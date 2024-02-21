@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     public static class clsDataAccessSettings
     {
-        static public string ConnectionString = "Server=.;Database=ContactsDB;User Id=sa;Password=123456";
+        static public string ConnectionString = "Server=.;Database=DVLM_Database;User Id=sa;Password=123456";
 
     }
 }
