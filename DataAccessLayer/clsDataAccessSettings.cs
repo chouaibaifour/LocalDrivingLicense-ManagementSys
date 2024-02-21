@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class Class1
+    public static class clsDataAccessSettings
     {
+        static public string ConnectionString = "Server=.;Database=DVLM_Database;User Id=sa;Password=123456";
+
     }
 }
