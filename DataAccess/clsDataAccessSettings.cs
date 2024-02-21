@@ -1,4 +1,4 @@
-﻿namespace DataAccess
+﻿namespace DataAccessLayer
 {
     static public class clsDataAccessSettings
     {
