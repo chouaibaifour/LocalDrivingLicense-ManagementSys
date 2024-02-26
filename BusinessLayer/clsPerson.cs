@@ -62,6 +62,11 @@ namespace BusinessLayer
 
         }
 
+        public string FullName
+        {
+            get { return FirstName + "" + SecondName + "" + ThirdName + "" + LastName; }
+        }
+
         private clsPerson(int PersonID, string NationalNumber, string FirstName, string SecondName,
              string ThirdName, string LastName, DateTime DateOfBirth, bool Gender, string Address, string Email,
               string PhoneNumber, int NationalityCountryID, string ImagePath)
