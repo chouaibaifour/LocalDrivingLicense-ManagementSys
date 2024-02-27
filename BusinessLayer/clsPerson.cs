@@ -37,7 +37,7 @@ namespace BusinessLayer
         public string PhoneNumber { get; set; } 
         public string Address { get; set; }
         public string Email { get; set; }
-        public int NationalityCountryID { get; set; }
+        private int NationalityCountryID { get; set; }
         public string ImagePath { get; set; }
 
            
@@ -66,9 +66,15 @@ namespace BusinessLayer
         {
             get { return FirstName + "" + SecondName + "" + ThirdName + "" + LastName; }
         }
-        public string NationalityCountryName
+        public string CountryName()
         {
-            get { return NationalityCountryName; }
+            clsCountry country = clsCountry.Find(NationalityCountryID);
+            if (country != null){
+                return (country.CountryName !="") ? country.CountryName : "";
+            }
+
+            return "";
+            
             
         }
 

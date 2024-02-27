@@ -47,10 +47,8 @@ namespace PresentationLayer
                 lblAddress.Text= person.Address;
                 lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = person.PhoneNumber;
-                lblCountryName.Text =person.NationalityCountryID.ToString();
-                MessageBox.Show("the country name will be apprear when we add clsCountry");
-                if (person.ImagePath=="")
-                picProfilePhoto.Image=Image.FromFile(person.ImagePath);
+                lblCountryName.Text =person.CountryName();
+                //picProfilePhoto.Image=Image.FromFile(person.ImagePath);
             }
         }
 
@@ -68,13 +66,9 @@ namespace PresentationLayer
                 lblAddress.Text = person.Address;
                 lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = person.PhoneNumber;
-                lblCountryName.Text = person.NationalityCountryID.ToString();
-                /*this will be complete when  
-                 * country class is ready
-                 */
-                MessageBox.Show("the country name will be apprear when we add clsCountry");
-                if (person.ImagePath == "")
-                    picProfilePhoto.Image = Image.FromFile(person.ImagePath);
+                lblCountryName.Text = person.CountryName();
+
+                //picProfilePhoto.Image = Image.FromFile(person.ImagePath);
             }
         }
 
