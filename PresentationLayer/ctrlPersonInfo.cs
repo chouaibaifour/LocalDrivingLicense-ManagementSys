@@ -24,12 +24,12 @@ namespace PresentationLayer
             if (Gender)
             {
                 lblGender.Text = "Male";
-                lblGender.Image = Resources.person_man;
+                lblGenderIcon.Image = Resources.person_man;
                 return;
 
             }
             lblGender.Text = "Female";
-            lblGender.Image = Resources.person_woman;
+            lblGenderIcon.Image = Resources.person_woman;
         }
 
 

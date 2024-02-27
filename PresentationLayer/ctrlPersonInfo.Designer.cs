@@ -93,10 +93,10 @@
             this.llbEditPersonInfo.LinkColor = System.Drawing.Color.Black;
             this.llbEditPersonInfo.Location = new System.Drawing.Point(583, 40);
             this.llbEditPersonInfo.Name = "llbEditPersonInfo";
-            this.llbEditPersonInfo.Size = new System.Drawing.Size(11, 16);
+            this.llbEditPersonInfo.Size = new System.Drawing.Size(99, 16);
             this.llbEditPersonInfo.TabIndex = 3;
             this.llbEditPersonInfo.TabStop = true;
-            this.llbEditPersonInfo.Text = "/";
+            this.llbEditPersonInfo.Text = "Edit Person info";
             this.llbEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbEditPersonInfo_LinkClicked);
             // 
             // picProfilePhoto

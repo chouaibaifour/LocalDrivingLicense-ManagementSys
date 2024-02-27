@@ -37,7 +37,7 @@ namespace BusinessLayer
         public string PhoneNumber { get; set; } 
         public string Address { get; set; }
         public string Email { get; set; }
-        private int NationalityCountryID { get; set; }
+        public int NationalityCountryID { get; set; }
         public string ImagePath { get; set; }
 
            
@@ -208,6 +208,14 @@ namespace BusinessLayer
         {
             return clsPersonDataAccess.IsPersonExists(PersonID);
         }
+        static public bool IsPersonExists(string NationalNumber)
+        {
+            return clsPersonDataAccess.IsPersonExist(NationalNumber);
+        }
 
+        static public bool IsEmailExists(string Email)
+        {
+            return clsPersonDataAccess.IsEmailExist(Email);
+        }
     }
 }
