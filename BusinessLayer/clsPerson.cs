@@ -66,6 +66,11 @@ namespace BusinessLayer
         {
             get { return FirstName + "" + SecondName + "" + ThirdName + "" + LastName; }
         }
+        public string NationalityCountryName
+        {
+            get { return NationalityCountryName; }
+            
+        }
 
         private clsPerson(int PersonID, string NationalNumber, string FirstName, string SecondName,
              string ThirdName, string LastName, DateTime DateOfBirth, bool Gender, string Address, string Email,
@@ -129,7 +134,6 @@ namespace BusinessLayer
         static public clsPerson Find(int PersonID)
         {
 
-            PersonID = -1;
             string NationalNumber = "";
             string FirstName="";
             string SecondName="";
@@ -159,7 +163,7 @@ namespace BusinessLayer
         {
 
             int PersonID = -1;
-            NationalNumber = "";
+            
             string FirstName = "";
             string SecondName = "";
             string ThirdName = "";
@@ -172,7 +176,7 @@ namespace BusinessLayer
             int NationalityCountryID = -1;
             string ImagePath = "";
 
-            if (clsPersonDataAccess.GetPersonByID(ref PersonID, ref NationalNumber, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
+            if (clsPersonDataAccess.GetPersonByNationalNumber(ref PersonID, ref NationalNumber, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
                 ref DateOfBirth, ref Gender, ref Address, ref Email, ref PhoneNumber, ref NationalityCountryID, ref ImagePath))
             {
                 return new clsPerson(PersonID, NationalNumber, FirstName, SecondName, ThirdName, LastName,

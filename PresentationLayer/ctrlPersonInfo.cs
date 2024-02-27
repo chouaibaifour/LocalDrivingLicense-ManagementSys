@@ -32,11 +32,12 @@ namespace PresentationLayer
             lblGender.Image = Resources.person_woman;
         }
 
-        private void LoadPersonInfo(int PersonID)
+
+        public void LoadPersonInfo(int PersonID)
         {
             clsPerson person = clsPerson.Find(PersonID);
 
-            if(person == null)
+            if(person != null)
             {
                 lblPersonID.Text=person.PersonID.ToString();
                 lblNationalNumber.Text = person.NationalNumber; 
@@ -47,15 +48,17 @@ namespace PresentationLayer
                 lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = person.PhoneNumber;
                 lblCountryName.Text =person.NationalityCountryID.ToString();
+                MessageBox.Show("the country name will be apprear when we add clsCountry");
+                if (person.ImagePath=="")
                 picProfilePhoto.Image=Image.FromFile(person.ImagePath);
             }
         }
 
-        private void LoadPersonInfo(string NationalNumber)
+        public void LoadPersonInfo(string NationalNumber)
         {
             clsPerson person = clsPerson.Find(NationalNumber);
 
-            if (person == null)
+            if (person != null)
             {
                 lblPersonID.Text = person.PersonID.ToString();
                 lblNationalNumber.Text = person.NationalNumber;
@@ -70,7 +73,8 @@ namespace PresentationLayer
                  * country class is ready
                  */
                 MessageBox.Show("the country name will be apprear when we add clsCountry");
-                picProfilePhoto.Image = Image.FromFile(person.ImagePath);
+                if (person.ImagePath == "")
+                    picProfilePhoto.Image = Image.FromFile(person.ImagePath);
             }
         }
 
