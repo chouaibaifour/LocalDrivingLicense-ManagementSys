@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlPersonInfo));
             this.gbPesonInformation = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblGenderIcon = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.llbEditPersonInfo = new System.Windows.Forms.LinkLabel();
             this.picProfilePhoto = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -56,7 +48,7 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblGenderIcon = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbPesonInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePhoto)).BeginInit();
@@ -65,14 +57,6 @@
             // gbPesonInformation
             // 
             this.gbPesonInformation.BackColor = System.Drawing.Color.White;
-            this.gbPesonInformation.Controls.Add(this.label12);
-            this.gbPesonInformation.Controls.Add(this.label11);
-            this.gbPesonInformation.Controls.Add(this.label9);
-            this.gbPesonInformation.Controls.Add(this.lblGenderIcon);
-            this.gbPesonInformation.Controls.Add(this.label8);
-            this.gbPesonInformation.Controls.Add(this.label13);
-            this.gbPesonInformation.Controls.Add(this.label10);
-            this.gbPesonInformation.Controls.Add(this.label7);
             this.gbPesonInformation.Controls.Add(this.llbEditPersonInfo);
             this.gbPesonInformation.Controls.Add(this.picProfilePhoto);
             this.gbPesonInformation.Controls.Add(this.label18);
@@ -91,7 +75,7 @@
             this.gbPesonInformation.Controls.Add(this.lblGender);
             this.gbPesonInformation.Controls.Add(this.label5);
             this.gbPesonInformation.Controls.Add(this.lblName);
-            this.gbPesonInformation.Controls.Add(this.label3);
+            this.gbPesonInformation.Controls.Add(this.lblGenderIcon);
             this.gbPesonInformation.Controls.Add(this.label1);
             this.gbPesonInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbPesonInformation.Font = new System.Drawing.Font("Arial", 8F);
@@ -102,86 +86,6 @@
             this.gbPesonInformation.TabStop = false;
             this.gbPesonInformation.Text = "Person information";
             // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Image = global::PresentationLayer.Properties.Resources.Address;
-            this.label12.Location = new System.Drawing.Point(91, 198);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 20);
-            this.label12.TabIndex = 4;
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Image = global::PresentationLayer.Properties.Resources.email;
-            this.label11.Location = new System.Drawing.Point(91, 166);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 20);
-            this.label11.TabIndex = 4;
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Image = global::PresentationLayer.Properties.Resources.id;
-            this.label9.Location = new System.Drawing.Point(91, 104);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 20);
-            this.label9.TabIndex = 4;
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblGenderIcon
-            // 
-            this.lblGenderIcon.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenderIcon.Image = global::PresentationLayer.Properties.Resources.person_man;
-            this.lblGenderIcon.Location = new System.Drawing.Point(91, 132);
-            this.lblGenderIcon.Name = "lblGenderIcon";
-            this.lblGenderIcon.Size = new System.Drawing.Size(20, 20);
-            this.lblGenderIcon.TabIndex = 4;
-            this.lblGenderIcon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Image = global::PresentationLayer.Properties.Resources.user;
-            this.label8.Location = new System.Drawing.Point(91, 72);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 20);
-            this.label8.TabIndex = 4;
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Image = global::PresentationLayer.Properties.Resources.Country;
-            this.label13.Location = new System.Drawing.Point(409, 160);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(20, 20);
-            this.label13.TabIndex = 4;
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Image = global::PresentationLayer.Properties.Resources.Phonel;
-            this.label10.Location = new System.Drawing.Point(409, 136);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 20);
-            this.label10.TabIndex = 4;
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = global::PresentationLayer.Properties.Resources.DateOfBirth;
-            this.label7.Location = new System.Drawing.Point(409, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(20, 20);
-            this.label7.TabIndex = 4;
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // llbEditPersonInfo
             // 
             this.llbEditPersonInfo.AutoSize = true;
@@ -189,10 +93,10 @@
             this.llbEditPersonInfo.LinkColor = System.Drawing.Color.Black;
             this.llbEditPersonInfo.Location = new System.Drawing.Point(583, 40);
             this.llbEditPersonInfo.Name = "llbEditPersonInfo";
-            this.llbEditPersonInfo.Size = new System.Drawing.Size(99, 16);
+            this.llbEditPersonInfo.Size = new System.Drawing.Size(11, 16);
             this.llbEditPersonInfo.TabIndex = 3;
             this.llbEditPersonInfo.TabStop = true;
-            this.llbEditPersonInfo.Text = "Edit Person info";
+            this.llbEditPersonInfo.Text = "/";
             this.llbEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbEditPersonInfo_LinkClicked);
             // 
             // picProfilePhoto
@@ -209,11 +113,12 @@
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(318, 104);
+            this.label18.Image = global::PresentationLayer.Properties.Resources.DateOfBirth;
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label18.Location = new System.Drawing.Point(318, 98);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 16);
+            this.label18.Size = new System.Drawing.Size(111, 24);
             this.label18.TabIndex = 1;
             this.label18.Text = "Date Of Birth : ";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,11 +145,12 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Image = global::PresentationLayer.Properties.Resources.email;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label6.Location = new System.Drawing.Point(6, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 16);
+            this.label6.Size = new System.Drawing.Size(105, 24);
             this.label6.TabIndex = 1;
             this.label6.Text = "Email :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,33 +167,36 @@
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(318, 168);
+            this.label17.Image = global::PresentationLayer.Properties.Resources.Country;
+            this.label17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label17.Location = new System.Drawing.Point(318, 162);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 16);
+            this.label17.Size = new System.Drawing.Size(111, 24);
             this.label17.TabIndex = 0;
             this.label17.Text = "Country :";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::PresentationLayer.Properties.Resources.id;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(6, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.Size = new System.Drawing.Size(113, 24);
             this.label4.TabIndex = 1;
             this.label4.Text = "National No :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(318, 136);
+            this.label16.Image = global::PresentationLayer.Properties.Resources.Phonel;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label16.Location = new System.Drawing.Point(318, 130);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 16);
+            this.label16.Size = new System.Drawing.Size(111, 24);
             this.label16.TabIndex = 0;
             this.label16.Text = "Phone :";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,11 +243,11 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Location = new System.Drawing.Point(6, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.Size = new System.Drawing.Size(105, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Person ID :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -355,11 +264,12 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Image = global::PresentationLayer.Properties.Resources.Address;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(6, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.Size = new System.Drawing.Size(105, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Address :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,24 +286,26 @@
             this.lblName.Text = "N/A";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblGenderIcon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Gender :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGenderIcon.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenderIcon.Image = global::PresentationLayer.Properties.Resources.person_man;
+            this.lblGenderIcon.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblGenderIcon.Location = new System.Drawing.Point(6, 136);
+            this.lblGenderIcon.Name = "lblGenderIcon";
+            this.lblGenderIcon.Size = new System.Drawing.Size(105, 24);
+            this.lblGenderIcon.TabIndex = 0;
+            this.lblGenderIcon.Text = "Gender :";
+            this.lblGenderIcon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = global::PresentationLayer.Properties.Resources.user;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Location = new System.Drawing.Point(6, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,7 +333,6 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCountryName;
         private System.Windows.Forms.Label lblEmail;
@@ -435,13 +346,6 @@
         private System.Windows.Forms.PictureBox picProfilePhoto;
         private System.Windows.Forms.LinkLabel llbEditPersonInfo;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblGenderIcon;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
     }
 }

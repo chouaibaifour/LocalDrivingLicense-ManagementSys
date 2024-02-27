@@ -76,5 +76,10 @@ namespace PresentationLayer
         {
             //this will provide linkable label to update Person info
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

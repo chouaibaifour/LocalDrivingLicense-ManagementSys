@@ -49,17 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlAddNewPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlAddNewPerson.Designer.cs">
+      <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ctrlPersonInfo.Designer.cs">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddNewPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewPerson.Designer.cs">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonInfo.Designer.cs">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmtest.cs">
       <SubType>Form</SubType>
@@ -69,11 +87,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlAddNewPerson.resx">
+      <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlPersonInfo.resx">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewPerson.resx">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonInfo.resx">
+      <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmtest.resx">
       <DependentUpon>frmtest.cs</DependentUpon>
@@ -133,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
