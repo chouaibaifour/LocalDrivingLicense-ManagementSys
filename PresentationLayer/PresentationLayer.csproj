@@ -79,12 +79,6 @@
     <Compile Include="frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmtest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmtest.Designer.cs">
-      <DependentUpon>frmtest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ctrlAddNewUpdatePerson.resx">
@@ -101,9 +95,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmtest.resx">
-      <DependentUpon>frmtest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

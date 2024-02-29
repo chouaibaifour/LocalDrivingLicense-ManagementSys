@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmAddNewPerson
+            // frmAddNewUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(727, 347);
+            this.ClientSize = new System.Drawing.Size(921, 464);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAddNewPerson";
+            this.Name = "frmAddNewUpdatePerson";
             this.Text = "frmAddNewPerson";
             this.ResumeLayout(false);
 
