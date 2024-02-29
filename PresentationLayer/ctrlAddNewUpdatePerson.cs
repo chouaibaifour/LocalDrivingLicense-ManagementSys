@@ -262,5 +262,9 @@ namespace PresentationLayer
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            (this.FindForm()).Close();
+        }
     }
 }
