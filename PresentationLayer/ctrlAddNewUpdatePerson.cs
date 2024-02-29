@@ -16,11 +16,31 @@ namespace PresentationLayer
 {
     public partial class ctrlAddNewUpdatePerson : UserControl
     {
+        public enum enMode { AddNew = 0, Update = 1 }
+        private enMode _Mode;
         public ctrlAddNewUpdatePerson()
         {
             InitializeComponent();
         }
-        clsPerson person;
+
+        int _PersonID;
+        clsPerson _Person;
+
+        public void Load_PersonInfo(int PersonID)
+        {
+            if (-1==PersonID )
+            {
+                _PersonID = PersonID;
+                _Mode = enMode.AddNew;
+            }
+            else
+            {
+                _PersonID = PersonID;
+                _Mode = enMode.Update;
+            }
+
+            _LoadData();
+        }
 
         private void _FillCountriesInComboBox()
         {
@@ -138,57 +158,65 @@ namespace PresentationLayer
             }
         }
 
-       public void Load_CtrlAddNewUpdatePerson(int PersonID)
-        {
-            if (PersonID>0)
-            {
-                 person = clsPerson.Find(PersonID);
-
-                if(person != null)
-                {
-                    LoadData();
-                }
-            }
-            else {
-                person = new clsPerson();
-            }
-        }
-
-        private void selecteGender(bool Gender)
+        private void _SelecteGender(bool Gender)
         {
             if (Gender)
             {
                rbMale.Checked = true;
                 lblGenderIcon.Image = Resources.person_man;
+                picProfile.Image = Image.FromFile("F:\\repos\\Icons\\72px\\person_man.png");
                 return;
 
             }
             rbFemale.Checked = true;
             lblGenderIcon.Image = Resources.person_woman;
+            picProfile.Image = Image.FromFile("F:\\repos\\Icons\\72px\\person_woman.png");
         }
 
-        private void LoadData()
+        private void _LoadData()
         {
-            lblPersonID.Text = person.PersonID.ToString();
-            txtFirstName.Text = person.FirstName.ToString();
-            txtSecondName.Text =person.SecondName.ToString();
-            txtThirdName.Text = person.ThirdName.ToString();
-            txtLastName.Text = person.LastName.ToString();
-            txtNationalNumber.Text = person.NationalNumber.ToString();
-            dtpDateOfBirth.Value = person.DateOfBirth.Date;
-            selecteGender(person.Gender);
-            txtPhoneNumber.Text = person.PhoneNumber.ToString();
-            txtEmail.Text = person.Email.ToString();
-            rtxtAddress.Text = person.Address.ToString();
             _FillCountriesInComboBox();
-            cbCountry.SelectedText = person.CountryName();
+            cbCountry.SelectedIndex = 0;
+            if (enMode.AddNew.Equals(_Mode))
+            {
+                // Add New Person Mode 
+                lblMode.Text = "Add New Person";
+                _Person = new clsPerson();
+                return;
 
-           // picProfile.Image = (person.ImagePath != "") ? Image.FromFile(person.ImagePath) :
-             //   (person.Gender) ? Image.FromFile("F:\\repos\\Icons\\72px\\person_man.png") :
-               // Image.FromFile("F:\\repos\\Icons\\72px\\person_woman.png");
+            }
+            _Person = clsPerson.Find(_PersonID);
 
+            if(null== _Person)
+            {
+                MessageBox.Show("This form will be Close because no Person with PersonID : " + _PersonID.ToString());
+                (this.FindForm()).Close();
+            }
+            // Update Mode 
+            lblMode.Text = "Edit Person Info";
+
+            lblPersonID.Text = _Person.PersonID.ToString();
+            txtFirstName.Text = _Person.FirstName;
+            txtSecondName.Text =_Person.SecondName;
+            txtThirdName.Text = _Person.ThirdName;
+            txtLastName.Text = _Person.LastName;
+            txtNationalNumber.Text = _Person.NationalNumber;
+            dtpDateOfBirth.Value = _Person.DateOfBirth.Date;
+            _SelecteGender(_Person.Gender);
+            txtPhoneNumber.Text = _Person.PhoneNumber;
+            txtEmail.Text = _Person.Email;
+            rtxtAddress.Text = _Person.Address;
+            
+            if (!"".Equals(_Person.ImagePath))
+            {
+                picProfile.Image = Image.FromFile(_Person.ImagePath);
+
+            }
+            llbRemove.Visible = (!"".Equals(_Person.ImagePath));
+            cbCountry.SelectedIndex =cbCountry.FindString( _Person.CountryName());
 
         }
+
         private int GetCountryID(string CountryName)
         {
             clsCountry country = clsCountry.Find(CountryName);
@@ -203,34 +231,36 @@ namespace PresentationLayer
 
         private void GetPersonInfoFromForm()
         {
-            person.NationalNumber = txtNationalNumber.Text;
-            person.FirstName = txtFirstName.Text;
-            person.SecondName = txtSecondName.Text;
-            person.ThirdName = txtThirdName.Text;
-            person.LastName = txtLastName.Text;
-            person.Gender = rbMale.Checked;
-            person.DateOfBirth = dtpDateOfBirth.Value;
-            person.Email = txtEmail.Text;
-            person.Address = rtxtAddress.Text;
-            person.PhoneNumber =txtPhoneNumber.Text;
+            _Person.NationalNumber = txtNationalNumber.Text;
+            _Person.FirstName = txtFirstName.Text;
+            _Person.SecondName = txtSecondName.Text;
+            _Person.ThirdName = txtThirdName.Text;
+            _Person.LastName = txtLastName.Text;
+            _Person.Gender = rbMale.Checked;
+            _Person.DateOfBirth = dtpDateOfBirth.Value;
+            _Person.Email = txtEmail.Text;
+            _Person.Address = rtxtAddress.Text;
+            _Person.PhoneNumber =txtPhoneNumber.Text;
             int CountryID;
             if ((CountryID = GetCountryID(cbCountry.SelectedText)) > 0) 
-                person.NationalityCountryID=CountryID;
-            person.ImagePath = openFileDialog.FileName;
+                _Person.NationalityCountryID=CountryID;
 
+            _Person.ImagePath = (null!=picProfile.ImageLocation)?picProfile.ImageLocation:"";
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             GetPersonInfoFromForm();
-            person.Save();
+            if (_Person.Save())
+                MessageBox.Show("Person Saved Successfully.");
+            else
+                MessageBox.Show("Error : Data is not Saved Successfully.");
+            _Mode = enMode.Update;
+            lblMode.Text = "Edit Person Info";
+            lblPersonID.Text=_PersonID.ToString();
 
         }
 
-        private void ctrlAddNewPerson_Load(object sender, EventArgs e)
-        {
-            _FillCountriesInComboBox();
-        }
     }
 }

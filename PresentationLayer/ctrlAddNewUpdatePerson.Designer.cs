@@ -65,6 +65,7 @@ namespace PresentationLayer
             this.label1 = new System.Windows.Forms.Label();
             this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblMode = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
@@ -103,7 +104,7 @@ namespace PresentationLayer
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(23, 34);
+            this.groupBox1.Location = new System.Drawing.Point(23, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(767, 315);
             this.groupBox1.TabIndex = 0;
@@ -446,7 +447,7 @@ namespace PresentationLayer
             // lblPersonID
             // 
             this.lblPersonID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(138, 6);
+            this.lblPersonID.Location = new System.Drawing.Point(138, 56);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(113, 25);
             this.lblPersonID.TabIndex = 1;
@@ -458,7 +459,7 @@ namespace PresentationLayer
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::PresentationLayer.Properties.Resources.id;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(17, 6);
+            this.label1.Location = new System.Drawing.Point(17, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 1;
@@ -473,17 +474,27 @@ namespace PresentationLayer
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // ctrlAddNewPerson
+            // lblMode
+            // 
+            this.lblMode.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.Location = new System.Drawing.Point(307, 26);
+            this.lblMode.Name = "lblMode";
+            this.lblMode.Size = new System.Drawing.Size(198, 26);
+            this.lblMode.TabIndex = 2;
+            this.lblMode.Text = "Add New Person";
+            this.lblMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ctrlAddNewUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblMode);
             this.Controls.Add(this.lblPersonID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ctrlAddNewPerson";
-            this.Size = new System.Drawing.Size(790, 349);
-            this.Load += new System.EventHandler(this.ctrlAddNewPerson_Load);
+            this.Name = "ctrlAddNewUpdatePerson";
+            this.Size = new System.Drawing.Size(790, 399);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
@@ -529,5 +540,6 @@ namespace PresentationLayer
         private System.Windows.Forms.LinkLabel llbSetImage;
         private System.Windows.Forms.LinkLabel llbRemove;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label lblMode;
     }
 }

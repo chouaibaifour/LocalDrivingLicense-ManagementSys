@@ -48,7 +48,7 @@ namespace PresentationLayer
                 lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = person.PhoneNumber;
                 lblCountryName.Text =person.CountryName();
-                //picProfilePhoto.Image=Image.FromFile(person.ImagePath);
+                //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
             }
         }
 
@@ -68,7 +68,7 @@ namespace PresentationLayer
                 lblPhone.Text = person.PhoneNumber;
                 lblCountryName.Text = person.CountryName();
 
-                //picProfilePhoto.Image = Image.FromFile(person.ImagePath);
+                //picProfilePhoto.Image = Image.FromFile(_Person.ImagePath);
             }
         }
 

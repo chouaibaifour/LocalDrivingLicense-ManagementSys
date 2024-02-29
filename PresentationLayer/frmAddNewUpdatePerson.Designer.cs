@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctrlPersonInfo1 = new PresentationLayer.ctrlPersonInfo();
             this.SuspendLayout();
+            // 
+            // ctrlPersonInfo1
+            // 
+            this.ctrlPersonInfo1.Location = new System.Drawing.Point(1, -2);
+            this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
+            this.ctrlPersonInfo1.Size = new System.Drawing.Size(708, 244);
+            this.ctrlPersonInfo1.TabIndex = 0;
             // 
             // frmAddNewUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(921, 464);
+            this.ClientSize = new System.Drawing.Size(921, 658);
+            this.Controls.Add(this.ctrlPersonInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNewUpdatePerson";
             this.Text = "frmAddNewPerson";
@@ -44,5 +53,8 @@
         }
 
         #endregion
+
+        private ctrlPersonInfo ctrlPersonInfo1;
+        
     }
 }
