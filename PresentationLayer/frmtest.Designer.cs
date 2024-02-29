@@ -28,14 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctrlAddNewPerson1 = new PresentationLayer.ctrlAddNewUpdatePerson();
             this.SuspendLayout();
+            // 
+            // ctrlAddNewPerson1
+            // 
+            this.ctrlAddNewPerson1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddNewPerson1.Location = new System.Drawing.Point(27, 39);
+            this.ctrlAddNewPerson1.Name = "ctrlAddNewPerson1";
+            this.ctrlAddNewPerson1.Size = new System.Drawing.Size(816, 381);
+            this.ctrlAddNewPerson1.TabIndex = 0;
+            this.ctrlAddNewPerson1.Load += new System.EventHandler(this.ctrlAddNewPerson1_Load);
             // 
             // frmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(882, 487);
+            this.Controls.Add(this.ctrlAddNewPerson1);
             this.Name = "frmTest";
             this.Text = "test";
             this.Load += new System.EventHandler(this.frmTest_Load);
@@ -44,5 +55,7 @@
         }
 
         #endregion
+
+        private ctrlAddNewUpdatePerson ctrlAddNewPerson1;
     }
 }

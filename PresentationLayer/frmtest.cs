@@ -17,14 +17,16 @@ namespace PresentationLayer
             InitializeComponent();
         }
 
-        private void ctrlPersonInfo1_Load(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void frmTest_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ctrlAddNewPerson1_Load(object sender, EventArgs e)
+        {
+            ctrlAddNewPerson1.UpdateOrAddNewPerson(-1);
         }
     }
 }

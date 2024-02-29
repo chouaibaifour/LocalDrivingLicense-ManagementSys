@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlAddNewPerson.cs">
+    <Compile Include="ctrlAddNewUpdatePerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlAddNewPerson.Designer.cs">
-      <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
+    <Compile Include="ctrlAddNewUpdatePerson.Designer.cs">
+      <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="ctrlPersonInfo.cs">
       <SubType>UserControl</SubType>
@@ -61,11 +61,11 @@
     <Compile Include="ctrlPersonInfo.Designer.cs">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddNewPerson.cs">
+    <Compile Include="frmAddNewUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddNewPerson.Designer.cs">
-      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    <Compile Include="frmAddNewUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddNewUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -87,14 +87,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrlAddNewPerson.resx">
-      <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
+    <EmbeddedResource Include="ctrlAddNewUpdatePerson.resx">
+      <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlPersonInfo.resx">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddNewPerson.resx">
-      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddNewUpdatePerson.resx">
+      <DependentUpon>frmAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

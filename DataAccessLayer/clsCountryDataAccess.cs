@@ -220,22 +220,22 @@ namespace DataAccessLayer
 
         public static DataTable GetAllCountries()
         {
-            DataTable dt = new DataTable();
+           
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT * FROM Countries ";
+            string query = @"SELECT CountryName FROM Countries; ";
 
             SqlCommand command = new SqlCommand(query, connection);
-
+            DataTable dataTable = new DataTable();
             try
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-
+                
                 if (reader.HasRows)
                 {
-                    dt.Load(reader);
+                    dataTable.Load(reader);
                 }
                 reader.Close();
             }
@@ -247,7 +247,7 @@ namespace DataAccessLayer
             {
                 connection.Close();
             }
-            return dt;
+            return dataTable;
 
         }
 

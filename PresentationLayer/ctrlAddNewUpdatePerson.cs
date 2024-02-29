@@ -14,21 +14,25 @@ using PresentationLayer.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace PresentationLayer
 {
-    public partial class ctrlAddNewPerson : UserControl
+    public partial class ctrlAddNewUpdatePerson : UserControl
     {
-        public ctrlAddNewPerson()
+        public ctrlAddNewUpdatePerson()
         {
             InitializeComponent();
         }
         clsPerson person;
 
-        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        private void _FillCountriesInComboBox()
         {
             DataTable dt = clsCountry.GetAllCountries();
-            cbCountry.DataSource = dt.Columns["CountryName"];
-            cbCountry.Text = "Algeria";
+            foreach (DataRow row in dt.Rows)
+            {
+                cbCountry.Items.Add(row["CountryName"]);
+            }
+            cbCountry.SelectedText = "Algeria";
+            
         }
-        
+       
         private void ValidatingEmptyOrNulltxt(object sender,CancelEventArgs e)
         {
             System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
@@ -134,7 +138,7 @@ namespace PresentationLayer
             }
         }
 
-       public void UpdateOrAddNewPerson(int PersonID)
+       public void Load_CtrlAddNewUpdatePerson(int PersonID)
         {
             if (PersonID>0)
             {
@@ -142,7 +146,7 @@ namespace PresentationLayer
 
                 if(person != null)
                 {
-                    FillForm();
+                    LoadData();
                 }
             }
             else {
@@ -163,7 +167,7 @@ namespace PresentationLayer
             lblGenderIcon.Image = Resources.person_woman;
         }
 
-        private void FillForm()
+        private void LoadData()
         {
             lblPersonID.Text = person.PersonID.ToString();
             txtFirstName.Text = person.FirstName.ToString();
@@ -171,17 +175,17 @@ namespace PresentationLayer
             txtThirdName.Text = person.ThirdName.ToString();
             txtLastName.Text = person.LastName.ToString();
             txtNationalNumber.Text = person.NationalNumber.ToString();
-            dtpDateOfBirth.Value = person.DateOfBirth;
+            dtpDateOfBirth.Value = person.DateOfBirth.Date;
             selecteGender(person.Gender);
             txtPhoneNumber.Text = person.PhoneNumber.ToString();
             txtEmail.Text = person.Email.ToString();
             rtxtAddress.Text = person.Address.ToString();
-            cbCountry.DataSource = clsCountry.GetAllCountries();
+            _FillCountriesInComboBox();
             cbCountry.SelectedText = person.CountryName();
 
-            picProfile.Image = (person.ImagePath != "") ? Image.FromFile(person.ImagePath) :
-                (person.Gender) ? Image.FromFile("F:\\repos\\Icons\\72px\\person_man.png") :
-                Image.FromFile("F:\\repos\\Icons\\72px\\person_woman.png");
+           // picProfile.Image = (person.ImagePath != "") ? Image.FromFile(person.ImagePath) :
+             //   (person.Gender) ? Image.FromFile("F:\\repos\\Icons\\72px\\person_man.png") :
+               // Image.FromFile("F:\\repos\\Icons\\72px\\person_woman.png");
 
 
         }
@@ -224,6 +228,9 @@ namespace PresentationLayer
 
         }
 
-        
+        private void ctrlAddNewPerson_Load(object sender, EventArgs e)
+        {
+            _FillCountriesInComboBox();
+        }
     }
 }

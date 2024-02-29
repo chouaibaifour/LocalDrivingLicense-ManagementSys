@@ -1,7 +1,7 @@
 ﻿using System;
 namespace PresentationLayer
 {
-    partial class ctrlAddNewPerson
+    partial class ctrlAddNewUpdatePerson
     {
         /// <summary> 
         /// Required designer variable.
@@ -146,7 +146,6 @@ namespace PresentationLayer
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
-            
             // 
             // btnSave
             // 
@@ -206,9 +205,8 @@ namespace PresentationLayer
             this.cbCountry.Location = new System.Drawing.Point(444, 139);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(139, 24);
+            this.cbCountry.Sorted = true;
             this.cbCountry.TabIndex = 10;
-            this.cbCountry.Text = "Algeria";
-            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
             // 
             // rbFemale
             // 
@@ -250,11 +248,11 @@ namespace PresentationLayer
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateOfBirth.Location = new System.Drawing.Point(444, 77);
-            this.dtpDateOfBirth.MinDate = new System.DateTime(2006, 2, 27, 0, 0, 0, 0);
+            this.dtpDateOfBirth.MaxDate = new System.DateTime(2006, 2, 28, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(139, 22);
             this.dtpDateOfBirth.TabIndex = 6;
-            this.dtpDateOfBirth.Value = new System.DateTime(2024, 2, 27, 0, 0, 0, 0);
+            this.dtpDateOfBirth.Value = new System.DateTime(2006, 2, 28, 0, 0, 0, 0);
             // 
             // label13
             // 
@@ -485,6 +483,7 @@ namespace PresentationLayer
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlAddNewPerson";
             this.Size = new System.Drawing.Size(790, 349);
+            this.Load += new System.EventHandler(this.ctrlAddNewPerson_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();

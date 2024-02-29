@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer
 {
-    partial class frmAddNewPerson
+    partial class frmAddNewUpdatePerson
     {
         /// <summary>
         /// Required designer variable.
