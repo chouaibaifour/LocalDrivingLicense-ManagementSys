@@ -28,7 +28,7 @@ namespace PresentationLayer
 
         public void Load_PersonInfo(int PersonID)
         {
-            if (-1==PersonID )
+            if (-1 == PersonID)
             {
                 _PersonID = PersonID;
                 _Mode = enMode.AddNew;
@@ -50,10 +50,10 @@ namespace PresentationLayer
                 cbCountry.Items.Add(row["CountryName"]);
             }
             cbCountry.SelectedText = "Algeria";
-            
+
         }
-       
-        private void ValidatingEmptyOrNulltxt(object sender,CancelEventArgs e)
+
+        private void ValidatingEmptyOrNulltxt(object sender, CancelEventArgs e)
         {
             System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
             if (string.IsNullOrEmpty(textBox.Text))
@@ -73,9 +73,9 @@ namespace PresentationLayer
         {
             ValidatingEmptyOrNulltxt(sender, e);
 
-            if(clsPerson.IsPersonExists(txtNationalNumber.Text))
+            if (clsPerson.IsPersonExists(txtNationalNumber.Text))
             {
-                e.Cancel=true;
+                e.Cancel = true;
                 epEmptyOrNull.SetError(txtNationalNumber, "InValid National Number try agian !");
             }
             else
@@ -101,8 +101,8 @@ namespace PresentationLayer
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             ValidatingEmptyOrNulltxt(sender, e);
-            
-            if (clsPerson.IsEmailExists(txtEmail.Text)|| !IsEmailValid(txtEmail.Text))
+
+            if (clsPerson.IsEmailExists(txtEmail.Text) || !IsEmailValid(txtEmail.Text))
             {
                 e.Cancel = true;
                 epEmptyOrNull.SetError(txtEmail, "InValid Email try agian !");
@@ -138,21 +138,24 @@ namespace PresentationLayer
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string FilePath = @"F:\\repos\\Icons\\PeopleProfiles\\" + Guid.NewGuid().ToString() + ".png";
+                string FilePath = @"F:\\repos\\Icons\\PersonProfilePics\\" + Guid.NewGuid().ToString() + ".png";
                 //Get the path of specified file
-                File.Copy(openFileDialog.FileName,FilePath);
+                File.Copy(openFileDialog.FileName, FilePath);
                 picProfile.Image = Image.FromFile(FilePath);
+                picProfile.ImageLocation = FilePath;
+                llbRemove.Visible = true;
 
             }
         }
 
         private void rbMale_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbMale.Checked)
+            if (rbMale.Checked)
             {
                 lblGenderIcon.Image = Resources.person_man;
 
-            }else if(rbFemale.Checked)
+            }
+            else if (rbFemale.Checked)
             {
                 lblGenderIcon.Image = Resources.person_woman;
             }
@@ -162,16 +165,20 @@ namespace PresentationLayer
         {
             if (Gender)
             {
-               rbMale.Checked = true;
+                rbMale.Checked = true;
                 lblGenderIcon.Image = Resources.person_man;
-                picProfile.Image = Image.FromFile("F:\\repos\\Icons\\72px\\person_man.png");
                 return;
 
             }
-            rbFemale.Checked = true;
-            lblGenderIcon.Image = Resources.person_woman;
-            picProfile.Image = Image.FromFile("F:\\repos\\Icons\\72px\\person_woman.png");
+            else {
+                rbFemale.Checked = true;
+                lblGenderIcon.Image = Resources.person_woman;
+            }
+                
+            picProfile.Image = Image.FromFile("F:\\repos\\Icons\\72px\\NoProfilePic.png");
         }
+        
+    
 
         private void _LoadData()
         {
@@ -242,7 +249,7 @@ namespace PresentationLayer
             _Person.Address = rtxtAddress.Text;
             _Person.PhoneNumber =txtPhoneNumber.Text;
             int CountryID;
-            if ((CountryID = GetCountryID(cbCountry.SelectedText)) > 0) 
+            if ((CountryID = GetCountryID(cbCountry.Text)) > 0) 
                 _Person.NationalityCountryID=CountryID;
 
             _Person.ImagePath = (null!=picProfile.ImageLocation)?picProfile.ImageLocation:"";
@@ -265,6 +272,11 @@ namespace PresentationLayer
         private void btnClose_Click(object sender, EventArgs e)
         {
             (this.FindForm()).Close();
+        }
+
+        private void llbRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            picProfile.Image=null;
         }
     }
 }

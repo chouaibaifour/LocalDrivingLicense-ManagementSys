@@ -116,7 +116,7 @@ namespace PresentationLayer
             this.llbSetImage.Location = new System.Drawing.Point(641, 250);
             this.llbSetImage.Name = "llbSetImage";
             this.llbSetImage.Size = new System.Drawing.Size(69, 18);
-            this.llbSetImage.TabIndex = 15;
+            this.llbSetImage.TabIndex = 18;
             this.llbSetImage.TabStop = true;
             this.llbSetImage.Text = "Set Image";
             this.llbSetImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,10 +128,11 @@ namespace PresentationLayer
             this.llbRemove.Location = new System.Drawing.Point(641, 274);
             this.llbRemove.Name = "llbRemove";
             this.llbRemove.Size = new System.Drawing.Size(69, 18);
-            this.llbRemove.TabIndex = 15;
+            this.llbRemove.TabIndex = 19;
             this.llbRemove.TabStop = true;
             this.llbRemove.Text = "Remove";
             this.llbRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llbRemove.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbRemove_LinkClicked);
             // 
             // btnClose
             // 
@@ -143,7 +144,7 @@ namespace PresentationLayer
             this.btnClose.Location = new System.Drawing.Point(508, 274);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 32);
-            this.btnClose.TabIndex = 14;
+            this.btnClose.TabIndex = 17;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
@@ -159,7 +160,7 @@ namespace PresentationLayer
             this.btnSave.Location = new System.Drawing.Point(407, 274);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 32);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
@@ -172,7 +173,7 @@ namespace PresentationLayer
             this.rtxtAddress.Name = "rtxtAddress";
             this.rtxtAddress.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.rtxtAddress.Size = new System.Drawing.Size(451, 95);
-            this.rtxtAddress.TabIndex = 12;
+            this.rtxtAddress.TabIndex = 15;
             this.rtxtAddress.Text = "";
             this.rtxtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.rtxtAddress_Validating);
             // 
@@ -208,7 +209,7 @@ namespace PresentationLayer
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(139, 24);
             this.cbCountry.Sorted = true;
-            this.cbCountry.TabIndex = 10;
+            this.cbCountry.TabIndex = 14;
             // 
             // rbFemale
             // 
@@ -253,7 +254,7 @@ namespace PresentationLayer
             this.dtpDateOfBirth.MaxDate = new System.DateTime(2006, 2, 28, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(139, 22);
-            this.dtpDateOfBirth.TabIndex = 6;
+            this.dtpDateOfBirth.TabIndex = 7;
             this.dtpDateOfBirth.Value = new System.DateTime(2006, 2, 28, 0, 0, 0, 0);
             // 
             // label13
@@ -264,7 +265,7 @@ namespace PresentationLayer
             this.label13.Location = new System.Drawing.Point(285, 135);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(142, 24);
-            this.label13.TabIndex = 5;
+            this.label13.TabIndex = 13;
             this.label13.Text = "Country :";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -276,7 +277,7 @@ namespace PresentationLayer
             this.label11.Location = new System.Drawing.Point(285, 108);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(142, 24);
-            this.label11.TabIndex = 5;
+            this.label11.TabIndex = 10;
             this.label11.Text = "Phone :";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -288,7 +289,7 @@ namespace PresentationLayer
             this.label10.Location = new System.Drawing.Point(285, 78);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 24);
-            this.label10.TabIndex = 5;
+            this.label10.TabIndex = 6;
             this.label10.Text = "Date Of Birth :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -334,7 +335,7 @@ namespace PresentationLayer
             this.txtLastName.Location = new System.Drawing.Point(600, 44);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(139, 25);
-            this.txtLastName.TabIndex = 3;
+            this.txtLastName.TabIndex = 4;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
             // txtPhoneNumber
@@ -343,7 +344,7 @@ namespace PresentationLayer
             this.txtPhoneNumber.Location = new System.Drawing.Point(444, 108);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(139, 25);
-            this.txtPhoneNumber.TabIndex = 3;
+            this.txtPhoneNumber.TabIndex = 11;
             this.txtPhoneNumber.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
             // txtThirdName
@@ -360,7 +361,7 @@ namespace PresentationLayer
             this.txtEmail.Location = new System.Drawing.Point(132, 134);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(139, 25);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 12;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtNationalNumber
@@ -369,7 +370,7 @@ namespace PresentationLayer
             this.txtNationalNumber.Location = new System.Drawing.Point(132, 77);
             this.txtNationalNumber.Name = "txtNationalNumber";
             this.txtNationalNumber.Size = new System.Drawing.Size(139, 25);
-            this.txtNationalNumber.TabIndex = 3;
+            this.txtNationalNumber.TabIndex = 5;
             this.txtNationalNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationalNumber_Validating);
             // 
             // txtFirstName
@@ -378,7 +379,7 @@ namespace PresentationLayer
             this.txtFirstName.Location = new System.Drawing.Point(132, 44);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(139, 25);
-            this.txtFirstName.TabIndex = 3;
+            this.txtFirstName.TabIndex = 2;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
             // txtSecondName
@@ -387,7 +388,7 @@ namespace PresentationLayer
             this.txtSecondName.Location = new System.Drawing.Point(288, 44);
             this.txtSecondName.Name = "txtSecondName";
             this.txtSecondName.Size = new System.Drawing.Size(139, 25);
-            this.txtSecondName.TabIndex = 3;
+            this.txtSecondName.TabIndex = 1;
             // 
             // label8
             // 
@@ -408,7 +409,7 @@ namespace PresentationLayer
             this.label4.Location = new System.Drawing.Point(6, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 24);
-            this.label4.TabIndex = 2;
+            this.label4.TabIndex = 20;
             this.label4.Text = "Name :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -451,7 +452,7 @@ namespace PresentationLayer
             this.lblPersonID.Location = new System.Drawing.Point(138, 56);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(113, 25);
-            this.lblPersonID.TabIndex = 1;
+            this.lblPersonID.TabIndex = 0;
             this.lblPersonID.Text = "N/A";
             this.lblPersonID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -481,7 +482,7 @@ namespace PresentationLayer
             this.lblMode.Location = new System.Drawing.Point(307, 26);
             this.lblMode.Name = "lblMode";
             this.lblMode.Size = new System.Drawing.Size(198, 26);
-            this.lblMode.TabIndex = 2;
+            this.lblMode.TabIndex = 1;
             this.lblMode.Text = "Add New Person";
             this.lblMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

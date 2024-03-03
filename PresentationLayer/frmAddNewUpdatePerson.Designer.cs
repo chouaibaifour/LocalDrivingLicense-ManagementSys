@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlPersonInfo1 = new PresentationLayer.ctrlPersonInfo();
+            this.ctrlAddNewUpdatePerson1 = new PresentationLayer.ctrlAddNewUpdatePerson();
             this.SuspendLayout();
             // 
-            // ctrlPersonInfo1
+            // ctrlAddNewUpdatePerson1
             // 
-            this.ctrlPersonInfo1.Location = new System.Drawing.Point(1, -2);
-            this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
-            this.ctrlPersonInfo1.Size = new System.Drawing.Size(708, 244);
-            this.ctrlPersonInfo1.TabIndex = 0;
-            // 
+            this.ctrlAddNewUpdatePerson1.AutoSize = true;
+            this.ctrlAddNewUpdatePerson1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddNewUpdatePerson1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlAddNewUpdatePerson1.Name = "ctrlAddNewUpdatePerson1";
+            this.ctrlAddNewUpdatePerson1.Size = new System.Drawing.Size(793, 402);
+            this.ctrlAddNewUpdatePerson1.TabIndex = 0;
+            
             // frmAddNewUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(921, 658);
-            this.Controls.Add(this.ctrlPersonInfo1);
+            this.ClientSize = new System.Drawing.Size(793, 402);
+            this.Controls.Add(this.ctrlAddNewUpdatePerson1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNewUpdatePerson";
-            this.Text = "frmAddNewPerson";
+            this.Load += new System.EventHandler(this.frmAddNewUpdatePerson_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private ctrlPersonInfo ctrlPersonInfo1;
-        
+        private ctrlAddNewUpdatePerson ctrlAddNewUpdatePerson1;
     }
 }

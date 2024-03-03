@@ -15,6 +15,15 @@ namespace PresentationLayer
         public frmAddNewUpdatePerson()
         {
             InitializeComponent();
+            ctrlAddNewUpdatePerson1.Load_PersonInfo(1);
+
         }
+
+        private void frmAddNewUpdatePerson_Load(object sender, EventArgs e)
+        {
+           // ctrlAddNewUpdatePerson1.Load_PersonInfo(-1);
+        }
+
+        
     }
 }
