@@ -55,6 +55,12 @@
     <Compile Include="ctrlAddNewUpdatePerson.Designer.cs">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlPeopleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlPeopleList.Designer.cs">
+      <DependentUpon>ctrlPeopleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPeopleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeopleList.Designer.cs">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,9 @@
     <EmbeddedResource Include="ctrlAddNewUpdatePerson.resx">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ctrlPeopleList.resx">
+      <DependentUpon>ctrlPeopleList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrlPersonInfo.resx">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPeopleList.resx">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
@@ -157,6 +175,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

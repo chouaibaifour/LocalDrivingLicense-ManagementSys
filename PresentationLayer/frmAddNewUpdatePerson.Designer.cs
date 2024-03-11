@@ -39,7 +39,7 @@
             this.ctrlAddNewUpdatePerson1.Name = "ctrlAddNewUpdatePerson1";
             this.ctrlAddNewUpdatePerson1.Size = new System.Drawing.Size(793, 402);
             this.ctrlAddNewUpdatePerson1.TabIndex = 0;
-            
+            // 
             // frmAddNewUpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +49,7 @@
             this.Controls.Add(this.ctrlAddNewUpdatePerson1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNewUpdatePerson";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddNewUpdatePerson_FormClosed);
             this.Load += new System.EventHandler(this.frmAddNewUpdatePerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

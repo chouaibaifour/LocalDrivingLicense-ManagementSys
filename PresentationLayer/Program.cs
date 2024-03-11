@@ -17,7 +17,7 @@ namespace PresentationLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmPersonInfo());
-            Application.Run(new frmAddNewUpdatePerson());
+            Application.Run(new frmPeopleList());
         }
     }
 }

@@ -219,10 +219,10 @@ namespace DataAccessLayer
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
                 
-            string query = @"INSERT INTO People(NationalNumber,FirstName,SecondName,ThirdName,LastName, DateOfBirth, Gender,Address
+            string query = @"INSERT INTO People(NationalNumber,FirstName,SecondName,ThirdName,LastName, DateOfBirth, Gender,Address,
                                 Email,PhoneNumber,NationalityCountryID,ImagePath)
                             VALUES
-                            (@NationalNumber,@FirstName,@SecondName,@ThirdName,@LastName, @DateOfBirth, @Gender,Address
+                            (@NationalNumber,@FirstName,@SecondName,@ThirdName,@LastName, @DateOfBirth, @Gender,@Address,
                                 @Email,@PhoneNumber,@NationalityCountryID,@ImagePath);
                                SELECT SCOPE_IDENTITY(); ";
 
@@ -269,7 +269,7 @@ namespace DataAccessLayer
 
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
 
-            command.Parameters.AddWithValue("@Email", Address);
+            command.Parameters.AddWithValue("@Address", Address);
 
             if (Email != "")
             {
@@ -455,7 +455,14 @@ namespace DataAccessLayer
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT * FROM People ";
+            string query = @"SELECT PersonID, NationalNumber, FirstName, SecondName, ThirdName, LastName,DateOfBirth,
+                    CASE
+					    WHEN People.Gender=1 THEN 'Male'
+					    WHEN People.Gender=0 THEN 'Female'					 
+					END as Gender, PhoneNumber, Email, 
+                        CountryName as Nationality
+                        FROM    Countries INNER JOIN
+                             People ON Countries.CountryID = People.NationalityCountryID ";
 
             SqlCommand command = new SqlCommand(query, connection);
 

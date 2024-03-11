@@ -21,6 +21,7 @@ namespace PresentationLayer
         public ctrlAddNewUpdatePerson()
         {
             InitializeComponent();
+
         }
 
         int _PersonID;
@@ -262,7 +263,11 @@ namespace PresentationLayer
             if (_Person.Save())
                 MessageBox.Show("Person Saved Successfully.");
             else
+            {
                 MessageBox.Show("Error : Data is not Saved Successfully.");
+                return;
+            }
+                
             _Mode = enMode.Update;
             lblMode.Text = "Edit Person Info";
             lblPersonID.Text=_PersonID.ToString();
@@ -271,7 +276,8 @@ namespace PresentationLayer
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            (this.FindForm()).Close();
+            Form frm = this.FindForm();
+            frm.Close();
         }
 
         private void llbRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
