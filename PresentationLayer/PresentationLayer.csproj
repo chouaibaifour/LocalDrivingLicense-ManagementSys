@@ -49,28 +49,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlAddNewUpdatePerson.cs">
+    <Compile Include="controls\ctrlAddNewUpdatePerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlAddNewUpdatePerson.Designer.cs">
+    <Compile Include="controls\ctrlAddNewUpdatePerson.Designer.cs">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlPeopleList.cs">
+    <Compile Include="controls\ctrlPeopleList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlPeopleList.Designer.cs">
+    <Compile Include="controls\ctrlPeopleList.Designer.cs">
       <DependentUpon>ctrlPeopleList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlPersonInfo.cs">
+    <Compile Include="controls\ctrlPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlPersonInfo.Designer.cs">
+    <Compile Include="controls\ctrlPersonInfo.Designer.cs">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddNewUpdatePerson.cs">
+    <Compile Include="People\frmAddNewUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddNewUpdatePerson.Designer.cs">
+    <Compile Include="People\frmAddNewUpdatePerson.Designer.cs">
       <DependentUpon>frmAddNewUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -79,39 +79,39 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPeopleList.cs">
+    <Compile Include="People\frmPeopleList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPeopleList.Designer.cs">
+    <Compile Include="People\frmPeopleList.Designer.cs">
       <DependentUpon>frmPeopleList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPersonInfo.cs">
+    <Compile Include="People\frmPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPersonInfo.Designer.cs">
+    <Compile Include="People\frmPersonInfo.Designer.cs">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrlAddNewUpdatePerson.resx">
+    <EmbeddedResource Include="controls\ctrlAddNewUpdatePerson.resx">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlPeopleList.resx">
+    <EmbeddedResource Include="controls\ctrlPeopleList.resx">
       <DependentUpon>ctrlPeopleList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlPersonInfo.resx">
+    <EmbeddedResource Include="controls\ctrlPersonInfo.resx">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddNewUpdatePerson.resx">
+    <EmbeddedResource Include="People\frmAddNewUpdatePerson.resx">
       <DependentUpon>frmAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPeopleList.resx">
+    <EmbeddedResource Include="People\frmPeopleList.resx">
       <DependentUpon>frmPeopleList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersonInfo.resx">
+    <EmbeddedResource Include="People\frmPersonInfo.resx">
       <DependentUpon>frmPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
