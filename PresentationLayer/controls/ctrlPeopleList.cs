@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PresentationLayer
 {
@@ -21,17 +22,19 @@ namespace PresentationLayer
 
         string Filter;
 
+        DataView dataView = clsPerson.GetAllPeople().DefaultView;
+
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
             frmAddNewUpdatePerson addNewUpdatePerson=new frmAddNewUpdatePerson(-1);
 
-            addNewUpdatePerson.SendDataBack += _GetAllPeople;
+            addNewUpdatePerson.SendDataBack += _FillAllPeopleTo_dgv;
 
             addNewUpdatePerson.ShowDialog(); 
 
         }
 
-        private void _GetAllPeople()
+        private void _FillAllPeopleTo_dgv()
         {
             DataTable dt = clsPerson.GetAllPeople();
             dgvPeople.DataSource = dt;
@@ -43,7 +46,7 @@ namespace PresentationLayer
         private void ctrlPeopleList_Load(object sender, EventArgs e)
         {
             cbFilters.SelectedIndex = 0;
-            _GetAllPeople();
+            _FillAllPeopleTo_dgv();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace PresentationLayer
         {
             Filter = "";
 
-            string[] Filters = {"None",
+            string[] Filters = {
             "PersonID",
             "NationalNumber",
             "FirstName",
@@ -80,44 +83,110 @@ namespace PresentationLayer
                 txtFilterValue.Visible = true;
 
                 btnFindRow.Visible = true;
-
+                
                 return;
             }
 
             txtFilterValue.Visible = false;
 
             btnFindRow.Visible = false;
-            
-            dgvPeople.DataSource = clsPerson.GetAllPeople();
+
+            dgvPeople.DataSource = dataView;
 
         }
 
-        private void btnFindRow_Click(object sender, EventArgs e)
+
+        private void txtFilterValue_KeyUp(object sender, KeyEventArgs e)
         {
-            DataView dataView = clsPerson.GetAllPeople().DefaultView;
-            
             _getClomnName(cbFilters.SelectedIndex);
 
-            if (!"PersonID".Equals(Filter))
+             if (!"PersonID".Equals(Filter))
             {
-                Filter += @"='" + txtFilterValue.Text+"'";
+                Filter += @" LIKE '%" + txtFilterValue.Text+"%'";
             }
             else
-            Filter += @"=" + txtFilterValue.Text;
+            {
+                if (!int.TryParse(txtFilterValue.Text, out int PersonID))
+                {
+
+                    txtFilterValue.Text = string.Empty;
+                    Filter += @"=0";
+                    
+                }
+                else
+                {
+                    
+                    Filter += @"=" + PersonID.ToString();
+                }
+
+            }
+                
             try
             {
                 dataView.RowFilter = Filter;
-                
+
             }
             catch (Exception)
             {
-               
+
             }
+
             dgvPeople.DataSource = dataView.ToTable();
 
             lblRecordCount.Text = dgvPeople.RowCount.ToString();
+        }
+
+        private void smiShowDetails_Click(object sender, EventArgs e)
+        {
+            if(int.TryParse(dgvPeople.CurrentRow.Cells[0].Value.ToString(),out int PersonID))
+            {
+                frmPersonInfo frmPersonInfo = new frmPersonInfo(PersonID);
+                frmPersonInfo.ShowDialog();
+            }
 
         }
 
+        private void smiEdit_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(dgvPeople.CurrentRow.Cells[0].Value.ToString(), out int PersonID))
+            {
+                frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(PersonID);
+                frmUpdatePerson.SendDataBack += _FillAllPeopleTo_dgv;
+                frmUpdatePerson.ShowDialog();
+            }
+            
+        }
+
+        private void smiDelete_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(dgvPeople.CurrentRow.Cells[0].Value.ToString(), out int PersonID))
+            {
+                if(clsPerson.IsPersonExists(PersonID))
+                {
+                    if(clsPerson.DeletePerson(PersonID))
+                    {
+                        MessageBox.Show("Person Deleted Successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Person is Not Deleted.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Person is Not Deleted.");
+                }
+                _FillAllPeopleTo_dgv();
+            }
+        }
+
+        private void smiAddNew_Click(object sender, EventArgs e)
+        {
+
+            frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(-1);
+            frmUpdatePerson.SendDataBack += _FillAllPeopleTo_dgv;
+            frmUpdatePerson.ShowDialog();
+            
+        }
     }
 }

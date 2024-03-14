@@ -14,6 +14,8 @@ namespace PresentationLayer
 {
     public partial class ctrlPersonInfo : UserControl
     {
+        private clsPerson _Person;
+
         public ctrlPersonInfo()
         {
             InitializeComponent();
@@ -35,19 +37,19 @@ namespace PresentationLayer
 
         public void LoadPersonInfo(int PersonID)
         {
-            clsPerson person = clsPerson.Find(PersonID);
+             _Person = clsPerson.Find(PersonID);
 
-            if(person != null)
+            if(_Person != null)
             {
-                lblPersonID.Text=person.PersonID.ToString();
-                lblNationalNumber.Text = person.NationalNumber; 
-                lblName.Text=person.FullName;
-                selecteGender(person.Gender);
-                lblEmail.Text = person.Email;
-                lblAddress.Text= person.Address;
-                lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
-                lblPhone.Text = person.PhoneNumber;
-                lblCountryName.Text =person.CountryName();
+                lblPersonID.Text=_Person.PersonID.ToString();
+                lblNationalNumber.Text = _Person.NationalNumber; 
+                lblName.Text=_Person.FullName;
+                selecteGender(_Person.Gender);
+                lblEmail.Text = _Person.Email;
+                lblAddress.Text= _Person.Address;
+                lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+                lblPhone.Text = _Person.PhoneNumber;
+                lblCountryName.Text =_Person.CountryName();
                 //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
             }
         }
@@ -74,12 +76,11 @@ namespace PresentationLayer
 
         private void llbEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //this will provide linkable label to update Person info
+            frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(_Person.PersonID);
+            frmUpdatePerson.SendDataBackWithPersonID += LoadPersonInfo;
+            frmUpdatePerson.ShowDialog();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

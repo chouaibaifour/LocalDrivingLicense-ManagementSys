@@ -12,14 +12,17 @@ namespace PresentationLayer
 {
     public partial class frmPersonInfo : Form
     {
-        public frmPersonInfo()
+        private int _PersonID;
+
+        public frmPersonInfo(int PersonID)
         {
             InitializeComponent();
+            this._PersonID = PersonID;
         }
 
         private void ctrlPersonInfo1_Load(object sender, EventArgs e)
         {
-            ctrlPersonInfo1.LoadPersonInfo(1);
+            ctrlPersonInfo1.LoadPersonInfo(_PersonID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

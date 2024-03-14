@@ -13,7 +13,9 @@ namespace PresentationLayer
     public partial class frmAddNewUpdatePerson : Form
     {
         public delegate void DataBackEventHandler();
+        public delegate void DataBackWithPersonIDHandler(int PersonID);
         public event DataBackEventHandler SendDataBack;
+       public event DataBackWithPersonIDHandler SendDataBackWithPersonID;
 
         private int _PersonID;
         public frmAddNewUpdatePerson(int PersonID)
@@ -31,7 +33,13 @@ namespace PresentationLayer
 
         private void frmAddNewUpdatePerson_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Invoke(SendDataBack);
+            if(SendDataBack != null)
+             this.Invoke(SendDataBack);
+            if (SendDataBackWithPersonID != null)
+                this.Invoke(SendDataBackWithPersonID,_PersonID); 
+            
         }
+
+        
     }
 }

@@ -276,8 +276,8 @@ namespace PresentationLayer
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Form frm = this.FindForm();
-            frm.Close();
+            this.FindForm().Close();
+
         }
 
         private void llbRemove_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

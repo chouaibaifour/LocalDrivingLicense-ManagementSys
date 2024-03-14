@@ -32,16 +32,24 @@ namespace PresentationLayer
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.smiShowDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiAddNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.callToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecordCount = new System.Windows.Forms.Label();
             this.cbFilters = new System.Windows.Forms.ComboBox();
+            this.txtFilterValue = new System.Windows.Forms.TextBox();
+            this.btnFindRow = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.txtFilterValue = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnFindRow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPeople
@@ -52,12 +60,78 @@ namespace PresentationLayer
             this.dgvPeople.AllowUserToResizeRows = false;
             this.dgvPeople.BackgroundColor = System.Drawing.Color.White;
             this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPeople.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPeople.Location = new System.Drawing.Point(0, 60);
             this.dgvPeople.MultiSelect = false;
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
             this.dgvPeople.Size = new System.Drawing.Size(1148, 376);
             this.dgvPeople.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smiShowDetails,
+            this.smiAddNew,
+            this.smiEdit,
+            this.smiDelete,
+            this.toolStripMenuItem1,
+            this.callToolStripMenuItem,
+            this.mailToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
+            // 
+            // smiShowDetails
+            // 
+            this.smiShowDetails.Image = global::PresentationLayer.Properties.Resources.Details;
+            this.smiShowDetails.Name = "smiShowDetails";
+            this.smiShowDetails.Size = new System.Drawing.Size(180, 22);
+            this.smiShowDetails.Text = "Show Details";
+            this.smiShowDetails.Click += new System.EventHandler(this.smiShowDetails_Click);
+            // 
+            // smiAddNew
+            // 
+            this.smiAddNew.Image = global::PresentationLayer.Properties.Resources.AddPerson;
+            this.smiAddNew.Name = "smiAddNew";
+            this.smiAddNew.Size = new System.Drawing.Size(180, 22);
+            this.smiAddNew.Text = "Add New";
+            this.smiAddNew.Click += new System.EventHandler(this.smiAddNew_Click);
+            // 
+            // smiEdit
+            // 
+            this.smiEdit.Image = global::PresentationLayer.Properties.Resources.Edit;
+            this.smiEdit.Name = "smiEdit";
+            this.smiEdit.Size = new System.Drawing.Size(180, 22);
+            this.smiEdit.Text = "Edit";
+            this.smiEdit.Click += new System.EventHandler(this.smiEdit_Click);
+            // 
+            // smiDelete
+            // 
+            this.smiDelete.Image = global::PresentationLayer.Properties.Resources.delete;
+            this.smiDelete.Name = "smiDelete";
+            this.smiDelete.Size = new System.Drawing.Size(180, 22);
+            this.smiDelete.Text = "Delete";
+            this.smiDelete.Click += new System.EventHandler(this.smiDelete_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // callToolStripMenuItem
+            // 
+            this.callToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.phone;
+            this.callToolStripMenuItem.Name = "callToolStripMenuItem";
+            this.callToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.callToolStripMenuItem.Text = "Call";
+            // 
+            // mailToolStripMenuItem
+            // 
+            this.mailToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.mail;
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mailToolStripMenuItem.Text = "Mail";
             // 
             // label1
             // 
@@ -112,6 +186,31 @@ namespace PresentationLayer
             this.cbFilters.TabIndex = 3;
             this.cbFilters.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
             // 
+            // txtFilterValue
+            // 
+            this.txtFilterValue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilterValue.Location = new System.Drawing.Point(303, 24);
+            this.txtFilterValue.Name = "txtFilterValue";
+            this.txtFilterValue.Size = new System.Drawing.Size(144, 25);
+            this.txtFilterValue.TabIndex = 5;
+            this.txtFilterValue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterValue_KeyUp);
+            // 
+            // btnFindRow
+            // 
+            this.btnFindRow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnFindRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindRow.Image = global::PresentationLayer.Properties.Resources.AddPerson;
+            this.btnFindRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFindRow.Location = new System.Drawing.Point(470, 21);
+            this.btnFindRow.Name = "btnFindRow";
+            this.btnFindRow.Size = new System.Drawing.Size(75, 29);
+            this.btnFindRow.TabIndex = 6;
+            this.btnFindRow.Text = "Find";
+            this.btnFindRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFindRow.UseVisualStyleBackColor = true;
+            this.btnFindRow.Visible = false;
+            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -144,37 +243,6 @@ namespace PresentationLayer
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
-            // txtFilterValue
-            // 
-            this.txtFilterValue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFilterValue.Location = new System.Drawing.Point(303, 24);
-            this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(144, 25);
-            this.txtFilterValue.TabIndex = 5;
-            this.txtFilterValue.Visible = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btnFindRow
-            // 
-            this.btnFindRow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnFindRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindRow.Image = global::PresentationLayer.Properties.Resources.AddPerson;
-            this.btnFindRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFindRow.Location = new System.Drawing.Point(470, 21);
-            this.btnFindRow.Name = "btnFindRow";
-            this.btnFindRow.Size = new System.Drawing.Size(75, 29);
-            this.btnFindRow.TabIndex = 6;
-            this.btnFindRow.Text = "Find";
-            this.btnFindRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFindRow.UseVisualStyleBackColor = true;
-            this.btnFindRow.Visible = false;
-            this.btnFindRow.Click += new System.EventHandler(this.btnFindRow_Click);
-            // 
             // ctrlPeopleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +261,7 @@ namespace PresentationLayer
             this.Size = new System.Drawing.Size(1148, 490);
             this.Load += new System.EventHandler(this.ctrlPeopleList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +279,12 @@ namespace PresentationLayer
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnFindRow;
+        private ToolStripMenuItem smiShowDetails;
+        private ToolStripMenuItem smiDelete;
+        private ToolStripMenuItem smiEdit;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem callToolStripMenuItem;
+        private ToolStripMenuItem mailToolStripMenuItem;
+        private ToolStripMenuItem smiAddNew;
     }
 }

@@ -64,7 +64,7 @@ namespace BusinessLayer
 
         public string FullName
         {
-            get { return FirstName + "" + SecondName + "" + ThirdName + "" + LastName; }
+            get { return FirstName + " " + SecondName + " " + ThirdName + " " + LastName; }
         }
         public string CountryName()
         {
