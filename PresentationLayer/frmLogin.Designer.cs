@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pnlLoginInterface = new System.Windows.Forms.Panel();
-            this.pnlLoginForm = new System.Windows.Forms.Panel();
             this.lbLogo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlLoginForm = new System.Windows.Forms.Panel();
+            this.lblClose = new System.Windows.Forms.Label();
+            this.llblForgetPassword = new System.Windows.Forms.LinkLabel();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlLoginInterface.SuspendLayout();
             this.pnlLoginForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLoginInterface
@@ -56,25 +60,6 @@
             this.pnlLoginInterface.Size = new System.Drawing.Size(191, 327);
             this.pnlLoginInterface.TabIndex = 1;
             // 
-            // pnlLoginForm
-            // 
-            this.pnlLoginForm.BackColor = System.Drawing.Color.White;
-            this.pnlLoginForm.Controls.Add(this.linkLabel1);
-            this.pnlLoginForm.Controls.Add(this.textBox2);
-            this.pnlLoginForm.Controls.Add(this.textBox1);
-            this.pnlLoginForm.Controls.Add(this.button1);
-            this.pnlLoginForm.Controls.Add(this.checkBox1);
-            this.pnlLoginForm.Controls.Add(this.label2);
-            this.pnlLoginForm.Controls.Add(this.label3);
-            this.pnlLoginForm.Controls.Add(this.label1);
-            this.pnlLoginForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlLoginForm.Location = new System.Drawing.Point(189, 0);
-            this.pnlLoginForm.MaximumSize = new System.Drawing.Size(306, 327);
-            this.pnlLoginForm.MinimumSize = new System.Drawing.Size(306, 327);
-            this.pnlLoginForm.Name = "pnlLoginForm";
-            this.pnlLoginForm.Size = new System.Drawing.Size(306, 327);
-            this.pnlLoginForm.TabIndex = 0;
-            // 
             // lbLogo
             // 
             this.lbLogo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,15 +73,88 @@
             this.lbLogo.Text = "Welcome to  DLVD Mangement System";
             this.lbLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // pnlLoginForm
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "UserName :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlLoginForm.BackColor = System.Drawing.Color.White;
+            this.pnlLoginForm.Controls.Add(this.lblClose);
+            this.pnlLoginForm.Controls.Add(this.llblForgetPassword);
+            this.pnlLoginForm.Controls.Add(this.txtUserName);
+            this.pnlLoginForm.Controls.Add(this.txtPassword);
+            this.pnlLoginForm.Controls.Add(this.btnLogin);
+            this.pnlLoginForm.Controls.Add(this.chkRememberMe);
+            this.pnlLoginForm.Controls.Add(this.label2);
+            this.pnlLoginForm.Controls.Add(this.label3);
+            this.pnlLoginForm.Controls.Add(this.label1);
+            this.pnlLoginForm.Location = new System.Drawing.Point(191, 0);
+            this.pnlLoginForm.MaximumSize = new System.Drawing.Size(306, 327);
+            this.pnlLoginForm.MinimumSize = new System.Drawing.Size(306, 327);
+            this.pnlLoginForm.Name = "pnlLoginForm";
+            this.pnlLoginForm.Size = new System.Drawing.Size(306, 327);
+            this.pnlLoginForm.TabIndex = 0;
+            // 
+            // lblClose
+            // 
+            this.lblClose.Image = global::PresentationLayer.Properties.Resources.close1;
+            this.lblClose.Location = new System.Drawing.Point(270, 9);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(24, 24);
+            this.lblClose.TabIndex = 6;
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            // 
+            // llblForgetPassword
+            // 
+            this.llblForgetPassword.AutoSize = true;
+            this.llblForgetPassword.LinkColor = System.Drawing.Color.Black;
+            this.llblForgetPassword.Location = new System.Drawing.Point(96, 197);
+            this.llblForgetPassword.Name = "llblForgetPassword";
+            this.llblForgetPassword.Size = new System.Drawing.Size(95, 13);
+            this.llblForgetPassword.TabIndex = 4;
+            this.llblForgetPassword.TabStop = true;
+            this.llblForgetPassword.Text = "Forget Password ?";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(99, 86);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(151, 22);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(99, 126);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(151, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Location = new System.Drawing.Point(148, 240);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(102, 31);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // chkRememberMe
+            // 
+            this.chkRememberMe.AutoSize = true;
+            this.chkRememberMe.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberMe.Location = new System.Drawing.Point(99, 167);
+            this.chkRememberMe.Name = "chkRememberMe";
+            this.chkRememberMe.Size = new System.Drawing.Size(111, 20);
+            this.chkRememberMe.TabIndex = 3;
+            this.chkRememberMe.Text = "Remember me";
+            this.chkRememberMe.UseVisualStyleBackColor = true;
+            this.chkRememberMe.CheckedChanged += new System.EventHandler(this.chkRememberMe_CheckedChanged);
             // 
             // label2
             // 
@@ -118,71 +176,38 @@
             this.label3.Text = "Login to you account";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // label1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(99, 167);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 20);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Remember me";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "UserName :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // epEmptyOrNull
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(148, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;            
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(99, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(99, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(96, 197);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forget Password ?";
+            this.epEmptyOrNull.ContainerControl = this;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 327);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(497, 327);
             this.Controls.Add(this.pnlLoginForm);
             this.Controls.Add(this.pnlLoginInterface);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(100, 100);
             this.MaximumSize = new System.Drawing.Size(511, 366);
-            this.MinimumSize = new System.Drawing.Size(511, 366);
+            this.MinimumSize = new System.Drawing.Size(497, 327);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlLoginInterface.ResumeLayout(false);
             this.pnlLoginForm.ResumeLayout(false);
             this.pnlLoginForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,14 +217,16 @@
         private System.Windows.Forms.Panel pnlLoginInterface;
         private System.Windows.Forms.Label lbLogo;
         private System.Windows.Forms.Panel pnlLoginForm;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox chkRememberMe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel llblForgetPassword;
+        private System.Windows.Forms.ErrorProvider epEmptyOrNull;
+        private System.Windows.Forms.Label lblClose;
     }
 }
 

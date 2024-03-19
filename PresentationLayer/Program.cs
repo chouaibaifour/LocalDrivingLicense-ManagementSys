@@ -16,8 +16,32 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPersonInfo());
-            Application.Run(new frmPeopleList());
+
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            while (true)
+            {
+                if (frmLogin.trynum <= 3)
+                {
+                    if (frmLogin.DialogResult == DialogResult.OK)
+                    {
+                        Application.Run(new frmPeopleList());// go to next Page
+                        //DialogResult == Yes and trynum<3
+                        return;// try again
+                    }
+                    frmLogin.ShowDialog();
+                    //DialogResult==No and trynum<3
+                }
+                else if (frmLogin.DialogResult == DialogResult.No)
+                {
+                    frmLogin.Close();// close the login form
+                    //DialogResult==No and trynum<3
+                    return;
+                }
+
+            }
+
+
         }
     }
 }

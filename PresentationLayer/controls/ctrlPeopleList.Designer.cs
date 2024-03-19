@@ -38,8 +38,8 @@ namespace PresentationLayer
             this.smiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.smiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.callToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiCall = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiSendEmail = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRecordCount = new System.Windows.Forms.Label();
@@ -77,16 +77,16 @@ namespace PresentationLayer
             this.smiEdit,
             this.smiDelete,
             this.toolStripMenuItem1,
-            this.callToolStripMenuItem,
-            this.mailToolStripMenuItem});
+            this.smiCall,
+            this.smiSendEmail});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(151, 142);
             // 
             // smiShowDetails
             // 
             this.smiShowDetails.Image = global::PresentationLayer.Properties.Resources.Details;
             this.smiShowDetails.Name = "smiShowDetails";
-            this.smiShowDetails.Size = new System.Drawing.Size(180, 22);
+            this.smiShowDetails.Size = new System.Drawing.Size(150, 22);
             this.smiShowDetails.Text = "Show Details";
             this.smiShowDetails.Click += new System.EventHandler(this.smiShowDetails_Click);
             // 
@@ -94,7 +94,7 @@ namespace PresentationLayer
             // 
             this.smiAddNew.Image = global::PresentationLayer.Properties.Resources.AddPerson;
             this.smiAddNew.Name = "smiAddNew";
-            this.smiAddNew.Size = new System.Drawing.Size(180, 22);
+            this.smiAddNew.Size = new System.Drawing.Size(150, 22);
             this.smiAddNew.Text = "Add New";
             this.smiAddNew.Click += new System.EventHandler(this.smiAddNew_Click);
             // 
@@ -102,7 +102,7 @@ namespace PresentationLayer
             // 
             this.smiEdit.Image = global::PresentationLayer.Properties.Resources.Edit;
             this.smiEdit.Name = "smiEdit";
-            this.smiEdit.Size = new System.Drawing.Size(180, 22);
+            this.smiEdit.Size = new System.Drawing.Size(150, 22);
             this.smiEdit.Text = "Edit";
             this.smiEdit.Click += new System.EventHandler(this.smiEdit_Click);
             // 
@@ -110,28 +110,30 @@ namespace PresentationLayer
             // 
             this.smiDelete.Image = global::PresentationLayer.Properties.Resources.delete;
             this.smiDelete.Name = "smiDelete";
-            this.smiDelete.Size = new System.Drawing.Size(180, 22);
+            this.smiDelete.Size = new System.Drawing.Size(150, 22);
             this.smiDelete.Text = "Delete";
             this.smiDelete.Click += new System.EventHandler(this.smiDelete_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 6);
             // 
-            // callToolStripMenuItem
+            // smiCall
             // 
-            this.callToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.phone;
-            this.callToolStripMenuItem.Name = "callToolStripMenuItem";
-            this.callToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.callToolStripMenuItem.Text = "Call";
+            this.smiCall.Image = global::PresentationLayer.Properties.Resources.phone;
+            this.smiCall.Name = "smiCall";
+            this.smiCall.Size = new System.Drawing.Size(150, 22);
+            this.smiCall.Text = "Call";
+            this.smiCall.Click += new System.EventHandler(this.smiCall_Click);
             // 
-            // mailToolStripMenuItem
+            // smiSendEmail
             // 
-            this.mailToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.mail;
-            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
-            this.mailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mailToolStripMenuItem.Text = "Mail";
+            this.smiSendEmail.Image = global::PresentationLayer.Properties.Resources.mail;
+            this.smiSendEmail.Name = "smiSendEmail";
+            this.smiSendEmail.Size = new System.Drawing.Size(150, 22);
+            this.smiSendEmail.Text = "Send Mail";
+            this.smiSendEmail.Click += new System.EventHandler(this.smiSendEmail_Click);
             // 
             // label1
             // 
@@ -283,8 +285,8 @@ namespace PresentationLayer
         private ToolStripMenuItem smiDelete;
         private ToolStripMenuItem smiEdit;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem callToolStripMenuItem;
-        private ToolStripMenuItem mailToolStripMenuItem;
+        private ToolStripMenuItem smiCall;
+        private ToolStripMenuItem smiSendEmail;
         private ToolStripMenuItem smiAddNew;
     }
 }

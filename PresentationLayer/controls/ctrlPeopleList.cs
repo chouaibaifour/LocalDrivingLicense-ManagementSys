@@ -98,11 +98,13 @@ namespace PresentationLayer
 
         private void txtFilterValue_KeyUp(object sender, KeyEventArgs e)
         {
+
             _getClomnName(cbFilters.SelectedIndex);
 
-             if (!"PersonID".Equals(Filter))
+
+            if (!"PersonID".Equals(Filter))
             {
-                Filter += @" LIKE '%" + txtFilterValue.Text+"%'";
+                Filter += @" LIKE '%" + txtFilterValue.Text + "%'";
             }
             else
             {
@@ -111,16 +113,16 @@ namespace PresentationLayer
 
                     txtFilterValue.Text = string.Empty;
                     Filter += @"=0";
-                    
+
                 }
                 else
                 {
-                    
+
                     Filter += @"=" + PersonID.ToString();
                 }
 
             }
-                
+
             try
             {
                 dataView.RowFilter = Filter;
@@ -135,6 +137,8 @@ namespace PresentationLayer
 
             lblRecordCount.Text = dgvPeople.RowCount.ToString();
         }
+
+        
 
         private void smiShowDetails_Click(object sender, EventArgs e)
         {
@@ -188,5 +192,17 @@ namespace PresentationLayer
             frmUpdatePerson.ShowDialog();
             
         }
+
+        private void smiCall_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("this Feature is not implemented Yet !");
+        }
+
+        private void smiSendEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("this Feature is not implemented Yet !");
+        }
+
+       
     }
 }
