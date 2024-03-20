@@ -109,6 +109,9 @@
     <EmbeddedResource Include="controls\ctrlPersonInfo.resx">
       <DependentUpon>ctrlPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\frmAddNewUpdatePerson.resx">
       <DependentUpon>frmAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +206,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driver1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

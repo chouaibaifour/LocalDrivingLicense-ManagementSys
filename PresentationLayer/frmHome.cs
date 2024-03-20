@@ -16,5 +16,31 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void lblApplication_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPeople_Click(object sender, EventArgs e)
+        {
+            frmPeopleList frmPeopleList = new frmPeopleList();  
+            frmPeopleList.ShowDialog();
+        }
+
+        private void lblDriver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAcountSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

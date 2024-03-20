@@ -25,7 +25,7 @@ namespace PresentationLayer
                 {
                     if (frmLogin.DialogResult == DialogResult.OK)
                     {
-                        Application.Run(new frmPeopleList());// go to next Page
+                        Application.Run(new frmHome());// go to next Page
                         //DialogResult == Yes and trynum<3
                         return;// try again
                     }
