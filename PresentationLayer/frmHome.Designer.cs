@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAcountSettings = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblDriver = new System.Windows.Forms.Label();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.lblDrivers = new System.Windows.Forms.Label();
             this.lblPeople = new System.Windows.Forms.Label();
             this.lblApplication = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,8 +42,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblAcountSettings);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblDriver);
+            this.panel1.Controls.Add(this.lblUsers);
+            this.panel1.Controls.Add(this.lblDrivers);
             this.panel1.Controls.Add(this.lblPeople);
             this.panel1.Controls.Add(this.lblApplication);
             this.panel1.Location = new System.Drawing.Point(0, 1);
@@ -64,31 +64,31 @@
             this.lblAcountSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAcountSettings.Click += new System.EventHandler(this.lblAcountSettings_Click);
             // 
-            // label4
+            // lblUsers
             // 
-            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::PresentationLayer.Properties.Resources.users1;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(524, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 50);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Users";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblUsers.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.Image = global::PresentationLayer.Properties.Resources.users1;
+            this.lblUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUsers.Location = new System.Drawing.Point(524, 8);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(119, 50);
+            this.lblUsers.TabIndex = 0;
+            this.lblUsers.Text = "Users";
+            this.lblUsers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsers.Click += new System.EventHandler(this.lblUsers_Click);
             // 
-            // lblDriver
+            // lblDrivers
             // 
-            this.lblDriver.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDriver.Image = global::PresentationLayer.Properties.Resources.driver;
-            this.lblDriver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDriver.Location = new System.Drawing.Point(370, 8);
-            this.lblDriver.Name = "lblDriver";
-            this.lblDriver.Size = new System.Drawing.Size(122, 50);
-            this.lblDriver.TabIndex = 0;
-            this.lblDriver.Text = "Drivers";
-            this.lblDriver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDriver.Click += new System.EventHandler(this.lblDriver_Click);
+            this.lblDrivers.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrivers.Image = global::PresentationLayer.Properties.Resources.driver;
+            this.lblDrivers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDrivers.Location = new System.Drawing.Point(370, 8);
+            this.lblDrivers.Name = "lblDrivers";
+            this.lblDrivers.Size = new System.Drawing.Size(122, 50);
+            this.lblDrivers.TabIndex = 0;
+            this.lblDrivers.Text = "Drivers";
+            this.lblDrivers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDrivers.Click += new System.EventHandler(this.lblDrivers_Click);
             // 
             // lblPeople
             // 
@@ -143,8 +143,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAcountSettings;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblDriver;
+        private System.Windows.Forms.Label lblUsers;
+        private System.Windows.Forms.Label lblDrivers;
         private System.Windows.Forms.Label lblPeople;
         private System.Windows.Forms.Label lblApplication;
     }

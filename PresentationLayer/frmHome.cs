@@ -28,7 +28,7 @@ namespace PresentationLayer
             frmPeopleList.ShowDialog();
         }
 
-        private void lblDriver_Click(object sender, EventArgs e)
+        private void lblDrivers_Click(object sender, EventArgs e)
         {
 
         }
@@ -38,7 +38,7 @@ namespace PresentationLayer
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void lblUsers_Click(object sender, EventArgs e)
         {
 
         }
