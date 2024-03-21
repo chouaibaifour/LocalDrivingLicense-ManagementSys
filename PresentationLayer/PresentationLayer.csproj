@@ -106,6 +106,12 @@
     <Compile Include="Users\controls\ctrlUsersList.Designer.cs">
       <DependentUpon>ctrlUsersList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUsersList.Designer.cs">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="People\controls\ctrlAddNewUpdatePerson.resx">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="Users\controls\ctrlUsersList.resx">
       <DependentUpon>ctrlUsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUsersList.resx">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -236,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserFind.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
