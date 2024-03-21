@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresentationLayer.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,8 @@ namespace PresentationLayer
 
         private void lblUsers_Click(object sender, EventArgs e)
         {
-
+            frmUsersList frmUsersList = new frmUsersList(); 
+            frmUsersList.ShowDialog();
         }
     }
 }

@@ -47,13 +47,18 @@
             // 
             this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.AllowUserToDeleteRows = false;
+            this.dgvUsers.AllowUserToResizeColumns = false;
+            this.dgvUsers.AllowUserToResizeRows = false;
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.GridColor = System.Drawing.Color.White;
             this.dgvUsers.Location = new System.Drawing.Point(3, 44);
+            this.dgvUsers.MultiSelect = false;
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.Size = new System.Drawing.Size(854, 262);
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsers.Size = new System.Drawing.Size(593, 262);
             this.dgvUsers.TabIndex = 0;
             // 
             // label1
@@ -92,6 +97,11 @@
             this.cbFilters.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbFilters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilters.FormattingEnabled = true;
+            this.cbFilters.Items.AddRange(new object[] {
+            "None",
+            "User ID",
+            "Person ID",
+            "isActive"});
             this.cbFilters.Location = new System.Drawing.Point(105, 13);
             this.cbFilters.Name = "cbFilters";
             this.cbFilters.Size = new System.Drawing.Size(132, 23);
@@ -103,7 +113,7 @@
             this.txtFilterValue.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilterValue.Location = new System.Drawing.Point(255, 13);
             this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(155, 22);
+            this.txtFilterValue.Size = new System.Drawing.Size(117, 22);
             this.txtFilterValue.TabIndex = 3;
             this.txtFilterValue.Visible = false;
             // 
@@ -128,7 +138,7 @@
             this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(765, 328);
+            this.btnClose.Location = new System.Drawing.Point(511, 328);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 24);
             this.btnClose.TabIndex = 6;
@@ -143,7 +153,7 @@
             this.btnFindRow.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindRow.Image = global::PresentationLayer.Properties.Resources.UserFind;
             this.btnFindRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFindRow.Location = new System.Drawing.Point(437, 13);
+            this.btnFindRow.Location = new System.Drawing.Point(378, 13);
             this.btnFindRow.Name = "btnFindRow";
             this.btnFindRow.Size = new System.Drawing.Size(73, 25);
             this.btnFindRow.TabIndex = 5;
@@ -159,7 +169,7 @@
             this.btnAddNewUser.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewUser.Image = global::PresentationLayer.Properties.Resources.user_add;
             this.btnAddNewUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewUser.Location = new System.Drawing.Point(765, 13);
+            this.btnAddNewUser.Location = new System.Drawing.Point(511, 13);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(73, 25);
             this.btnAddNewUser.TabIndex = 5;
@@ -184,7 +194,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUsers);
             this.Name = "ctrlUsersList";
-            this.Size = new System.Drawing.Size(860, 367);
+            this.Size = new System.Drawing.Size(603, 367);
             this.Load += new System.EventHandler(this.ctrlUsersList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);

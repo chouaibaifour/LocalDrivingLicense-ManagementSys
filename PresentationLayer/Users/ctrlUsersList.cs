@@ -46,6 +46,7 @@ namespace PresentationLayer.Users
         private void _FillAllUsersTo_dgv()
         {
             DataTable dt = clsUser.GetAllUsers();
+           
             dgvUsers.DataSource = dt;
 
             lblRecordCount.Text = dgvUsers.RowCount.ToString();

@@ -251,7 +251,10 @@ namespace DataAccessLayer
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT * FROM Users ";
+            string query = @"SELECT  UserID, Users.PersonID,
+                                FirstName+' '+ SecondName+' '+ThirdName+' '+ LastName as FullName, UserName, IsActive
+                                    FROM  Users INNER JOIN
+                                         People ON Users.PersonID = People.PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
