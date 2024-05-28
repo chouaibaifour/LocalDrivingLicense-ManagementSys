@@ -126,6 +126,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(99, 126);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(151, 22);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);

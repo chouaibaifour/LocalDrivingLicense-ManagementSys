@@ -30,7 +30,7 @@ namespace PresentationLayer
                         return;// try again
                     }
                     frmLogin.ShowDialog();
-                    //DialogResult==No and trynum<3
+                    //DialogResult == No and trynum<3
                 }
                 else if (frmLogin.DialogResult == DialogResult.No)
                 {

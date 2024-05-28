@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAcountSettings = new System.Windows.Forms.Label();
             this.lblUsers = new System.Windows.Forms.Label();
@@ -35,7 +36,13 @@
             this.lblPeople = new System.Windows.Forms.Label();
             this.lblApplication = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmsAccountSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.cmsAccountSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -46,6 +53,7 @@
             this.panel1.Controls.Add(this.lblDrivers);
             this.panel1.Controls.Add(this.lblPeople);
             this.panel1.Controls.Add(this.lblApplication);
+            
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1441, 72);
@@ -53,6 +61,7 @@
             // 
             // lblAcountSettings
             // 
+            this.lblAcountSettings.ContextMenuStrip = this.cmsAccountSettings;
             this.lblAcountSettings.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcountSettings.Image = global::PresentationLayer.Properties.Resources.user_settings;
             this.lblAcountSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,6 +133,36 @@
             this.panel2.Size = new System.Drawing.Size(1456, 808);
             this.panel2.TabIndex = 1;
             // 
+            // cmsAccountSettings
+            // 
+            this.cmsAccountSettings.BackColor = System.Drawing.Color.White;
+            this.cmsAccountSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentUserInfoToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.signOutToolStripMenuItem});
+            this.cmsAccountSettings.Name = "cmsAccountSettings";
+            this.cmsAccountSettings.Size = new System.Drawing.Size(181, 98);
+            // 
+            // currentUserInfoToolStripMenuItem
+            // 
+            this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.currentUserInfoToolStripMenuItem.Text = "CurrentUser Info";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+           
+            // 
+            // signOutToolStripMenuItem
+            // 
+            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.signOutToolStripMenuItem.Text = "Sign Out";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +173,7 @@
             this.Name = "frmHome";
             this.Text = "frmHome";
             this.panel1.ResumeLayout(false);
+            this.cmsAccountSettings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -147,5 +187,10 @@
         private System.Windows.Forms.Label lblDrivers;
         private System.Windows.Forms.Label lblPeople;
         private System.Windows.Forms.Label lblApplication;
+        private System.Windows.Forms.ContextMenuStrip cmsAccountSettings;
+        private System.Windows.Forms.ToolStripMenuItem currentUserInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
     }
 }

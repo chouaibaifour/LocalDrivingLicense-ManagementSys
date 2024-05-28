@@ -36,7 +36,7 @@ namespace PresentationLayer
 
         private void lblAcountSettings_Click(object sender, EventArgs e)
         {
-
+            lblAcountSettings.ContextMenuStrip.Show(new Point(lblAcountSettings.Left, lblAcountSettings.Bottom));
         }
 
         private void lblUsers_Click(object sender, EventArgs e)
