@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +27,7 @@ namespace PresentationLayer.Users
         private void ctrlUsersList_Load(object sender, EventArgs e)
         {
             cbFilters.SelectedIndex = 0;
+            cbAccountStatus.SelectedIndex = 0;
             _FillAllUsersTo_dgv();
         }
 
@@ -35,11 +38,11 @@ namespace PresentationLayer.Users
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            //frmAddNewUpdateUser addNewUpdateUser = new frmAddNewUpdateUser(-1);
+            frmAddNewUpdateUser addNewUpdateUser = new frmAddNewUpdateUser(-1);
 
-            //addNewUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
+            addNewUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
 
-            //addNewUpdateUser.ShowDialog();
+            addNewUpdateUser.ShowDialog();
 
         }
 
@@ -59,15 +62,8 @@ namespace PresentationLayer.Users
 
             string[] Filters = {
             "UserID",
-            "NationalNumber",
-            "FirstName",
-            "SecondName",
-            "ThirdName",
-            "LastName",
-            "Gender",
-            "Nationality",
-            "Phone",
-            "Email"};
+            "PersonID",
+            "FullName"};
 
             if (Filters.Length <= index && 0 > index)
                 return;
@@ -79,9 +75,19 @@ namespace PresentationLayer.Users
         {
             if (0 != cbFilters.SelectedIndex)
             {
+                if (cbFilters.SelectedItem.ToString().Equals("isActive"))
+                {
+                    txtFilterValue.Visible = false;
+
+                    btnFindRow.Visible = false;
+
+                    cbAccountStatus.Visible = true;
+                    return;
+                }
                 txtFilterValue.Visible = true;
 
                 btnFindRow.Visible = true;
+
 
                 return;
             }
@@ -94,12 +100,11 @@ namespace PresentationLayer.Users
 
         }
 
-
         private void txtFilterValue_KeyUp(object sender, KeyEventArgs e)
         {
 
             _getClomnName(cbFilters.SelectedIndex);
-
+            Filter=Filter.Replace(" ", "");
 
             if (!"UserID".Equals(Filter))
             {
@@ -137,7 +142,21 @@ namespace PresentationLayer.Users
             lblRecordCount.Text = dgvUsers.RowCount.ToString();
         }
 
+        private void ValidatingEmptyOrNulltxt(object sender, CancelEventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                    e.Cancel = true;
 
+                epEmptyOrNull.SetError(textBox, "Invalid input try again !");
+            }
+            else
+            {
+                e.Cancel = false;
+                epEmptyOrNull.SetError(textBox, "");
+            }
+        }
 
         private void smiShowDetails_Click(object sender, EventArgs e)
         {
@@ -201,5 +220,30 @@ namespace PresentationLayer.Users
         {
             MessageBox.Show("this Feature is not implemented Yet !");
         }
+
+        private void cbAccountStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if(cbAccountStatus.SelectedIndex==1)
+                    dataView.RowFilter = "IsActive = 1";
+                else if(cbAccountStatus.SelectedIndex==2)
+                    dataView.RowFilter = "IsActive = 0";
+                else
+                    dataView.RowFilter = "IsActive = 0 or IsActive = 1";
+
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            dgvUsers.DataSource = dataView.ToTable();
+
+            lblRecordCount.Text = dgvUsers.RowCount.ToString();
+        }
+
+
     }
 }

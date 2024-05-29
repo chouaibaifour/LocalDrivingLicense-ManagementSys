@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,20 +79,6 @@ namespace PresentationLayer
 
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (0 != cbFilters.SelectedIndex)
-            {
-                txtFilterValue.Visible = true;
-
-                btnFindRow.Visible = true;
-                
-                return;
-            }
-
-            txtFilterValue.Visible = false;
-
-            btnFindRow.Visible = false;
-
-            dgvPeople.DataSource = dataView;
 
         }
 
@@ -138,7 +125,23 @@ namespace PresentationLayer
             lblRecordCount.Text = dgvPeople.RowCount.ToString();
         }
 
-        
+        private void ValidatingEmptyOrNulltxt(object sender, CancelEventArgs e)
+        {
+            System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+               
+                e.Cancel = true;
+                
+                epEmptyOrNull.SetError(textBox, "Invalid input try again !");
+            }
+            else
+            {
+                e.Cancel = false;
+                epEmptyOrNull.SetError(textBox, "");
+            }
+        }
+
 
         private void smiShowDetails_Click(object sender, EventArgs e)
         {

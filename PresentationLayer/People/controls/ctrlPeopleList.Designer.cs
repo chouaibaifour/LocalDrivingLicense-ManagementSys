@@ -48,8 +48,10 @@ namespace PresentationLayer
             this.btnFindRow = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPeople
@@ -173,7 +175,7 @@ namespace PresentationLayer
             this.cbFilters.Items.AddRange(new object[] {
             "None",
             "Person ID",
-            "National No.",
+            "National No",
             "First Name",
             "Second Name",
             "Third Name",
@@ -186,7 +188,6 @@ namespace PresentationLayer
             this.cbFilters.Name = "cbFilters";
             this.cbFilters.Size = new System.Drawing.Size(121, 25);
             this.cbFilters.TabIndex = 3;
-            this.cbFilters.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 
@@ -196,6 +197,7 @@ namespace PresentationLayer
             this.txtFilterValue.Size = new System.Drawing.Size(144, 25);
             this.txtFilterValue.TabIndex = 5;
             this.txtFilterValue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterValue_KeyUp);
+            this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
             // btnFindRow
             // 
@@ -245,6 +247,10 @@ namespace PresentationLayer
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
+            // epEmptyOrNull
+            // 
+            this.epEmptyOrNull.ContainerControl = this;
+            // 
             // ctrlPeopleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +270,7 @@ namespace PresentationLayer
             this.Load += new System.EventHandler(this.ctrlPeopleList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +295,6 @@ namespace PresentationLayer
         private ToolStripMenuItem smiCall;
         private ToolStripMenuItem smiSendEmail;
         private ToolStripMenuItem smiAddNew;
+        private ErrorProvider epEmptyOrNull;
     }
 }

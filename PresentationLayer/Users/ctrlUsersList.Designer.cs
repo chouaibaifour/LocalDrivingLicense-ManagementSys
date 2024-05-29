@@ -33,14 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecordCount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbFilters = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFindRow = new System.Windows.Forms.Button();
             this.btnAddNewUser = new System.Windows.Forms.Button();
+            this.cbFilters = new System.Windows.Forms.ComboBox();
+            this.cbAccountStatus = new System.Windows.Forms.ComboBox();
+            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -91,22 +94,6 @@
             this.label5.Text = "Filter By :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbFilters
-            // 
-            this.cbFilters.BackColor = System.Drawing.Color.White;
-            this.cbFilters.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbFilters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilters.FormattingEnabled = true;
-            this.cbFilters.Items.AddRange(new object[] {
-            "None",
-            "User ID",
-            "Person ID",
-            "isActive"});
-            this.cbFilters.Location = new System.Drawing.Point(105, 13);
-            this.cbFilters.Name = "cbFilters";
-            this.cbFilters.Size = new System.Drawing.Size(132, 23);
-            this.cbFilters.TabIndex = 2;
-            // 
             // txtFilterValue
             // 
             this.txtFilterValue.BackColor = System.Drawing.Color.White;
@@ -116,6 +103,7 @@
             this.txtFilterValue.Size = new System.Drawing.Size(117, 22);
             this.txtFilterValue.TabIndex = 3;
             this.txtFilterValue.Visible = false;
+            this.txtFilterValue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterValue_KeyUp);
             // 
             // contextMenuStrip1
             // 
@@ -178,16 +166,52 @@
             this.btnAddNewUser.UseVisualStyleBackColor = true;
             this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
+            // cbFilters
+            // 
+            this.cbFilters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilters.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilters.Items.AddRange(new object[] {
+            "None",
+            "UserID",
+            "PersonID",
+            "FullName",
+            "isActive"});
+            this.cbFilters.Location = new System.Drawing.Point(105, 13);
+            this.cbFilters.Name = "cbFilters";
+            this.cbFilters.Size = new System.Drawing.Size(117, 23);
+            this.cbFilters.TabIndex = 7;
+            this.cbFilters.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
+            // 
+            // cbAccountStatus
+            // 
+            this.cbAccountStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAccountStatus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAccountStatus.Items.AddRange(new object[] {
+            "All",
+            "Active",
+            "Disactive"});
+            this.cbAccountStatus.Location = new System.Drawing.Point(255, 12);
+            this.cbAccountStatus.Name = "cbAccountStatus";
+            this.cbAccountStatus.Size = new System.Drawing.Size(117, 23);
+            this.cbAccountStatus.TabIndex = 8;
+            this.cbAccountStatus.Visible = false;
+            this.cbAccountStatus.SelectedIndexChanged += new System.EventHandler(this.cbAccountStatus_SelectedIndexChanged);
+            // 
+            // epEmptyOrNull
+            // 
+            this.epEmptyOrNull.ContainerControl = this;
+            // 
             // ctrlUsersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cbAccountStatus);
+            this.Controls.Add(this.cbFilters);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnFindRow);
             this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.txtFilterValue);
-            this.Controls.Add(this.cbFilters);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblRecordCount);
@@ -197,6 +221,7 @@
             this.Size = new System.Drawing.Size(603, 367);
             this.Load += new System.EventHandler(this.ctrlUsersList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,12 +233,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRecordCount;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbFilters;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnAddNewUser;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFindRow;
+        private System.Windows.Forms.ComboBox cbFilters;
+        private System.Windows.Forms.ComboBox cbAccountStatus;
+        private System.Windows.Forms.ErrorProvider epEmptyOrNull;
     }
 }
