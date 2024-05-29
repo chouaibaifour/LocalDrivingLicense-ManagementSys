@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAcountSettings = new System.Windows.Forms.Label();
-            this.lblUsers = new System.Windows.Forms.Label();
-            this.lblDrivers = new System.Windows.Forms.Label();
-            this.lblPeople = new System.Windows.Forms.Label();
-            this.lblApplication = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.cmsAccountSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.lblDrivers = new System.Windows.Forms.Label();
+            this.lblPeople = new System.Windows.Forms.Label();
+            this.lblApplication = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.cmsAccountSettings.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,6 @@
             this.panel1.Controls.Add(this.lblDrivers);
             this.panel1.Controls.Add(this.lblPeople);
             this.panel1.Controls.Add(this.lblApplication);
-            
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1441, 72);
@@ -72,6 +71,40 @@
             this.lblAcountSettings.Text = "Account Settings";
             this.lblAcountSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAcountSettings.Click += new System.EventHandler(this.lblAcountSettings_Click);
+            // 
+            // cmsAccountSettings
+            // 
+            this.cmsAccountSettings.BackColor = System.Drawing.Color.White;
+            this.cmsAccountSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentUserInfoToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.signOutToolStripMenuItem});
+            this.cmsAccountSettings.Name = "cmsAccountSettings";
+            this.cmsAccountSettings.Size = new System.Drawing.Size(181, 98);
+            // 
+            // currentUserInfoToolStripMenuItem
+            // 
+            this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.currentUserInfoToolStripMenuItem.Text = "CurrentUser Info";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // signOutToolStripMenuItem
+            // 
+            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.signOutToolStripMenuItem.Text = "Sign Out";
             // 
             // lblUsers
             // 
@@ -132,36 +165,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1456, 808);
             this.panel2.TabIndex = 1;
-            // 
-            // cmsAccountSettings
-            // 
-            this.cmsAccountSettings.BackColor = System.Drawing.Color.White;
-            this.cmsAccountSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentUserInfoToolStripMenuItem,
-            this.changePasswordToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.signOutToolStripMenuItem});
-            this.cmsAccountSettings.Name = "cmsAccountSettings";
-            this.cmsAccountSettings.Size = new System.Drawing.Size(181, 98);
-            // 
-            // currentUserInfoToolStripMenuItem
-            // 
-            this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.currentUserInfoToolStripMenuItem.Text = "CurrentUser Info";
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-           
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.signOutToolStripMenuItem.Text = "Sign Out";
             // 
             // frmHome
             // 
