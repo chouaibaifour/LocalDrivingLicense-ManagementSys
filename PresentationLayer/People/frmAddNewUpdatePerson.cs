@@ -17,7 +17,7 @@ namespace PresentationLayer
         public event DataBackEventHandler SendDataBack;
        public event DataBackWithPersonIDHandler SendDataBackWithPersonID;
 
-        private int _PersonID;
+        public int _PersonID;
         public frmAddNewUpdatePerson(int PersonID)
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace PresentationLayer
         {
             if(SendDataBack != null)
              this.Invoke(SendDataBack);
+
             if (SendDataBackWithPersonID != null)
                 this.Invoke(SendDataBackWithPersonID,_PersonID); 
             

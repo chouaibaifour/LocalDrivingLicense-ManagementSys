@@ -34,44 +34,63 @@ namespace PresentationLayer
             lblGenderIcon.Image = Resources.person_woman;
         }
 
+        public void EmptyPersonInfo()
+        {
+            lblPersonID.Text = "N/A";
+            lblNationalNumber.Text = "N/A";
+            lblName.Text = "N/A";
+            lblGender.Text = "N/A";
+            lblGenderIcon.Image = Resources.person_man;
+            lblEmail.Text = "N/A";
+            lblAddress.Text = "N/A";
+            lblDateOfBirth.Text = "N/A";
+            lblPhone.Text = "N/A";
+            lblCountryName.Text = "N/A";
+            //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
+        }
 
         public void LoadPersonInfo(int PersonID)
         {
              _Person = clsPerson.Find(PersonID);
 
+
             if(_Person != null)
             {
-                lblPersonID.Text=_Person.PersonID.ToString();
-                lblNationalNumber.Text = _Person.NationalNumber; 
-                lblName.Text=_Person.FullName;
+                lblPersonID.Text = _Person.PersonID.ToString();
+                lblNationalNumber.Text = _Person.NationalNumber;
+                lblName.Text = _Person.FullName;
                 selecteGender(_Person.Gender);
                 lblEmail.Text = _Person.Email;
-                lblAddress.Text= _Person.Address;
+                lblAddress.Text = _Person.Address;
                 lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = _Person.PhoneNumber;
-                lblCountryName.Text =_Person.CountryName();
+                lblCountryName.Text = _Person.CountryName();
                 //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
             }
+            else
+                EmptyPersonInfo();
+
         }
 
         public void LoadPersonInfo(string NationalNumber)
         {
             clsPerson person = clsPerson.Find(NationalNumber);
 
-            if (person != null)
+            if (_Person != null)
             {
-                lblPersonID.Text = person.PersonID.ToString();
-                lblNationalNumber.Text = person.NationalNumber;
-                lblName.Text = person.FullName;
-                selecteGender(person.Gender);
-                lblEmail.Text = person.Email;
-                lblAddress.Text = person.Address;
-                lblDateOfBirth.Text = person.DateOfBirth.ToShortDateString();
-                lblPhone.Text = person.PhoneNumber;
-                lblCountryName.Text = person.CountryName();
-
-                //picProfilePhoto.Image = Image.FromFile(_Person.ImagePath);
+                lblPersonID.Text = _Person.PersonID.ToString();
+                lblNationalNumber.Text = _Person.NationalNumber;
+                lblName.Text = _Person.FullName;
+                selecteGender(_Person.Gender);
+                lblEmail.Text = _Person.Email;
+                lblAddress.Text = _Person.Address;
+                lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+                lblPhone.Text = _Person.PhoneNumber;
+                lblCountryName.Text = _Person.CountryName();
+                //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
             }
+            else
+                EmptyPersonInfo();
         }
 
         private void llbEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

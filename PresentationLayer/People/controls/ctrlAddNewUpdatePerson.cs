@@ -17,7 +17,9 @@ namespace PresentationLayer
     public partial class ctrlAddNewUpdatePerson : UserControl
     {
         public enum enMode { AddNew = 0, Update = 1 }
+
         private enMode _Mode;
+
         public ctrlAddNewUpdatePerson()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace PresentationLayer
         }
 
         int _PersonID;
+
         clsPerson _Person;
 
         public void Load_PersonInfo(int PersonID)
@@ -32,11 +35,13 @@ namespace PresentationLayer
             if (-1 == PersonID)
             {
                 _PersonID = PersonID;
+
                 _Mode = enMode.AddNew;
             }
             else
             {
                 _PersonID = PersonID;
+
                 _Mode = enMode.Update;
             }
 
@@ -46,10 +51,14 @@ namespace PresentationLayer
         private void _FillCountriesInComboBox()
         {
             DataTable dt = clsCountry.GetAllCountries();
+
             foreach (DataRow row in dt.Rows)
             {
+
                 cbCountry.Items.Add(row["CountryName"]);
+
             }
+
             cbCountry.SelectedText = "Algeria";
 
         }
@@ -57,16 +66,19 @@ namespace PresentationLayer
         private void ValidatingEmptyOrNulltxt(object sender, CancelEventArgs e)
         {
             System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
+
             if (string.IsNullOrEmpty(textBox.Text))
             {
                 e.Cancel = true;
-                textBox.Focus();
+
                 epEmptyOrNull.SetError(textBox, "Invalid input try again !");
             }
             else
             {
                 e.Cancel = false;
+
                 epEmptyOrNull.SetError(textBox, "");
+
             }
         }
 
@@ -77,11 +89,13 @@ namespace PresentationLayer
             if (clsPerson.IsPersonExists(txtNationalNumber.Text))
             {
                 e.Cancel = true;
+
                 epEmptyOrNull.SetError(txtNationalNumber, "InValid National Number try agian !");
             }
             else
             {
                 e.Cancel = false;
+
                 epEmptyOrNull.SetError(txtNationalNumber, "");
             }
         }
@@ -106,11 +120,13 @@ namespace PresentationLayer
             if (clsPerson.IsEmailExists(txtEmail.Text) || !IsEmailValid(txtEmail.Text))
             {
                 e.Cancel = true;
+
                 epEmptyOrNull.SetError(txtEmail, "InValid Email try agian !");
             }
             else
             {
                 e.Cancel = false;
+
                 epEmptyOrNull.SetError(txtEmail, "");
             }
         }
@@ -120,12 +136,13 @@ namespace PresentationLayer
             if (string.IsNullOrEmpty(rtxtAddress.Text))
             {
                 e.Cancel = true;
-                rtxtAddress.Focus();
+                
                 epEmptyOrNull.SetError(rtxtAddress, "Invalid input try again !");
             }
             else
             {
                 e.Cancel = false;
+
                 epEmptyOrNull.SetError(rtxtAddress, "");
             }
         }
@@ -133,17 +150,25 @@ namespace PresentationLayer
         private void llbSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             openFileDialog.InitialDirectory = "F:\\repos\\Icons\\figures";
+
             openFileDialog.Filter = "png files (*.png)|*.png|All files (*.*)|*.*";
+
             openFileDialog.FilterIndex = 2;
+
             openFileDialog.RestoreDirectory = true;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string FilePath = @"F:\\repos\\Icons\\PersonProfilePics\\" + Guid.NewGuid().ToString() + ".png";
+
                 //Get the path of specified file
+
                 File.Copy(openFileDialog.FileName, FilePath);
+
                 picProfile.Image = Image.FromFile(FilePath);
+
                 picProfile.ImageLocation = FilePath;
+
                 llbRemove.Visible = true;
 
             }
@@ -167,7 +192,9 @@ namespace PresentationLayer
             if (Gender)
             {
                 rbMale.Checked = true;
+
                 lblGenderIcon.Image = Resources.person_man;
+
                 return;
 
             }
@@ -198,6 +225,7 @@ namespace PresentationLayer
             if(null== _Person)
             {
                 MessageBox.Show("This form will be Close because no Person with PersonID : " + _PersonID.ToString());
+
                 (this.FindForm()).Close();
             }
             // Update Mode 
@@ -218,9 +246,10 @@ namespace PresentationLayer
             if (!"".Equals(_Person.ImagePath))
             {
                 picProfile.Image = Image.FromFile(_Person.ImagePath);
-
             }
+
             llbRemove.Visible = (!"".Equals(_Person.ImagePath));
+
             cbCountry.SelectedIndex =cbCountry.FindString( _Person.CountryName());
 
         }
@@ -276,6 +305,7 @@ namespace PresentationLayer
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+           ( this.ParentForm as frmAddNewUpdatePerson )._PersonID = _Person.PersonID;
             this.FindForm().Close();
 
         }

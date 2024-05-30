@@ -45,7 +45,6 @@ namespace PresentationLayer
             this.lblRecordCount = new System.Windows.Forms.Label();
             this.cbFilters = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
-            this.btnFindRow = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
@@ -199,22 +198,6 @@ namespace PresentationLayer
             this.txtFilterValue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterValue_KeyUp);
             this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
-            // btnFindRow
-            // 
-            this.btnFindRow.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnFindRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindRow.Image = global::PresentationLayer.Properties.Resources.AddPerson;
-            this.btnFindRow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFindRow.Location = new System.Drawing.Point(470, 21);
-            this.btnFindRow.Name = "btnFindRow";
-            this.btnFindRow.Size = new System.Drawing.Size(75, 29);
-            this.btnFindRow.TabIndex = 6;
-            this.btnFindRow.Text = "Find";
-            this.btnFindRow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFindRow.UseVisualStyleBackColor = true;
-            this.btnFindRow.Visible = false;
-            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -256,7 +239,6 @@ namespace PresentationLayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnFindRow);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddNewPerson);
@@ -287,7 +269,6 @@ namespace PresentationLayer
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btnFindRow;
         private ToolStripMenuItem smiShowDetails;
         private ToolStripMenuItem smiDelete;
         private ToolStripMenuItem smiEdit;

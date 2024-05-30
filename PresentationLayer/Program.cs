@@ -18,8 +18,8 @@ namespace PresentationLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Users.frmUsersList());
-
+            // Application.Run(new Users.frmUsersList());
+            Application.Run(new Test());
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.ShowDialog();
             //while (true)

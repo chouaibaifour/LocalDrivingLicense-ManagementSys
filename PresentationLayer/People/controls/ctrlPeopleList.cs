@@ -79,7 +79,17 @@ namespace PresentationLayer
 
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (0 != cbFilters.SelectedIndex)
+            {
+                
+                txtFilterValue.Visible = true;
 
+                return;
+            }
+
+            txtFilterValue.Visible = false;
+
+            dgvPeople.DataSource = dataView;
         }
 
 
