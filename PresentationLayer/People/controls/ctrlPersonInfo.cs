@@ -15,7 +15,7 @@ namespace PresentationLayer
     public partial class ctrlPersonInfo : UserControl
     {
         private clsPerson _Person;
-
+        public int PersonID { get; set; }
         public ctrlPersonInfo()
         {
             InitializeComponent();
@@ -47,6 +47,7 @@ namespace PresentationLayer
             lblPhone.Text = "N/A";
             lblCountryName.Text = "N/A";
             //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
+            this.PersonID = -1;
         }
 
         public void LoadPersonInfo(int PersonID)
@@ -66,6 +67,7 @@ namespace PresentationLayer
                 lblPhone.Text = _Person.PhoneNumber;
                 lblCountryName.Text = _Person.CountryName();
                 //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
+                this.PersonID = PersonID;
             }
             else
                 EmptyPersonInfo();
@@ -88,6 +90,7 @@ namespace PresentationLayer
                 lblPhone.Text = _Person.PhoneNumber;
                 lblCountryName.Text = _Person.CountryName();
                 //picProfilePhoto.Image=Image.FromFile(_Person.ImagePath);
+                this.PersonID = PersonID;
             }
             else
                 EmptyPersonInfo();

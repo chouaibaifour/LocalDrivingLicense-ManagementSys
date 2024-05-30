@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlFindPerson1 = new PresentationLayer.People.controls.ctrlFindPerson();
+            this.ctrlAddNewUpdateUser1 = new PresentationLayer.Users.controls.ctrlAddNewUpdateUser();
             this.SuspendLayout();
             // 
-            // ctrlFindPerson1
+            // ctrlAddNewUpdateUser1
             // 
-            this.ctrlFindPerson1.BackColor = System.Drawing.Color.White;
-            this.ctrlFindPerson1.Location = new System.Drawing.Point(35, 74);
-            this.ctrlFindPerson1.Name = "ctrlFindPerson1";
-            this.ctrlFindPerson1.Size = new System.Drawing.Size(715, 344);
-            this.ctrlFindPerson1.TabIndex = 0;
+            this.ctrlAddNewUpdateUser1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddNewUpdateUser1.Location = new System.Drawing.Point(12, 22);
+            this.ctrlAddNewUpdateUser1.Name = "ctrlAddNewUpdateUser1";
+            this.ctrlAddNewUpdateUser1.Size = new System.Drawing.Size(861, 564);
+            this.ctrlAddNewUpdateUser1.TabIndex = 0;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ctrlFindPerson1);
+            this.ClientSize = new System.Drawing.Size(895, 626);
+            this.Controls.Add(this.ctrlAddNewUpdateUser1);
             this.Name = "Test";
             this.Text = "Test";
             this.ResumeLayout(false);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private People.controls.ctrlFindPerson ctrlFindPerson1;
+        private Users.controls.ctrlAddNewUpdateUser ctrlAddNewUpdateUser1;
     }
 }

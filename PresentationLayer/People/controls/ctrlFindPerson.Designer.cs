@@ -55,7 +55,7 @@
             // 
             // btnAddPerson
             // 
-            this.btnAddPerson.FlatAppearance.BorderSize = 0;
+            this.btnAddPerson.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPerson.Image = global::PresentationLayer.Properties.Resources.AddPerson;
             this.btnAddPerson.Location = new System.Drawing.Point(457, 34);
@@ -67,7 +67,7 @@
             // 
             // btnFindPerson
             // 
-            this.btnFindPerson.FlatAppearance.BorderSize = 0;
+            this.btnFindPerson.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnFindPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFindPerson.Image = global::PresentationLayer.Properties.Resources.FindPerson;
             this.btnFindPerson.Location = new System.Drawing.Point(410, 34);

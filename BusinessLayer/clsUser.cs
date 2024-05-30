@@ -135,6 +135,10 @@ namespace BusinessLayer
         {
             return clsUserDataAccess.IsUserExists(UserID);
         }
-    
-}
+        static public bool IsUserExistsbyPersonID(int PersonID)
+        {
+            return clsUserDataAccess.IsUserExistsbyPersonID(PersonID);
+        }
+
+    }
 }

@@ -15,9 +15,11 @@ namespace PresentationLayer.People.controls
         public ctrlFindPerson()
         {
             InitializeComponent();
+            this.PersonID = -1;
         }
 
-       
+       public int PersonID { get; set; }
+        
 
         private void btnFindPerson_Click(object sender, EventArgs e)
         {
@@ -32,6 +34,8 @@ namespace PresentationLayer.People.controls
 
                 personInfo.LoadPersonInfo(PersonID);
 
+            this.PersonID=personInfo.PersonID;
+
         }
 
         private void ctrlFindPerson_Load(object sender, EventArgs e)
@@ -45,6 +49,7 @@ namespace PresentationLayer.People.controls
             frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(-1);
             frmUpdatePerson.SendDataBackWithPersonID += personInfo.LoadPersonInfo;
             frmUpdatePerson.ShowDialog();
+            this.PersonID = personInfo.PersonID;
         }
     }
 }

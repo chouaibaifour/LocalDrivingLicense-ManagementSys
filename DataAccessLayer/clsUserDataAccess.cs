@@ -349,5 +349,39 @@ namespace DataAccessLayer
             }
             return isFound;
         }
+
+        public static bool IsUserExistsbyPersonID(int PersonID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            // this fuction will returns true when RowsAffected > 0 and flase if not 
+
+            bool isFound = false;
+
+            string query = @"SELECT IsFound=1 FROM Users
+                             WHERE PersonID = @PersonID";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
     }
 }
