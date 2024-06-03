@@ -15,7 +15,7 @@ namespace PresentationLayer
         public delegate void DataBackEventHandler();
         public delegate void DataBackWithPersonIDHandler(int PersonID);
         public event DataBackEventHandler SendDataBack;
-       public event DataBackWithPersonIDHandler SendDataBackWithPersonID;
+        public event DataBackWithPersonIDHandler SendDataBackWithPersonID;
 
         public int _PersonID;
         public frmAddNewUpdatePerson(int PersonID)

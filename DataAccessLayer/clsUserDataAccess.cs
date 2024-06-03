@@ -173,7 +173,7 @@ namespace DataAccessLayer
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             //(,NationalityCountryID,ImagePath)
             string query = @"UPDATE Users
-                            SET UserID = @UserID,
+                            SET 
                             PersonID = @PersonID,
                             UserName = @UserName,
                             Password = @Password,
@@ -252,9 +252,12 @@ namespace DataAccessLayer
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"SELECT  UserID, Users.PersonID,
-                                FirstName+' '+ SecondName+' '+ThirdName+' '+ LastName as FullName, UserName, IsActive
-                                    FROM  Users INNER JOIN
-                                         People ON Users.PersonID = People.PersonID";
+                                        COALESCE(People.FirstName, '') + ' ' + 
+                                        COALESCE(People.SecondName, '') + ' ' + 
+                                        COALESCE(People.ThirdName, '') + ' ' + 
+                                        COALESCE(People.LastName, '') AS FullName,UserName, IsActive
+                                                             FROM  Users INNER JOIN
+                                                                    People ON Users.PersonID = People.PersonID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 

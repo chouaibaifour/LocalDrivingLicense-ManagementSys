@@ -15,41 +15,72 @@ namespace PresentationLayer.People.controls
         public ctrlFindPerson()
         {
             InitializeComponent();
-            this.PersonID = -1;
+
+            
         }
 
-       public int PersonID { get; set; }
-        
+        //Define a custom event handler delegte with parameters 
+        public event Action<int> OnPersonSelected;
+        //create protected method to raise the event with parameter
+        protected virtual void PersonSelected(int PersonID)
+        {
+            Action<int> handler = OnPersonSelected;
 
+            if(handler != null)
+
+                handler(PersonID);// Raise the event with parameter
+
+        }
+
+        public void LoadPersonInfo(int PersonID)
+        {
+            personInfo.LoadPersonInfo(PersonID);
+        }
+        
         private void btnFindPerson_Click(object sender, EventArgs e)
         {
             if ("".Equals(txtFilterValue.Text))
                 return;
 
-            if (cbFilters.SelectedIndex == 0)
+            switch (cbFilters.SelectedItem)
+            {
+                case "PersonID":
 
-                personInfo.LoadPersonInfo(txtFilterValue.Text);
+                    if (int.TryParse(txtFilterValue.Text, out int PersonID))
+                        personInfo.LoadPersonInfo(PersonID);
 
-            else if(cbFilters.SelectedIndex == 1&&int.TryParse(txtFilterValue.Text,out int PersonID))
+                    break;
+                case "NationalNo.":
+                    personInfo.LoadPersonInfo(txtFilterValue.Text);
+                    break;
 
-                personInfo.LoadPersonInfo(PersonID);
+            }
 
-            this.PersonID=personInfo.PersonID;
+            if (OnPersonSelected != null)
+                //Raise the event with paramter
+                OnPersonSelected(personInfo.PersonID);
 
         }
 
         private void ctrlFindPerson_Load(object sender, EventArgs e)
         {
             cbFilters.SelectedIndex = 0;
+            
 
         }
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(-1);
+
             frmUpdatePerson.SendDataBackWithPersonID += personInfo.LoadPersonInfo;
+
             frmUpdatePerson.ShowDialog();
-            this.PersonID = personInfo.PersonID;
+
+            if (OnPersonSelected != null)
+                //Raise the event with paramter
+                OnPersonSelected(personInfo.PersonID);
+
         }
     }
 }

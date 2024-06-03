@@ -86,7 +86,7 @@ namespace BusinessLayer
         static public clsUser Find(int UserID)
         {
 
-            UserID = -1;
+            
             int PersonID = -1;
             string UserName = "";
             string Password = "";

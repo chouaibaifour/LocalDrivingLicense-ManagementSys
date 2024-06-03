@@ -46,6 +46,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(619, 504);
             this.Controls.Add(this.ctrlUsersList1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsersList";
             this.Text = "Users";
             this.ResumeLayout(false);

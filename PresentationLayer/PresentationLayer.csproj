@@ -182,6 +182,9 @@
     <EmbeddedResource Include="Users\controls\ctrlUsersList.resx">
       <DependentUpon>ctrlUsersList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddNewUpdateUser.resx">
+      <DependentUpon>frmAddNewUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUsersList.resx">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </EmbeddedResource>

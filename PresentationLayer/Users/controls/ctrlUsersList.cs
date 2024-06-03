@@ -38,9 +38,9 @@ namespace PresentationLayer.Users
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            frmAddNewUpdateUser addNewUpdateUser = new frmAddNewUpdateUser();
+            frmAddNewUpdateUser addNewUpdateUser = new frmAddNewUpdateUser(-1);
 
-          //  addNewUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
+            addNewUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
 
             addNewUpdateUser.ShowDialog();
 
@@ -165,9 +165,9 @@ namespace PresentationLayer.Users
         {
             if (int.TryParse(dgvUsers.CurrentRow.Cells[0].Value.ToString(), out int UserID))
             {
-                //frmAddNewUpdateUser frmUpdateUser = new frmAddNewUpdateUser(UserID);
-                //frmUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
-                //frmUpdateUser.ShowDialog();
+                frmAddNewUpdateUser frmUpdateUser = new frmAddNewUpdateUser(UserID);
+                frmUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
+                frmUpdateUser.ShowDialog();
             }
 
         }
@@ -198,9 +198,9 @@ namespace PresentationLayer.Users
         private void smiAddNew_Click(object sender, EventArgs e)
         {
 
-            //frmAddNewUpdateUser frmUpdateUser = new frmAddNewUpdateUser(-1);
-            //frmUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
-            //frmUpdateUser.ShowDialog();
+            frmAddNewUpdateUser frmUpdateUser = new frmAddNewUpdateUser(-1);
+            frmUpdateUser.SendDataBack += _FillAllUsersTo_dgv;
+            frmUpdateUser.ShowDialog();
 
         }
 
@@ -237,6 +237,9 @@ namespace PresentationLayer.Users
             lblRecordCount.Text = dgvUsers.RowCount.ToString();
         }
 
+        private void smiChangePassword_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -299,7 +299,7 @@ namespace PresentationLayer
                 
             _Mode = enMode.Update;
             lblMode.Text = "Edit Person Info";
-            lblPersonID.Text=_PersonID.ToString();
+            lblPersonID.Text=_Person.PersonID.ToString();
 
         }
 

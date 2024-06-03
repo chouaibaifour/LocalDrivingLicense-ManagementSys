@@ -46,6 +46,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMode = new System.Windows.Forms.Label();
             this.tablcontrol.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginIngo.SuspendLayout();
@@ -57,7 +58,7 @@
             this.tablcontrol.Controls.Add(this.tpPersonalInfo);
             this.tablcontrol.Controls.Add(this.tpLoginIngo);
             this.tablcontrol.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablcontrol.Location = new System.Drawing.Point(3, 45);
+            this.tablcontrol.Location = new System.Drawing.Point(3, 79);
             this.tablcontrol.Name = "tablcontrol";
             this.tablcontrol.SelectedIndex = 0;
             this.tablcontrol.Size = new System.Drawing.Size(857, 478);
@@ -83,6 +84,7 @@
             this.ctrlFindPerson1.Name = "ctrlFindPerson1";
             this.ctrlFindPerson1.Size = new System.Drawing.Size(835, 406);
             this.ctrlFindPerson1.TabIndex = 2;
+            this.ctrlFindPerson1.OnPersonSelected += new System.Action<int>(this.ctrlFindPerson1_OnPersonSelected);
             // 
             // btnNext
             // 
@@ -144,17 +146,19 @@
             // 
             this.txtPasswordConfirm.Location = new System.Drawing.Point(211, 175);
             this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.PasswordChar = '*';
             this.txtPasswordConfirm.Size = new System.Drawing.Size(140, 21);
             this.txtPasswordConfirm.TabIndex = 2;
-            this.txtPasswordConfirm.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
+            this.txtPasswordConfirm.Validating += new System.ComponentModel.CancelEventHandler(this.txtPasswordConfirm_Validating);
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(211, 136);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(140, 21);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // txtUserName
             // 
@@ -220,13 +224,14 @@
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(708, 529);
+            this.btnSave.Location = new System.Drawing.Point(707, 563);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(72, 32);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -236,34 +241,47 @@
             this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(786, 529);
+            this.btnClose.Location = new System.Drawing.Point(785, 563);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(71, 32);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // epEmptyOrNull
             // 
             this.epEmptyOrNull.ContainerControl = this;
+            // 
+            // lblMode
+            // 
+            this.lblMode.AutoSize = true;
+            this.lblMode.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.Location = new System.Drawing.Point(282, 39);
+            this.lblMode.Name = "lblMode";
+            this.lblMode.Size = new System.Drawing.Size(232, 37);
+            this.lblMode.TabIndex = 2;
+            this.lblMode.Text = "Add New User";
             // 
             // ctrlAddNewUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblMode);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tablcontrol);
             this.Name = "ctrlAddNewUpdateUser";
-            this.Size = new System.Drawing.Size(861, 564);
+            this.Size = new System.Drawing.Size(861, 598);
             this.tablcontrol.ResumeLayout(false);
             this.tpPersonalInfo.ResumeLayout(false);
             this.tpLoginIngo.ResumeLayout(false);
             this.tpLoginIngo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -286,5 +304,6 @@
         private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.CheckBox chkIsActive;
         private System.Windows.Forms.ErrorProvider epEmptyOrNull;
+        private System.Windows.Forms.Label lblMode;
     }
 }

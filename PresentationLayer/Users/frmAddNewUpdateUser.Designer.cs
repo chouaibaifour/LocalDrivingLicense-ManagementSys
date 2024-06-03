@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ctrlAddNewUpdateUser1 = new PresentationLayer.Users.controls.ctrlAddNewUpdateUser();
+            this.SuspendLayout();
+            // 
+            // ctrlAddNewUpdateUser1
+            // 
+            this.ctrlAddNewUpdateUser1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddNewUpdateUser1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlAddNewUpdateUser1.Name = "ctrlAddNewUpdateUser1";
+            this.ctrlAddNewUpdateUser1.Size = new System.Drawing.Size(861, 598);
+            this.ctrlAddNewUpdateUser1.TabIndex = 0;
+            // 
+            // frmAddNewUpdateUser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(882, 620);
+            this.Controls.Add(this.ctrlAddNewUpdateUser1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmAddNewUpdateUser";
             this.Text = "frmAddNewUpdateUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddNewUpdateUser_FormClosed);
+            this.Load += new System.EventHandler(this.frmAddNewUpdateUser_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private controls.ctrlAddNewUpdateUser ctrlAddNewUpdateUser1;
     }
 }
