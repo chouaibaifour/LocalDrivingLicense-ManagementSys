@@ -32,10 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAcountSettings = new System.Windows.Forms.Label();
             this.cmsAccountSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiCurrentUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiSignOut = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsers = new System.Windows.Forms.Label();
             this.lblDrivers = new System.Windows.Forms.Label();
             this.lblPeople = new System.Windows.Forms.Label();
@@ -76,35 +76,38 @@
             // 
             this.cmsAccountSettings.BackColor = System.Drawing.Color.White;
             this.cmsAccountSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentUserInfoToolStripMenuItem,
-            this.changePasswordToolStripMenuItem,
+            this.smiCurrentUserInfo,
+            this.smiChangePassword,
             this.toolStripMenuItem1,
-            this.signOutToolStripMenuItem});
+            this.smiSignOut});
             this.cmsAccountSettings.Name = "cmsAccountSettings";
-            this.cmsAccountSettings.Size = new System.Drawing.Size(181, 98);
+            this.cmsAccountSettings.Size = new System.Drawing.Size(169, 76);
             // 
-            // currentUserInfoToolStripMenuItem
+            // smiCurrentUserInfo
             // 
-            this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.currentUserInfoToolStripMenuItem.Text = "CurrentUser Info";
+            this.smiCurrentUserInfo.Name = "smiCurrentUserInfo";
+            this.smiCurrentUserInfo.Size = new System.Drawing.Size(180, 22);
+            this.smiCurrentUserInfo.Text = "CurrentUser Info";
+            this.smiCurrentUserInfo.Click += new System.EventHandler(this.smiCurrentUserInfo_Click);
             // 
-            // changePasswordToolStripMenuItem
+            // smiChangePassword
             // 
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.smiChangePassword.Name = "smiChangePassword";
+            this.smiChangePassword.Size = new System.Drawing.Size(180, 22);
+            this.smiChangePassword.Text = "Change Password";
+            this.smiChangePassword.Click += new System.EventHandler(this.smiChangePassword_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
-            // signOutToolStripMenuItem
+            // smiSignOut
             // 
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.signOutToolStripMenuItem.Text = "Sign Out";
+            this.smiSignOut.Name = "smiSignOut";
+            this.smiSignOut.Size = new System.Drawing.Size(180, 22);
+            this.smiSignOut.Text = "Sign Out";
+            this.smiSignOut.Click += new System.EventHandler(this.smiSignOut_Click);
             // 
             // lblUsers
             // 
@@ -175,6 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmHome";
             this.Text = "frmHome";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.panel1.ResumeLayout(false);
             this.cmsAccountSettings.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -191,9 +195,9 @@
         private System.Windows.Forms.Label lblPeople;
         private System.Windows.Forms.Label lblApplication;
         private System.Windows.Forms.ContextMenuStrip cmsAccountSettings;
-        private System.Windows.Forms.ToolStripMenuItem currentUserInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smiCurrentUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem smiChangePassword;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smiSignOut;
     }
 }

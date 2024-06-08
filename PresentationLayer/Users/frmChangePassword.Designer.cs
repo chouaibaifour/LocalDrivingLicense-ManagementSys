@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ctrlChangePassword1 = new PresentationLayer.Users.controls.ctrlChangePassword();
+            this.SuspendLayout();
+            // 
+            // ctrlChangePassword1
+            // 
+            this.ctrlChangePassword1.BackColor = System.Drawing.Color.White;
+            this.ctrlChangePassword1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlChangePassword1.Name = "ctrlChangePassword1";
+            this.ctrlChangePassword1.Size = new System.Drawing.Size(723, 495);
+            this.ctrlChangePassword1.TabIndex = 0;
+            // 
+            // frmChangePassword
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(749, 519);
+            this.Controls.Add(this.ctrlChangePassword1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmChangePassword";
             this.Text = "frmChangePassword";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmChangePassword_FormClosed);
+            this.Load += new System.EventHandler(this.frmChangePassword_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private controls.ctrlChangePassword ctrlChangePassword1;
     }
 }

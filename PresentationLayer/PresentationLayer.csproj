@@ -50,6 +50,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationTypes\controls\ctrlApplicationTypesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationTypes\controls\ctrlApplicationTypesList.Designer.cs">
+      <DependentUpon>ctrlApplicationTypesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationTypes\frmApplicationTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationTypes\frmApplicationTypeList.Designer.cs">
+      <DependentUpon>frmApplicationTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationTypes\frmUpdateApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationTypes\frmUpdateApplicationType.Designer.cs">
+      <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\controls\ctrlAddNewUpdatePerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +136,18 @@
     <Compile Include="Users\controls\ctrlAddNewUpdateUser.Designer.cs">
       <DependentUpon>ctrlAddNewUpdateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\controls\ctrlChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\controls\ctrlChangePassword.Designer.cs">
+      <DependentUpon>ctrlChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\controls\ctrlUserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\controls\ctrlUserInfo.Designer.cs">
+      <DependentUpon>ctrlUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\controls\ctrlUsersList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,12 +160,33 @@
     <Compile Include="Users\frmAddNewUpdateUser.Designer.cs">
       <DependentUpon>frmAddNewUpdateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmUsersList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Users\frmUsersList.Designer.cs">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicationTypes\controls\ctrlApplicationTypesList.resx">
+      <DependentUpon>ctrlApplicationTypesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationTypes\frmApplicationTypeList.resx">
+      <DependentUpon>frmApplicationTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationTypes\frmUpdateApplicationType.resx">
+      <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\controls\ctrlAddNewUpdatePerson.resx">
       <DependentUpon>ctrlAddNewUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,11 +230,23 @@
     <EmbeddedResource Include="Users\controls\ctrlAddNewUpdateUser.resx">
       <DependentUpon>ctrlAddNewUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\controls\ctrlChangePassword.resx">
+      <DependentUpon>ctrlChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\controls\ctrlUserInfo.resx">
+      <DependentUpon>ctrlUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\controls\ctrlUsersList.resx">
       <DependentUpon>ctrlUsersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmAddNewUpdateUser.resx">
       <DependentUpon>frmAddNewUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUsersList.resx">
       <DependentUpon>frmUsersList.cs</DependentUpon>

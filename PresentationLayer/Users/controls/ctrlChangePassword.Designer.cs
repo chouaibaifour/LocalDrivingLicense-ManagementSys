@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlChangePassword));
             this.ctrlUserInfo1 = new PresentationLayer.Users.controls.ctrlUserInfo();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,8 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlUserInfo1
@@ -64,8 +67,10 @@
             // 
             this.txtCurrentPassword.Location = new System.Drawing.Point(242, 361);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
+            this.txtCurrentPassword.PasswordChar = '*';
             this.txtCurrentPassword.Size = new System.Drawing.Size(126, 20);
             this.txtCurrentPassword.TabIndex = 2;
+            this.txtCurrentPassword.Leave += new System.EventHandler(this.txtCurrentPassword_Leave);
             // 
             // label2
             // 
@@ -83,8 +88,10 @@
             // 
             this.txtNewPassword.Location = new System.Drawing.Point(242, 401);
             this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(126, 20);
             this.txtNewPassword.TabIndex = 2;
+            this.txtNewPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewPassword_Validating);
             // 
             // label3
             // 
@@ -102,8 +109,10 @@
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(242, 444);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(126, 20);
             this.txtConfirmPassword.TabIndex = 2;
+            this.txtConfirmPassword.Leave += new System.EventHandler(this.txtConfirmPassword_Leave);
             // 
             // btnSave
             // 
@@ -135,6 +144,10 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // epEmptyOrNull
+            // 
+            this.epEmptyOrNull.ContainerControl = this;
+            // 
             // ctrlChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,7 +164,7 @@
             this.Controls.Add(this.ctrlUserInfo1);
             this.Name = "ctrlChangePassword";
             this.Size = new System.Drawing.Size(723, 495);
-            this.Load += new System.EventHandler(this.ctrlChangePassword_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +181,6 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ErrorProvider epEmptyOrNull;
     }
 }

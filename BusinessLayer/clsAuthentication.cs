@@ -8,32 +8,42 @@ namespace BusinessLayer
 {
     public class clsAuthentication
     {
+        public int UserID { get; set; }
         public string UserName {  get; set; }
         public string Password { get; set; }
         public bool isActive { get; } 
+        public int PersonID { get; set; }
 
         public clsAuthentication() {
 
+            UserID = -1;
             UserName = "";
 
             Password = "";
+
+            PersonID = -1;
 
             isActive = false;
         
         }
 
-        private clsAuthentication(bool isActive)
+        private clsAuthentication(int UserID,int PersonID,bool isActive)
         {
+            this.UserID = UserID;
+            this.PersonID = PersonID;
+
             this.isActive = isActive;
         }
+        
         
         public static clsAuthentication Login(string UserName, string Password)
         {
             bool isActive = false;
-
-            if(clsAuthenticationDataAccess.Login(UserName,Password,ref isActive))
+            int PersonID = -1;
+            int UserID = -1;
+            if(clsAuthenticationDataAccess.Login(UserName,Password,ref UserID,ref PersonID,ref isActive))
             {
-                return new clsAuthentication(isActive);
+                return new clsAuthentication(UserID,PersonID,isActive);
 
             }
             else
@@ -42,6 +52,15 @@ namespace BusinessLayer
             }
         }
 
+        public static clsAuthentication FindCurrentUser(int UserID)
+        {
+           clsUser user= clsUser.Find(UserID);
+
+            if (user != null)
+                return new clsAuthentication(user.UserID, user.PersonID, user.isActive);
+
+            return null;
+        }
 
 
     }

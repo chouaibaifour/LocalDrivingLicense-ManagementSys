@@ -38,7 +38,7 @@ namespace PresentationLayer.Users.controls
             else
             {
                 _UserID = UserID;
-                ctrlFindPerson1.Enabled = false;
+                ctrlFindPerson1.toUpdate();
                 _Mode = enMode.Update;
             }
 
@@ -52,8 +52,7 @@ namespace PresentationLayer.Users.controls
 
             if (string.IsNullOrEmpty(textBox.Text))
             {
-                e.Cancel = true;
-
+                
                 epEmptyOrNull.SetError(textBox, "should not be Empty!");
             }
             else

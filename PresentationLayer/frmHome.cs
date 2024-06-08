@@ -1,4 +1,5 @@
-﻿using PresentationLayer.Users;
+﻿using BusinessLayer;
+using PresentationLayer.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,15 @@ namespace PresentationLayer
 {
     public partial class frmHome : Form
     {
-        public frmHome()
+      
+       
+        public frmHome(int CurrentUserID)
         {
             InitializeComponent();
+            auth=clsAuthentication.FindCurrentUser(CurrentUserID);
         }
+        public static  clsAuthentication auth;
+       
 
         private void lblApplication_Click(object sender, EventArgs e)
         {
@@ -43,6 +49,30 @@ namespace PresentationLayer
         {
             frmUsersList frmUsersList = new frmUsersList(); 
             frmUsersList.ShowDialog();
+        }
+
+        private void smiCurrentUserInfo_Click(object sender, EventArgs e)
+        {
+            frmUserInfo frmCurrentUserInfo = new frmUserInfo(auth.UserID);
+            frmCurrentUserInfo.ShowDialog();
+        }
+
+        private void smiChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword(auth.UserID);
+            frmChangePassword.ShowDialog();
+        }
+
+        private void smiSignOut_Click(object sender, EventArgs e)
+        {
+           this.Close();
+            
+        }
+
+        private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+          
+
         }
     }
 }

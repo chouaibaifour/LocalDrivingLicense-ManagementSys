@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,7 +22,7 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
-
+        public int CurrentUserID;
          private bool _Authenticate()
         {
             clsAuthentication authentication = clsAuthentication.Login(txtUserName.Text, txtPassword.Text);
@@ -30,7 +31,7 @@ namespace PresentationLayer
             {
                 if (authentication.isActive)
                 {
-
+                    CurrentUserID=authentication.UserID;
                     return true;
                 }
                 else
@@ -45,7 +46,7 @@ namespace PresentationLayer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            RemmeberMe();
             if (_Authenticate())
                 this.DialogResult = DialogResult.OK;
             else
@@ -76,7 +77,7 @@ namespace PresentationLayer
             this.Close();
         }
 
-        private void chkRememberMe_CheckedChanged(object sender, EventArgs e)
+        private void RemmeberMe()
         {
             string Token="";
             if (chkRememberMe.Checked)

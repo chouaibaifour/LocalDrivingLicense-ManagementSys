@@ -155,7 +155,7 @@
             this.chkRememberMe.TabIndex = 3;
             this.chkRememberMe.Text = "Remember me";
             this.chkRememberMe.UseVisualStyleBackColor = true;
-            this.chkRememberMe.CheckedChanged += new System.EventHandler(this.chkRememberMe_CheckedChanged);
+
             // 
             // label2
             // 

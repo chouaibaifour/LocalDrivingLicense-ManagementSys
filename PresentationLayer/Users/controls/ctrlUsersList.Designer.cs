@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.cmsListUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,9 +62,15 @@
             this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AllowUserToResizeColumns = false;
             this.dgvUsers.AllowUserToResizeRows = false;
-            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.ContextMenuStrip = this.cmsListUsers;
             this.dgvUsers.GridColor = System.Drawing.Color.White;
             this.dgvUsers.Location = new System.Drawing.Point(3, 44);
@@ -88,26 +95,26 @@
             this.smiSendEmail,
             this.smiCall});
             this.cmsListUsers.Name = "contextMenuStrip1";
-            this.cmsListUsers.Size = new System.Drawing.Size(181, 192);
+            this.cmsListUsers.Size = new System.Drawing.Size(178, 170);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Image = global::PresentationLayer.Properties.Resources.Details;
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.showToolStripMenuItem.Text = "Show Details";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.smiShowDetails_Click);
             // 
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(177, 6);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(174, 6);
             // 
             // smiAddNew
             // 
             this.smiAddNew.Image = global::PresentationLayer.Properties.Resources.AddPerson;
             this.smiAddNew.Name = "smiAddNew";
-            this.smiAddNew.Size = new System.Drawing.Size(180, 22);
+            this.smiAddNew.Size = new System.Drawing.Size(177, 22);
             this.smiAddNew.Text = "Add New User";
             this.smiAddNew.Click += new System.EventHandler(this.smiAddNew_Click);
             // 
@@ -115,7 +122,7 @@
             // 
             this.smiEdit.Image = global::PresentationLayer.Properties.Resources.Edit;
             this.smiEdit.Name = "smiEdit";
-            this.smiEdit.Size = new System.Drawing.Size(180, 22);
+            this.smiEdit.Size = new System.Drawing.Size(177, 22);
             this.smiEdit.Text = "Edit";
             this.smiEdit.Click += new System.EventHandler(this.smiEdit_Click);
             // 
@@ -123,7 +130,7 @@
             // 
             this.smiDelete.Image = global::PresentationLayer.Properties.Resources.delete;
             this.smiDelete.Name = "smiDelete";
-            this.smiDelete.Size = new System.Drawing.Size(180, 22);
+            this.smiDelete.Size = new System.Drawing.Size(177, 22);
             this.smiDelete.Text = "Delete";
             this.smiDelete.Click += new System.EventHandler(this.smiDelete_Click);
             // 
@@ -131,20 +138,20 @@
             // 
             this.smiChangePassword.Image = global::PresentationLayer.Properties.Resources.password;
             this.smiChangePassword.Name = "smiChangePassword";
-            this.smiChangePassword.Size = new System.Drawing.Size(180, 22);
+            this.smiChangePassword.Size = new System.Drawing.Size(177, 22);
             this.smiChangePassword.Text = "Change Password";
             this.smiChangePassword.Click += new System.EventHandler(this.smiChangePassword_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 6);
             // 
             // smiSendEmail
             // 
             this.smiSendEmail.Image = global::PresentationLayer.Properties.Resources.mail;
             this.smiSendEmail.Name = "smiSendEmail";
-            this.smiSendEmail.Size = new System.Drawing.Size(180, 22);
+            this.smiSendEmail.Size = new System.Drawing.Size(177, 22);
             this.smiSendEmail.Text = "Send Email";
             this.smiSendEmail.Click += new System.EventHandler(this.smiSendEmail_Click);
             // 
@@ -152,7 +159,7 @@
             // 
             this.smiCall.Image = global::PresentationLayer.Properties.Resources.phone;
             this.smiCall.Name = "smiCall";
-            this.smiCall.Size = new System.Drawing.Size(180, 22);
+            this.smiCall.Size = new System.Drawing.Size(177, 22);
             this.smiCall.Text = "Phone Call";
             this.smiCall.Click += new System.EventHandler(this.smiCall_Click);
             // 

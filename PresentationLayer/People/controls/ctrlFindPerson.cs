@@ -69,6 +69,11 @@ namespace PresentationLayer.People.controls
 
         }
 
+        public void toUpdate()
+        {
+            groupBox1.Enabled = false;
+        }
+
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             frmAddNewUpdatePerson frmUpdatePerson = new frmAddNewUpdatePerson(-1);

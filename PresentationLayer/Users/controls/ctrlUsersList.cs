@@ -155,8 +155,9 @@ namespace PresentationLayer.Users
         {
             if (int.TryParse(dgvUsers.CurrentRow.Cells[0].Value.ToString(), out int UserID))
             {
-                //frmUserInfo frmUserInfo = new frmUserInfo(UserID);
-                //frmUserInfo.ShowDialog();
+                frmUserInfo frmUserInfo = new frmUserInfo(UserID);
+                frmUserInfo.ShowDialog();
+                _FillAllUsersTo_dgv();
             }
 
         }
@@ -176,6 +177,12 @@ namespace PresentationLayer.Users
         {
             if (int.TryParse(dgvUsers.CurrentRow.Cells[0].Value.ToString(), out int UserID))
             {
+                
+                if (frmHome.auth.UserID == UserID)
+                {
+                    MessageBox.Show("this is the current User cannot be deleted!");
+                    return;
+                }
                 if (clsUser.IsUserExists(UserID))
                 {
                     if (clsUser.DeleteUser(UserID))
@@ -239,7 +246,13 @@ namespace PresentationLayer.Users
 
         private void smiChangePassword_Click(object sender, EventArgs e)
         {
-
+            if (int.TryParse(dgvUsers.CurrentRow.Cells[0].Value.ToString(), out int UserID))
+            {
+                frmChangePassword changePassword = new frmChangePassword(UserID);
+                changePassword.DataBack += _FillAllUsersTo_dgv;
+                changePassword.ShowDialog();
+            }
+               
         }
     }
 }

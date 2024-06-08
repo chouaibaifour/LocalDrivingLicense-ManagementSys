@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,38 @@ namespace PresentationLayer.Users.controls
         public ctrlUserInfo()
         {
             InitializeComponent();
+        }
+        private clsUser _User;
+
+        public void LoadUserInfo(int UserID)
+        {
+            _User=clsUser.Find(UserID);
+
+            if (_User != null)
+            {
+                ctrlPersonInfo1.LoadPersonInfo(UserID);
+                _FillUserData();
+                return;
+
+            }
+            MessageBox.Show("No User with UserID : " + UserID.ToString());
+        }
+
+        private void _FillUserData()
+        {
+            lblUserID.Text = _User.UserID.ToString();
+
+            lblUsername.Text = _User.UserName.ToString();
+
+            if (_User.isActive)
+                lblisActive.Text = "Yes";
+            else
+                lblisActive.Text = "No";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Close();
         }
     }
 }

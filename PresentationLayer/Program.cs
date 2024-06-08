@@ -12,14 +12,16 @@ namespace PresentationLayer
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Application.Run(new Users.frmUsersList());
-            Application.Run(new Users.frmUsersList());
+          Application.Run(new ApplicationTypes.frmlApplicationTypesList());
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.ShowDialog();
             //while (true)
@@ -28,9 +30,11 @@ namespace PresentationLayer
             //    {
             //        if (frmLogin.DialogResult == DialogResult.OK)
             //        {
-            //            Application.Run(new frmHome());// go to next Page
-            //            //DialogResult == Yes and trynum<3
-            //            return;// try again
+            //            frmHome frmHome = new frmHome(frmLogin.CurrentUserID);// go to next Page
+                      
+            //            frmHome.ShowDialog();
+                        
+                       
             //        }
             //        frmLogin.ShowDialog();
             //        //DialogResult == No and trynum<3
@@ -43,8 +47,6 @@ namespace PresentationLayer
             //    }
 
             //}
-
-
         }
     }
 }
