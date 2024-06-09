@@ -9,21 +9,22 @@ using System.Data.SqlTypes;
 
 namespace DataAccessLayer
 {
-    public static class clsApplicationTypeDataAccess
+    public static class clsTestTypeDataAccess
     {
-        static public bool GetApplicationTypeByID(ref int ApplicationTypeID, ref string ApplicationTypeTitle, ref int ApplicationFees)
+        static public bool GetTestTypeByID(ref int TestTypeID, ref string TestTypeTitle,ref string TestTypeDescription, ref int TestTypeFees)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            //string query = @"SELECT * FROM ApplicationTypes";
-            string query = @"SELECT ApplicationTypeID,
-                                    ApplicationTypeTitle,
-                                    CAST(ApplicationFees as int ) as ApplicationFees
-                                            FROM ApplicationTypes WHERE ApplicationTypeID = @ApplicationTypeID";
+            //string query = @"SELECT * FROM TestTypes";
+            string query = @"SELECT TestTypeID,
+                                    TestTypeTitle,
+                                    TestTypeDescription,
+                                    CAST(TestTypeFees as int ) as TestTypeFees
+                                            FROM TestTypes WHERE TestTypeID = @TestTypeID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {
@@ -35,15 +36,17 @@ namespace DataAccessLayer
 
                 if (reader.Read())
                 {
-                    // the ApplicationType Was Successfully Found
+                    // the TestType Was Successfully Found
 
                     isFound = true;
 
-                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
+                    TestTypeID = (int)reader["TestTypeID"];
 
-                    ApplicationFees = (int)reader["ApplicationFees"];
+                    TestTypeFees = (int)reader["TestTypeFees"];
 
-                    ApplicationTypeTitle = (string)reader["ApplicationTypeTitle"];
+                    TestTypeDescription = (string)reader["TestTypeDescription"];
+
+                    TestTypeTitle = (string)reader["TestTypeTitle"];
 
 
 
@@ -68,27 +71,33 @@ namespace DataAccessLayer
 
         }
 
-        static public bool UpdateApplicationType(int ApplicationTypeID, string ApplicationTypeTitle, decimal ApplicationFees)
+        static public bool UpdateTestType( int TestTypeID,  string TestTypeTitle,  string TestTypeDescription,  int TestTypeFees)
         {
             int RowsAffected = -1;
             // this function returns true if Rows affected > 0 or false if no RowsAffected
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             
-            string query = @"UPDATE ApplicationTypes
+            string query = @"UPDATE TestTypes
                             SET 
-                            ApplicationFees = @ApplicationFees,
-                            ApplicationTypeTitle = @ApplicationTypeTitle
-                            WHERE ApplicationTypeID = @ApplicationTypeID;";
+                            TestTypeFees = @TestTypeFees,
+
+                            TestTypeDescription = @TestTypeDescription,
+
+                            TestTypeTitle = @TestTypeTitle
+
+                            WHERE TestTypeID = @TestTypeID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
 
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
-            command.Parameters.AddWithValue("@ApplicationFees", ApplicationFees);
+            command.Parameters.AddWithValue("@TestTypeFees", TestTypeFees);
 
-            command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
+            command.Parameters.AddWithValue("@TestTypeDescription", TestTypeDescription);
+
+            command.Parameters.AddWithValue("@TestTypeTitle", TestTypeTitle);
 
 
             try
@@ -109,15 +118,13 @@ namespace DataAccessLayer
             return (RowsAffected > 0);
         }
 
-       
-
-        public static DataTable GetAllApplicationTypes()
+        public static DataTable GetAllTestTypes()
         {
             DataTable dt = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT  * FROM  ApplicationTypes;";
+            string query = @"SELECT  * FROM  TestTypes;";
 
             SqlCommand command = new SqlCommand(query, connection);
 

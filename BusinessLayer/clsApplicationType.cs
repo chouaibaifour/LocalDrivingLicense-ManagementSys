@@ -13,10 +13,10 @@ namespace BusinessLayer
         private enum enMode { AddNew, Update };
         private enMode _Mode = enMode.AddNew;
         public int ApplicationTypeID { get; set; }
-        public decimal ApplicationFees { get; set; }
+        public int ApplicationFees { get; set; }
         public string ApplicationTypeTitle { get; set; }
 
-        public clsApplicationType()
+        private clsApplicationType()
         {
             _Mode = enMode.AddNew;
             ApplicationTypeID = -1;
@@ -24,7 +24,7 @@ namespace BusinessLayer
             ApplicationTypeTitle = "";
         }
 
-        private clsApplicationType(int ApplicationTypeID,string ApplicationTypeTitle,decimal ApplicationFees)
+        private clsApplicationType(int ApplicationTypeID,string ApplicationTypeTitle,int ApplicationFees)
         {
             _Mode = enMode.Update;
             this.ApplicationTypeID = ApplicationTypeID;
@@ -35,7 +35,7 @@ namespace BusinessLayer
         static public clsApplicationType Find(int ApplicationTypeID)
         {
 
-            decimal ApplicationFees = -1;
+            int ApplicationFees = -1;
 
             string ApplicationTypeTitle = "";
 

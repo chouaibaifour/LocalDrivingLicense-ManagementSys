@@ -1,5 +1,5 @@
 ﻿using BusinessLayer;
-using PresentationLayer.ApplicationTypes;
+using PresentationLayer.TestTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.ApplicationTypes
+namespace PresentationLayer.TestTypes
 {
     public partial class ctrlTestTypesList : UserControl
     {
@@ -20,9 +20,9 @@ namespace PresentationLayer.ApplicationTypes
         }
 
        
-        private void ctrlApplicationTypesList_Load(object sender, EventArgs e)
+        private void ctrlTestTypesList_Load(object sender, EventArgs e)
         {
-            _FillAllApplicationTypesTo_dgv();
+            _FillAllTestTypesTo_dgv();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -32,24 +32,24 @@ namespace PresentationLayer.ApplicationTypes
 
        
 
-        private void _FillAllApplicationTypesTo_dgv()
+        private void _FillAllTestTypesTo_dgv()
         {
-            DataTable dt = clsApplicationType.GetAllApplicationTypes();
+            DataTable dt = clsTestType.GetAllTestTypes();
 
-            dgvApplicationTypes.DataSource = dt;
+            dgvTestTypes.DataSource = dt;
 
-            lblRecordCount.Text = dgvApplicationTypes.RowCount.ToString();
+            lblRecordCount.Text = dgvTestTypes.RowCount.ToString();
 
         }
 
-        private void smiEditApplicationType_Click(object sender, EventArgs e)
+        private void smiEditTestType_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(dgvApplicationTypes.CurrentRow.Cells[0].Value.ToString(), out int ApplicationTypeID)) {
+            if (int.TryParse(dgvTestTypes.CurrentRow.Cells[0].Value.ToString(), out int TestTypeID)) {
 
-                frmUpdateApplicationType frmUpdateApplicationType = new frmUpdateApplicationType(ApplicationTypeID);
+                frmUpdateTestType frmUpdateTestType = new frmUpdateTestType(TestTypeID);
 
-                frmUpdateApplicationType.sendBackData += _FillAllApplicationTypesTo_dgv;
-                frmUpdateApplicationType.ShowDialog();
+                frmUpdateTestType.sendBackData += _FillAllTestTypesTo_dgv;
+                frmUpdateTestType.ShowDialog();
 
             }
         }

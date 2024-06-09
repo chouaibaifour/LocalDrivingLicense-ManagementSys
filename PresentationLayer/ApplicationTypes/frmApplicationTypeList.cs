@@ -16,5 +16,10 @@ namespace PresentationLayer.ApplicationTypes
         {
             InitializeComponent();
         }
+
+        private void frmApplicationTypeList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

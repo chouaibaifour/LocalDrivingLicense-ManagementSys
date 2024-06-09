@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer.ApplicationTypes
+﻿namespace PresentationLayer.TestTypes
 {
-    partial class frmUpdateApplicationType
+    partial class frmUpdateTestType
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtFees = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.lblApplicationID = new System.Windows.Forms.Label();
+            this.lblTestID = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Update Application Type";
+            this.label1.Text = "Update Test Type";
             // 
             // lblClose
             // 
@@ -107,15 +107,15 @@
             this.txtTitle.Size = new System.Drawing.Size(236, 22);
             this.txtTitle.TabIndex = 3;
             // 
-            // lblApplicationID
+            // lblTestID
             // 
-            this.lblApplicationID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationID.Location = new System.Drawing.Point(107, 129);
-            this.lblApplicationID.Name = "lblApplicationID";
-            this.lblApplicationID.Size = new System.Drawing.Size(51, 16);
-            this.lblApplicationID.TabIndex = 2;
-            this.lblApplicationID.Text = "N/A";
-            this.lblApplicationID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTestID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestID.Location = new System.Drawing.Point(107, 129);
+            this.lblTestID.Name = "lblTestID";
+            this.lblTestID.Size = new System.Drawing.Size(51, 16);
+            this.lblTestID.TabIndex = 2;
+            this.lblTestID.Text = "N/A";
+            this.lblTestID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnClose
             // 
@@ -145,7 +145,7 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // frmUpdateApplicationType
+            // frmUpdateTestType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,17 +158,17 @@
             this.Controls.Add(this.txtFees);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblApplicationID);
+            this.Controls.Add(this.lblTestID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblClose);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmUpdateApplicationType";
+            this.Name = "frmUpdateTestType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUpdateApplicationType";
-            this.Load += new System.EventHandler(this.frmUpdateApplicationType_Load);
+            this.Text = "frmUpdateTestType";
+            this.Load += new System.EventHandler(this.frmUpdateTestType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFees;
         private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.Label lblApplicationID;
+        private System.Windows.Forms.Label lblTestID;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
     }

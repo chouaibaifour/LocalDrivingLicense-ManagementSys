@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.ApplicationTypes
 {
-    partial class ctrlApplicationTypesList
+    partial class ctrlTestTypesList
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvApplicationTypes = new System.Windows.Forms.DataGridView();
+            this.cmszApplicationType = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.smiEditApplicationType = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecordCount = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cmszApplicationType = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.smiEditApplicationType = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).BeginInit();
             this.cmszApplicationType.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,11 @@
             this.dgvApplicationTypes.AllowUserToOrderColumns = true;
             this.dgvApplicationTypes.AllowUserToResizeColumns = false;
             this.dgvApplicationTypes.AllowUserToResizeRows = false;
+            this.dgvApplicationTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvApplicationTypes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvApplicationTypes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvApplicationTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvApplicationTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvApplicationTypes.ContextMenuStrip = this.cmszApplicationType;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -61,9 +65,26 @@
             this.dgvApplicationTypes.MultiSelect = false;
             this.dgvApplicationTypes.Name = "dgvApplicationTypes";
             this.dgvApplicationTypes.ReadOnly = true;
+            this.dgvApplicationTypes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvApplicationTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvApplicationTypes.Size = new System.Drawing.Size(651, 327);
             this.dgvApplicationTypes.TabIndex = 0;
+            // 
+            // cmszApplicationType
+            // 
+            this.cmszApplicationType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smiEditApplicationType});
+            this.cmszApplicationType.Name = "cmszApplicationType";
+            this.cmszApplicationType.Size = new System.Drawing.Size(193, 48);
+            // 
+            // smiEditApplicationType
+            // 
+            this.smiEditApplicationType.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smiEditApplicationType.Image = global::PresentationLayer.Properties.Resources.Edit;
+            this.smiEditApplicationType.Name = "smiEditApplicationType";
+            this.smiEditApplicationType.Size = new System.Drawing.Size(192, 22);
+            this.smiEditApplicationType.Text = "Edit Applicaton Type";
+            this.smiEditApplicationType.Click += new System.EventHandler(this.smiEditApplicationType_Click);
             // 
             // label1
             // 
@@ -98,21 +119,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // cmszApplicationType
-            // 
-            this.cmszApplicationType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smiEditApplicationType});
-            this.cmszApplicationType.Name = "cmszApplicationType";
-            this.cmszApplicationType.Size = new System.Drawing.Size(193, 48);
-            // 
-            // smiEditApplicationType
-            // 
-            this.smiEditApplicationType.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smiEditApplicationType.Name = "smiEditApplicationType";
-            this.smiEditApplicationType.Size = new System.Drawing.Size(192, 22);
-            this.smiEditApplicationType.Text = "Edit Applicaton Type";
-            this.smiEditApplicationType.Click += new System.EventHandler(this.smiEditApplicationType_Click);
-            // 
             // ctrlApplicationTypesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +130,7 @@
             this.Controls.Add(this.dgvApplicationTypes);
             this.Name = "ctrlApplicationTypesList";
             this.Size = new System.Drawing.Size(657, 370);
+            this.Load += new System.EventHandler(this.ctrlApplicationTypesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();
             this.cmszApplicationType.ResumeLayout(false);
             this.ResumeLayout(false);

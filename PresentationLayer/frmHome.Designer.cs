@@ -41,8 +41,19 @@
             this.lblPeople = new System.Windows.Forms.Label();
             this.lblApplication = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmsApplications = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.drivingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.manageApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.detainLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.manageTestTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.cmsAccountSettings.SuspendLayout();
+            this.cmsApplications.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,11 +77,12 @@
             this.lblAcountSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblAcountSettings.Location = new System.Drawing.Point(675, 8);
             this.lblAcountSettings.Name = "lblAcountSettings";
-            this.lblAcountSettings.Size = new System.Drawing.Size(209, 50);
+            this.lblAcountSettings.Size = new System.Drawing.Size(209, 60);
             this.lblAcountSettings.TabIndex = 0;
             this.lblAcountSettings.Text = "Account Settings";
             this.lblAcountSettings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAcountSettings.Click += new System.EventHandler(this.lblAcountSettings_Click);
+            this.lblAcountSettings.MouseEnter += new System.EventHandler(this.lblAcountSettings_MouseEnter);
             // 
             // cmsAccountSettings
             // 
@@ -86,26 +98,26 @@
             // smiCurrentUserInfo
             // 
             this.smiCurrentUserInfo.Name = "smiCurrentUserInfo";
-            this.smiCurrentUserInfo.Size = new System.Drawing.Size(180, 22);
+            this.smiCurrentUserInfo.Size = new System.Drawing.Size(168, 22);
             this.smiCurrentUserInfo.Text = "CurrentUser Info";
             this.smiCurrentUserInfo.Click += new System.EventHandler(this.smiCurrentUserInfo_Click);
             // 
             // smiChangePassword
             // 
             this.smiChangePassword.Name = "smiChangePassword";
-            this.smiChangePassword.Size = new System.Drawing.Size(180, 22);
+            this.smiChangePassword.Size = new System.Drawing.Size(168, 22);
             this.smiChangePassword.Text = "Change Password";
             this.smiChangePassword.Click += new System.EventHandler(this.smiChangePassword_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
             // 
             // smiSignOut
             // 
             this.smiSignOut.Name = "smiSignOut";
-            this.smiSignOut.Size = new System.Drawing.Size(180, 22);
+            this.smiSignOut.Size = new System.Drawing.Size(168, 22);
             this.smiSignOut.Text = "Sign Out";
             this.smiSignOut.Click += new System.EventHandler(this.smiSignOut_Click);
             // 
@@ -116,11 +128,12 @@
             this.lblUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsers.Location = new System.Drawing.Point(524, 8);
             this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(119, 50);
+            this.lblUsers.Size = new System.Drawing.Size(119, 60);
             this.lblUsers.TabIndex = 0;
             this.lblUsers.Text = "Users";
             this.lblUsers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblUsers.Click += new System.EventHandler(this.lblUsers_Click);
+            this.lblUsers.MouseEnter += new System.EventHandler(this.lblAcountSettings_MouseEnter);
             // 
             // lblDrivers
             // 
@@ -129,11 +142,12 @@
             this.lblDrivers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDrivers.Location = new System.Drawing.Point(370, 8);
             this.lblDrivers.Name = "lblDrivers";
-            this.lblDrivers.Size = new System.Drawing.Size(122, 50);
+            this.lblDrivers.Size = new System.Drawing.Size(122, 60);
             this.lblDrivers.TabIndex = 0;
             this.lblDrivers.Text = "Drivers";
             this.lblDrivers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDrivers.Click += new System.EventHandler(this.lblDrivers_Click);
+            this.lblDrivers.MouseEnter += new System.EventHandler(this.lblAcountSettings_MouseEnter);
             // 
             // lblPeople
             // 
@@ -142,24 +156,27 @@
             this.lblPeople.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPeople.Location = new System.Drawing.Point(212, 8);
             this.lblPeople.Name = "lblPeople";
-            this.lblPeople.Size = new System.Drawing.Size(126, 50);
+            this.lblPeople.Size = new System.Drawing.Size(126, 60);
             this.lblPeople.TabIndex = 0;
             this.lblPeople.Text = "People";
             this.lblPeople.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblPeople.Click += new System.EventHandler(this.lblPeople_Click);
+            this.lblPeople.MouseEnter += new System.EventHandler(this.lblAcountSettings_MouseEnter);
             // 
             // lblApplication
             // 
+            this.lblApplication.ContextMenuStrip = this.cmsApplications;
             this.lblApplication.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplication.Image = global::PresentationLayer.Properties.Resources.Application;
             this.lblApplication.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblApplication.Location = new System.Drawing.Point(23, 8);
             this.lblApplication.Name = "lblApplication";
-            this.lblApplication.Size = new System.Drawing.Size(157, 50);
+            this.lblApplication.Size = new System.Drawing.Size(157, 60);
             this.lblApplication.TabIndex = 0;
             this.lblApplication.Text = "Application";
             this.lblApplication.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblApplication.Click += new System.EventHandler(this.lblApplication_Click);
+            this.lblApplication.MouseEnter += new System.EventHandler(this.lblAcountSettings_MouseEnter);
             // 
             // panel2
             // 
@@ -168,6 +185,73 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1456, 808);
             this.panel2.TabIndex = 1;
+            // 
+            // cmsApplications
+            // 
+            this.cmsApplications.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsApplications.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drivingToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.manageApplicationsToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.detainLicensesToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.manageApplicationTypesToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.manageTestTToolStripMenuItem});
+            this.cmsApplications.Name = "contextMenuStrip1";
+            this.cmsApplications.Size = new System.Drawing.Size(226, 160);
+            // 
+            // drivingToolStripMenuItem
+            // 
+            this.drivingToolStripMenuItem.Name = "drivingToolStripMenuItem";
+            this.drivingToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.drivingToolStripMenuItem.Text = "Driving Licenses services";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 6);
+            // 
+            // manageApplicationsToolStripMenuItem
+            // 
+            this.manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
+            this.manageApplicationsToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.manageApplicationsToolStripMenuItem.Text = "Manage Applications";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 6);
+            // 
+            // detainLicensesToolStripMenuItem
+            // 
+            this.detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
+            this.detainLicensesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.detainLicensesToolStripMenuItem.Text = "Detain Licenses";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(222, 6);
+            // 
+            // manageApplicationTypesToolStripMenuItem
+            // 
+            this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            this.manageApplicationTypesToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(222, 6);
+            // 
+            // manageTestTToolStripMenuItem
+            // 
+            this.manageTestTToolStripMenuItem.Name = "manageTestTToolStripMenuItem";
+            this.manageTestTToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.manageTestTToolStripMenuItem.Text = "Manage Test Types";
             // 
             // frmHome
             // 
@@ -181,6 +265,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.panel1.ResumeLayout(false);
             this.cmsAccountSettings.ResumeLayout(false);
+            this.cmsApplications.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -199,5 +284,15 @@
         private System.Windows.Forms.ToolStripMenuItem smiChangePassword;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem smiSignOut;
+        private System.Windows.Forms.ContextMenuStrip cmsApplications;
+        private System.Windows.Forms.ToolStripMenuItem drivingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem manageApplicationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem detainLicensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem manageTestTToolStripMenuItem;
     }
 }

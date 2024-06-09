@@ -9,45 +9,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.ApplicationTypes
+namespace PresentationLayer.TestTypes
 {
-    public partial class frmUpdateApplicationType : Form
+    public partial class frmUpdateTestType : Form
     {
         public delegate void SendBackData();
 
         public event SendBackData sendBackData;
 
-        public frmUpdateApplicationType(int ApplicationTypeID)
+        public frmUpdateTestType(int TestTypeID)
         {
             InitializeComponent();
 
-            _ApplicationTypeID = ApplicationTypeID;
+            _TestTypeID = TestTypeID;
 
         }
 
-        private int _ApplicationTypeID;
+        private int _TestTypeID;
 
-        private clsApplicationType _ApplicationType;
+        private clsTestType _TestType;
         
-        private void frmUpdateApplicationType_Load(object sender, EventArgs e)
+        private void frmUpdateTestType_Load(object sender, EventArgs e)
         {
-            _LoadApplicationType();
+            _LoadTestType();
         }
 
-        private void _LoadApplicationType()
+        private void _LoadTestType()
         {
-            if (-1 == _ApplicationTypeID)
+            if (-1 == _TestTypeID)
             {
-                MessageBox.Show("this Form will be closed because no Application Type with this ID = " + _ApplicationTypeID.ToString());
+                MessageBox.Show("this Form will be closed because no Test Type with this ID = " + _TestTypeID.ToString());
                 return;
             }
-            _ApplicationType = clsApplicationType.Find(_ApplicationTypeID);
+            _TestType = clsTestType.Find(_TestTypeID);
 
-            if( _ApplicationType != null )
+            if( _TestType != null )
             {
-                lblApplicationID.Text = _ApplicationType.ApplicationTypeID.ToString();
-                txtTitle.Text = _ApplicationType.ApplicationTypeTitle.ToString();
-                txtFees.Text = _ApplicationType.ApplicationFees.ToString();
+                lblTestID.Text = _TestType.TestTypeID.ToString();
+                txtTitle.Text = _TestType.TestTypeTitle.ToString();
+                txtFees.Text = _TestType.TestFees.ToString();
 
             }
 
@@ -55,11 +55,11 @@ namespace PresentationLayer.ApplicationTypes
 
         private void btnSave_Click(object sender, EventArgs e)
         { 
-            GetApplicationTypeInfoFromForm();
+            GetTestTypeInfoFromForm();
 
-            if (_ApplicationType.Save())
+            if (_TestType.Save())
             {
-                MessageBox.Show("Application Type Updated Successfully");                
+                MessageBox.Show("Test Type Updated Successfully");                
             }
             else
             {
@@ -68,13 +68,13 @@ namespace PresentationLayer.ApplicationTypes
             }
         }
 
-        private void GetApplicationTypeInfoFromForm()
+        private void GetTestTypeInfoFromForm()
         {
-            _ApplicationType.ApplicationTypeTitle = txtTitle.Text;
+            _TestType.TestTypeTitle = txtTitle.Text;
 
             if (int.TryParse(txtFees.Text, out int Fees))
 
-                _ApplicationType.ApplicationFees = Fees;
+                _TestType.TestFees = Fees;
 
         }
 

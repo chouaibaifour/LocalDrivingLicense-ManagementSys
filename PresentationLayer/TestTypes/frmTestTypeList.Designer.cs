@@ -72,7 +72,7 @@
 
         #endregion
 
-        private ctrlApplicationTypesList ctrlApplicationTypesList1;
+        private ctrlTestTypesList ctrlApplicationTypesList1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

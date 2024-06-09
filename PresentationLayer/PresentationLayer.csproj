@@ -50,6 +50,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestTypes\controls\ctrlTestTypesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestTypes\controls\ctrlTestTypesList.Designer.cs">
+      <DependentUpon>ctrlTestTypesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestTypes\frmTestTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\frmTestTypeList.Designer.cs">
+      <DependentUpon>frmTestTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestTypes\frmUpdateTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestTypes\frmUpdateTestType.Designer.cs">
+      <DependentUpon>frmUpdateTestType.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationTypes\controls\ctrlApplicationTypesList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +196,15 @@
     <Compile Include="Users\frmUsersList.Designer.cs">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestTypes\controls\ctrlTestTypesList.resx">
+      <DependentUpon>ctrlTestTypesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTypes\frmTestTypeList.resx">
+      <DependentUpon>frmTestTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestTypes\frmUpdateTestType.resx">
+      <DependentUpon>frmUpdateTestType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationTypes\controls\ctrlApplicationTypesList.resx">
       <DependentUpon>ctrlApplicationTypesList.cs</DependentUpon>
     </EmbeddedResource>

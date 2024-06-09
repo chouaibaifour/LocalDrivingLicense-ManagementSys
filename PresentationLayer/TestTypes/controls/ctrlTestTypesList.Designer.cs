@@ -1,4 +1,4 @@
-﻿namespace PresentationLayer.ApplicationTypes
+﻿namespace PresentationLayer.TestTypes
 {
     partial class ctrlTestTypesList
     {
@@ -30,29 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvApplicationTypes = new System.Windows.Forms.DataGridView();
-            this.cmszApplicationType = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.smiEditApplicationType = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvTestTypes = new System.Windows.Forms.DataGridView();
+            this.cmszTestType = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.smiEditTestType = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecordCount = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).BeginInit();
-            this.cmszApplicationType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).BeginInit();
+            this.cmszTestType.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvApplicationTypes
+            // dgvTestTypes
             // 
-            this.dgvApplicationTypes.AllowUserToAddRows = false;
-            this.dgvApplicationTypes.AllowUserToDeleteRows = false;
-            this.dgvApplicationTypes.AllowUserToOrderColumns = true;
-            this.dgvApplicationTypes.AllowUserToResizeColumns = false;
-            this.dgvApplicationTypes.AllowUserToResizeRows = false;
-            this.dgvApplicationTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvApplicationTypes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvApplicationTypes.BackgroundColor = System.Drawing.Color.White;
-            this.dgvApplicationTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvApplicationTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApplicationTypes.ContextMenuStrip = this.cmszApplicationType;
+            this.dgvTestTypes.AllowUserToAddRows = false;
+            this.dgvTestTypes.AllowUserToDeleteRows = false;
+            this.dgvTestTypes.AllowUserToOrderColumns = true;
+            this.dgvTestTypes.AllowUserToResizeColumns = false;
+            this.dgvTestTypes.AllowUserToResizeRows = false;
+            this.dgvTestTypes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTestTypes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTestTypes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTestTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTestTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestTypes.ContextMenuStrip = this.cmszTestType;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,31 +60,31 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvApplicationTypes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvApplicationTypes.Location = new System.Drawing.Point(3, 3);
-            this.dgvApplicationTypes.MultiSelect = false;
-            this.dgvApplicationTypes.Name = "dgvApplicationTypes";
-            this.dgvApplicationTypes.ReadOnly = true;
-            this.dgvApplicationTypes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvApplicationTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvApplicationTypes.Size = new System.Drawing.Size(651, 327);
-            this.dgvApplicationTypes.TabIndex = 0;
+            this.dgvTestTypes.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTestTypes.Location = new System.Drawing.Point(3, 3);
+            this.dgvTestTypes.MultiSelect = false;
+            this.dgvTestTypes.Name = "dgvTestTypes";
+            this.dgvTestTypes.ReadOnly = true;
+            this.dgvTestTypes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvTestTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTestTypes.Size = new System.Drawing.Size(651, 327);
+            this.dgvTestTypes.TabIndex = 0;
             // 
-            // cmszApplicationType
+            // cmszTestType
             // 
-            this.cmszApplicationType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smiEditApplicationType});
-            this.cmszApplicationType.Name = "cmszApplicationType";
-            this.cmszApplicationType.Size = new System.Drawing.Size(193, 48);
+            this.cmszTestType.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smiEditTestType});
+            this.cmszTestType.Name = "cmszTestType";
+            this.cmszTestType.Size = new System.Drawing.Size(157, 26);
             // 
-            // smiEditApplicationType
+            // smiEditTestType
             // 
-            this.smiEditApplicationType.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smiEditApplicationType.Image = global::PresentationLayer.Properties.Resources.Edit;
-            this.smiEditApplicationType.Name = "smiEditApplicationType";
-            this.smiEditApplicationType.Size = new System.Drawing.Size(192, 22);
-            this.smiEditApplicationType.Text = "Edit Applicaton Type";
-            this.smiEditApplicationType.Click += new System.EventHandler(this.smiEditApplicationType_Click);
+            this.smiEditTestType.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smiEditTestType.Image = global::PresentationLayer.Properties.Resources.Edit;
+            this.smiEditTestType.Name = "smiEditTestType";
+            this.smiEditTestType.Size = new System.Drawing.Size(156, 22);
+            this.smiEditTestType.Text = "Edit Test Type";
+            this.smiEditTestType.Click += new System.EventHandler(this.smiEditTestType_Click);
             // 
             // label1
             // 
@@ -119,7 +119,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ctrlApplicationTypesList
+            // ctrlTestTypesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,23 +127,23 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecordCount);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvApplicationTypes);
-            this.Name = "ctrlApplicationTypesList";
+            this.Controls.Add(this.dgvTestTypes);
+            this.Name = "ctrlTestTypesList";
             this.Size = new System.Drawing.Size(657, 370);
-            this.Load += new System.EventHandler(this.ctrlApplicationTypesList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();
-            this.cmszApplicationType.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.ctrlTestTypesList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).EndInit();
+            this.cmszTestType.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvApplicationTypes;
+        private System.Windows.Forms.DataGridView dgvTestTypes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRecordCount;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.ContextMenuStrip cmszApplicationType;
-        private System.Windows.Forms.ToolStripMenuItem smiEditApplicationType;
+        private System.Windows.Forms.ContextMenuStrip cmszTestType;
+        private System.Windows.Forms.ToolStripMenuItem smiEditTestType;
     }
 }

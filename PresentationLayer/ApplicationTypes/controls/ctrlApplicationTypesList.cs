@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.ApplicationTypes
 {
-    public partial class ctrlApplicationTypesList : UserControl
+    public partial class ctrlTestTypesList : UserControl
     {
-        public ctrlApplicationTypesList()
+        public ctrlTestTypesList()
         {
             InitializeComponent();
         }
@@ -44,7 +44,14 @@ namespace PresentationLayer.ApplicationTypes
 
         private void smiEditApplicationType_Click(object sender, EventArgs e)
         {
+            if (int.TryParse(dgvApplicationTypes.CurrentRow.Cells[0].Value.ToString(), out int ApplicationTypeID)) {
 
+                frmUpdateApplicationType frmUpdateApplicationType = new frmUpdateApplicationType(ApplicationTypeID);
+
+                frmUpdateApplicationType.sendBackData += _FillAllApplicationTypesTo_dgv;
+                frmUpdateApplicationType.ShowDialog();
+
+            }
         }
     }
 }

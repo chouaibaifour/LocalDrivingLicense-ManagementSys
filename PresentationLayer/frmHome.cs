@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using PresentationLayer.ApplicationTypes;
 using PresentationLayer.Users;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace PresentationLayer
 
         private void lblApplication_Click(object sender, EventArgs e)
         {
-
+            lblApplication.ContextMenuStrip.Show(new Point(lblApplication.Left, lblApplication.Bottom + 35));
         }
 
         private void lblPeople_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace PresentationLayer
 
         private void lblAcountSettings_Click(object sender, EventArgs e)
         {
-            lblAcountSettings.ContextMenuStrip.Show(new Point(lblAcountSettings.Left+55, lblAcountSettings.Bottom+40));
+            lblAcountSettings.ContextMenuStrip.Show(new Point(lblAcountSettings.Left, lblAcountSettings.Bottom+35));
         }
 
         private void lblUsers_Click(object sender, EventArgs e)
@@ -73,6 +74,18 @@ namespace PresentationLayer
         {
           
 
+        }
+
+        private void lblAcountSettings_MouseEnter(object sender, EventArgs e)
+        {
+            Label lbl = (sender) as Label;
+            lbl.Focus();
+        }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmApplicationTypeList frmApplicationTypeList = new frmApplicationTypeList();
+            frmApplicationTypeList.ShowDialog();
         }
     }
 }
