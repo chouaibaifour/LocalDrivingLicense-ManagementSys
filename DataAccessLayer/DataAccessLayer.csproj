@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsApplicationDataAccess.cs" />
     <Compile Include="clsTestTypeDataAccess.cs" />
     <Compile Include="clsApplicationTypeDataAccess.cs" />
     <Compile Include="clsAuthenticationDataAccess.cs" />

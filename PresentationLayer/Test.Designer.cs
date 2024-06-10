@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlAddNewUpdateUser1 = new PresentationLayer.Users.controls.ctrlAddNewUpdateUser();
+            this.ctrlAddUpdateLocal_L_Application1 = new PresentationLayer.LocalLicenseApplication.controls.ctrlAddUpdateLocal_L_Application();
             this.SuspendLayout();
             // 
-            // ctrlAddNewUpdateUser1
+            // ctrlAddUpdateLocal_L_Application1
             // 
-            this.ctrlAddNewUpdateUser1.BackColor = System.Drawing.Color.White;
-            this.ctrlAddNewUpdateUser1.Location = new System.Drawing.Point(12, 22);
-            this.ctrlAddNewUpdateUser1.Name = "ctrlAddNewUpdateUser1";
-            this.ctrlAddNewUpdateUser1.Size = new System.Drawing.Size(861, 564);
-            this.ctrlAddNewUpdateUser1.TabIndex = 0;
+            this.ctrlAddUpdateLocal_L_Application1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddUpdateLocal_L_Application1.Location = new System.Drawing.Point(10, 12);
+            this.ctrlAddUpdateLocal_L_Application1.Name = "ctrlAddUpdateLocal_L_Application1";
+            this.ctrlAddUpdateLocal_L_Application1.Size = new System.Drawing.Size(872, 652);
+            this.ctrlAddUpdateLocal_L_Application1.TabIndex = 0;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 626);
-            this.Controls.Add(this.ctrlAddNewUpdateUser1);
+            this.ClientSize = new System.Drawing.Size(894, 692);
+            this.Controls.Add(this.ctrlAddUpdateLocal_L_Application1);
             this.Name = "Test";
             this.Text = "Test";
             this.ResumeLayout(false);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private Users.controls.ctrlAddNewUpdateUser ctrlAddNewUpdateUser1;
+        private LocalLicenseApplication.controls.ctrlAddUpdateLocal_L_Application ctrlAddUpdateLocal_L_Application1;
     }
 }

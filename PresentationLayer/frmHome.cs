@@ -87,5 +87,10 @@ namespace PresentationLayer
             frmApplicationTypeList frmApplicationTypeList = new frmApplicationTypeList();
             frmApplicationTypeList.ShowDialog();
         }
+
+        private void smiLocalLicenseApplication_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,9 +12,16 @@ namespace PresentationLayer.LocalLicenseApplication.controls
 {
     public partial class ctrlAddUpdateLocal_L_Application : UserControl
     {
+        public enum enMode { AddNew = 0, Update = 1 }
+
+        private enMode _Mode;
+
+        
         public ctrlAddUpdateLocal_L_Application()
         {
             InitializeComponent();
         }
+
+       
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.ApplicationTypes
 {
-    partial class ctrlTestTypesList
+    partial class ctrlApplicationTypesList
     {
         /// <summary> 
         /// Required designer variable.

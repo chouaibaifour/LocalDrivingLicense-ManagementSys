@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.ApplicationTypes
+namespace PresentationLayer.TestTypes
 {
-    public partial class frmApplicationTypeList : Form
+    public partial class frmTestTypeList : Form
     {
-        public frmApplicationTypeList()
+        public frmTestTypeList()
         {
             InitializeComponent();
         }
 
-        private void frmApplicationTypeList_Load(object sender, EventArgs e)
+        private void frmTestTypeList_Load(object sender, EventArgs e)
         {
 
         }

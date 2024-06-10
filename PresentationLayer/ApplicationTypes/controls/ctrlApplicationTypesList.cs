@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.ApplicationTypes
 {
-    public partial class ctrlTestTypesList : UserControl
+    public partial class ctrlApplicationTypesList : UserControl
     {
-        public ctrlTestTypesList()
+        public ctrlApplicationTypesList()
         {
             InitializeComponent();
         }

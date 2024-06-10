@@ -47,6 +47,7 @@ namespace PresentationLayer.TestTypes
             {
                 lblTestID.Text = _TestType.TestTypeID.ToString();
                 txtTitle.Text = _TestType.TestTypeTitle.ToString();
+                rtbDescription.Text = _TestType.TestTypeDescription.ToString();
                 txtFees.Text = _TestType.TestFees.ToString();
 
             }
@@ -71,6 +72,7 @@ namespace PresentationLayer.TestTypes
         private void GetTestTypeInfoFromForm()
         {
             _TestType.TestTypeTitle = txtTitle.Text;
+            _TestType.TestTypeDescription = rtbDescription.Text;
 
             if (int.TryParse(txtFees.Text, out int Fees))
 

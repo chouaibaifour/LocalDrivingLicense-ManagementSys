@@ -32,21 +32,21 @@
             this.tablcontrol = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
             this.ctrlFindPerson1 = new PresentationLayer.People.controls.ctrlFindPerson();
-            this.btnNext = new System.Windows.Forms.Button();
             this.tpLoginIngo = new System.Windows.Forms.TabPage();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.lblUserID = new System.Windows.Forms.Label();
             this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMode = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblMode = new System.Windows.Forms.Label();
             this.tablcontrol.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginIngo.SuspendLayout();
@@ -82,25 +82,9 @@
             this.ctrlFindPerson1.Location = new System.Drawing.Point(7, 6);
             this.ctrlFindPerson1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ctrlFindPerson1.Name = "ctrlFindPerson1";
-            this.ctrlFindPerson1.Size = new System.Drawing.Size(835, 406);
+            this.ctrlFindPerson1.Size = new System.Drawing.Size(838, 406);
             this.ctrlFindPerson1.TabIndex = 2;
             this.ctrlFindPerson1.OnPersonSelected += new System.Action<int>(this.ctrlFindPerson1_OnPersonSelected);
-            // 
-            // btnNext
-            // 
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::PresentationLayer.Properties.Resources.next;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(767, 412);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 32);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next";
-            this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // tpLoginIngo
             // 
@@ -168,6 +152,70 @@
             this.txtUserName.TabIndex = 2;
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingEmptyOrNulltxt);
             // 
+            // epEmptyOrNull
+            // 
+            this.epEmptyOrNull.ContainerControl = this;
+            // 
+            // lblMode
+            // 
+            this.lblMode.AutoSize = true;
+            this.lblMode.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.Location = new System.Drawing.Point(282, 39);
+            this.lblMode.Name = "lblMode";
+            this.lblMode.Size = new System.Drawing.Size(232, 37);
+            this.lblMode.TabIndex = 2;
+            this.lblMode.Text = "Add New User";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(774, 563);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(72, 32);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(697, 563);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(74, 32);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::PresentationLayer.Properties.Resources.next;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNext.Location = new System.Drawing.Point(767, 412);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 32);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = "Next";
+            this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,54 +263,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Password :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(707, 563);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(72, 32);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(785, 563);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(71, 32);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // epEmptyOrNull
-            // 
-            this.epEmptyOrNull.ContainerControl = this;
-            // 
-            // lblMode
-            // 
-            this.lblMode.AutoSize = true;
-            this.lblMode.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMode.Location = new System.Drawing.Point(282, 39);
-            this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(232, 37);
-            this.lblMode.TabIndex = 2;
-            this.lblMode.Text = "Add New User";
             // 
             // ctrlAddNewUpdateUser
             // 

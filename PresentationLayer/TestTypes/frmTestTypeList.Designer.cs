@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer.ApplicationTypes
+﻿namespace PresentationLayer.TestTypes
 {
-    partial class frmApplicationTypeList
+    partial class frmTestTypeList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApplicationTypeList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTestTypeList));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ctrlApplicationTypesList1 = new PresentationLayer.ApplicationTypes.ctrlApplicationTypesList();
+            this.ctrlTestTypesList1 = new PresentationLayer.TestTypes.ctrlTestTypesList();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,27 +44,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // ctrlApplicationTypesList1
+            // ctrlTestTypesList1
             // 
-            this.ctrlApplicationTypesList1.BackColor = System.Drawing.Color.White;
-            this.ctrlApplicationTypesList1.Location = new System.Drawing.Point(12, 181);
-            this.ctrlApplicationTypesList1.Name = "ctrlApplicationTypesList1";
-            this.ctrlApplicationTypesList1.Size = new System.Drawing.Size(657, 370);
-            this.ctrlApplicationTypesList1.TabIndex = 0;
+            this.ctrlTestTypesList1.BackColor = System.Drawing.Color.White;
+            this.ctrlTestTypesList1.Location = new System.Drawing.Point(12, 181);
+            this.ctrlTestTypesList1.Name = "ctrlTestTypesList1";
+            this.ctrlTestTypesList1.Size = new System.Drawing.Size(657, 370);
+            this.ctrlTestTypesList1.TabIndex = 0;
             // 
-            // frmApplicationTypeList
+            // frmTestTypeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 563);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ctrlApplicationTypesList1);
+            this.Controls.Add(this.ctrlTestTypesList1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmApplicationTypeList";
+            this.Name = "frmTestTypeList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmApplicationTypeList";
-            this.Load += new System.EventHandler(this.frmApplicationTypeList_Load);
+            this.Text = "frmTestTypeList";
+            this.Load += new System.EventHandler(this.frmTestTypeList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -72,7 +72,7 @@
 
         #endregion
 
-        private ctrlTestTypesList ctrlApplicationTypesList1;
+        private ctrlTestTypesList ctrlTestTypesList1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

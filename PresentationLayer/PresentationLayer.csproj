@@ -50,6 +50,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.Designer.cs">
+      <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestTypes\controls\ctrlTestTypesList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <Compile Include="Users\frmUsersList.Designer.cs">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.resx">
+      <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestTypes\controls\ctrlTestTypesList.resx">
       <DependentUpon>ctrlTestTypesList.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +395,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\License.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

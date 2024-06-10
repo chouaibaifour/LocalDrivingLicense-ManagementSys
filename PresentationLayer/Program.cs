@@ -21,32 +21,32 @@ namespace PresentationLayer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Application.Run(new Users.frmUsersList());
-            //Application.Run(new ApplicationTypes.frmApplicationTypeList());
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
-            while (true)
-            {
-                if (frmLogin.trynum <= 3)
-                {
-                    if (frmLogin.DialogResult == DialogResult.OK)
-                    {
-                        frmHome frmHome = new frmHome(frmLogin.CurrentUserID);// go to next Page
+            Application.Run(new TestTypes.frmTestTypeList());
+            //frmLogin frmLogin = new frmLogin();
+            //frmLogin.ShowDialog();
+            //while (true)
+            //{
+            //    if (frmLogin.trynum <= 3)
+            //    {
+            //        if (frmLogin.DialogResult == DialogResult.OK)
+            //        {
+            //            frmHome frmHome = new frmHome(frmLogin.CurrentUserID);// go to next Page
 
-                        frmHome.ShowDialog();
+            //            frmHome.ShowDialog();
 
 
-                    }
-                    frmLogin.ShowDialog();
-                    //DialogResult == No and trynum<3
-                }
-                else if (frmLogin.DialogResult == DialogResult.No)
-                {
-                    frmLogin.Close();// close the login form
-                    //DialogResult==No and trynum<3
-                    return;
-                }
+            //        }
+            //        frmLogin.ShowDialog();
+            //        //DialogResult == No and trynum<3
+            //    }
+            //    else if (frmLogin.DialogResult == DialogResult.No)
+            //    {
+            //        frmLogin.Close();// close the login form
+            //        //DialogResult==No and trynum<3
+            //        return;
+            //    }
 
-            }
+            //}
         }
     }
 }

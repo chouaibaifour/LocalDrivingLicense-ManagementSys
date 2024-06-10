@@ -38,6 +38,8 @@
             this.lblTestID = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "ID :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -83,19 +85,21 @@
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Title :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 208);
+            this.label4.Location = new System.Drawing.Point(34, 339);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Fees :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtFees
             // 
-            this.txtFees.Location = new System.Drawing.Point(107, 205);
+            this.txtFees.Location = new System.Drawing.Point(106, 336);
             this.txtFees.Name = "txtFees";
             this.txtFees.Size = new System.Drawing.Size(236, 22);
             this.txtFees.TabIndex = 3;
@@ -122,7 +126,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(291, 272);
+            this.btnClose.Location = new System.Drawing.Point(290, 379);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 24);
             this.btnClose.TabIndex = 4;
@@ -136,7 +140,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Image = global::PresentationLayer.Properties.Resources.Save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(372, 272);
+            this.btnSave.Location = new System.Drawing.Point(371, 379);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 24);
             this.btnSave.TabIndex = 4;
@@ -145,18 +149,41 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 197);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Description :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // rtbDescription
+            // 
+            this.rtbDescription.BackColor = System.Drawing.Color.White;
+            this.rtbDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbDescription.Location = new System.Drawing.Point(107, 194);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbDescription.Size = new System.Drawing.Size(232, 136);
+            this.rtbDescription.TabIndex = 5;
+            this.rtbDescription.Text = "";
+            // 
             // frmUpdateTestType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(458, 308);
+            this.ClientSize = new System.Drawing.Size(458, 415);
             this.ControlBox = false;
+            this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtFees);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTestID);
             this.Controls.Add(this.label2);
@@ -186,5 +213,7 @@
         private System.Windows.Forms.Label lblTestID;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox rtbDescription;
     }
 }
