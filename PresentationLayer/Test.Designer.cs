@@ -47,6 +47,7 @@
             this.Controls.Add(this.ctrlAddUpdateLocal_L_Application1);
             this.Name = "Test";
             this.Text = "Test";
+            this.Load += new System.EventHandler(this.Test_Load);
             this.ResumeLayout(false);
 
         }

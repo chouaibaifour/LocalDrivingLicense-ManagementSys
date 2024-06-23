@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsApplicationDataAccess.cs" />
+    <Compile Include="clsLicenseClassDataAccess.cs" />
     <Compile Include="clsTestTypeDataAccess.cs" />
     <Compile Include="clsApplicationTypeDataAccess.cs" />
     <Compile Include="clsAuthenticationDataAccess.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsPersonDataAccess.cs" />
     <Compile Include="clsUserDataAccess.cs" />
+    <Compile Include="cls_LDL_ApplicationDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

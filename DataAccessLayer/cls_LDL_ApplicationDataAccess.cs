@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static  class clsApplicationDataAccess
+    public static class cls_LDL_ApplicationDataAccess
     {
-        static public bool GetApplicationByID(ref int ApplicationID, ref int ApplicantPersonID, ref DateTime ApplicationDate,
-            ref int ApplicationTypeID,ref byte ApplicationStatus,ref DateTime LastStatusDate,ref int PaidFees,ref int CreatedByUserID)
+        static public bool GetApplicationByID(ref int LocalDrivingLicenseApplicationID, ref int ApplicationID, ref int LicenseClassID)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT   ApplicationID, ApplicantPersonID, ApplicationDate, ApplicationTypeID,
-                                            ApplicationStatus, LastStatusDate, Cast(PaidFees as int)as PaidFees, CreatedByUserID
-                                                    FROM   Applications 
-                                                            WHERE ApplicationID = @ApplicationID";
+            string query = @"SELECT LocalDrivingLicenseApplicationID,ApplicationID,LicenseClassID 
+                                    FROM LocalDrivingLicenseApplications 
+                                            WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
 
             try
             {
@@ -37,22 +35,11 @@ namespace DataAccessLayer
 
                     isFound = true;
 
+                    LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
+
                     ApplicationID = (int)reader["ApplicationID"];
 
-                    ApplicantPersonID = (int)reader["ApplicantPersonID"];
-
-                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
-
-                    ApplicationStatus = (byte)reader["ApplicationStatus"];
-
-                    PaidFees = (int)reader["PaidFees"];
-
-                    CreatedByUserID = (int)reader["CreatedByUserID"];
-
-                    ApplicationDate = (DateTime)reader["ApplicationDate"];
-
-                    LastStatusDate = (DateTime)reader["LastStatusDate"];
-
+                    LicenseClassID = (int)reader["LicenseClassID"];
 
                 }
                 else
@@ -75,95 +62,25 @@ namespace DataAccessLayer
 
         }
 
-        static public bool GetApplicationByApplicantID(ref int ApplicationID, ref int ApplicantPersonID, ref DateTime ApplicationDate,
-            ref int ApplicationTypeID, ref byte ApplicationStatus, ref DateTime LastStatusDate, ref int PaidFees, ref int CreatedByUserID)
+        static public int AddNewApplication(int ApplicationID, int LicenseClassID)
         {
-            bool isFound = false;
-
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM Applications WHERE ApplicantPersonID = @ApplicantPersonID";
-
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-
-                if (reader.Read())
-                {
-                    // the Application Was Successfully Found
-                    isFound = true;
-
-                    ApplicationID = (int)reader["ApplicationID"];
-
-                    ApplicantPersonID = (int)reader["ApplicantPersonID"];
-
-                    ApplicationTypeID = (int)reader["ApplicationTypeID"];
-
-                    ApplicationStatus = (byte)reader["ApplicationStatus"];
-
-                    PaidFees = (int)reader["PaidFees"];
-
-                    CreatedByUserID = (int)reader["CreatedByUserID"];
-
-                    ApplicationDate = (DateTime)reader["ApplicationDate"];
-
-                    LastStatusDate = (DateTime)reader["LastStatusDate"];
-                }
-                else
-                    isFound = false;
-                reader.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                isFound = false;
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return isFound;
-
-        }
-
-        static public int AddNewApplication(  int ApplicantPersonID,  DateTime ApplicationDate,
-             int ApplicationTypeID,  int ApplicationStatus,  DateTime LastStatusDate,  int PaidFees,  int CreatedByUserID)
-        {
-            // the function will returns ApplicationID or -1 if not 
-            int ApplicationID = -1;
+            // the function will returns LDL_ApplicationID or -1 if not 
+            int LDL_ApplicationID = -1; 
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Applications
-                            (ApplicantPersonID,  ApplicationDate,  ApplicationTypeID,  ApplicationStatus,  LastStatusDate,  PaidFees,  CreatedByUserID)
+            string query = @"INSERT INTO LocalDrivingLicenseApplications 
+                            (ApplicationID,  LicenseClassID)
                             VALUES
-                            ( @ApplicantPersonID,  @ApplicationDate,  @ApplicationTypeID, @ApplicationStatus,  @LastStatusDate,  @PaidFees,  @CreatedByUserID);
-
+                            ( @ApplicationID,  @LicenseClassID);
                                SELECT SCOPE_IDENTITY(); ";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-
-            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {
@@ -173,7 +90,7 @@ namespace DataAccessLayer
 
                 if (result != DBNull.Value && int.TryParse(result.ToString(), out int InsertedID))
                 {
-                    ApplicationID = InsertedID;
+                    LDL_ApplicationID = InsertedID;
                 }
 
             }
@@ -186,12 +103,11 @@ namespace DataAccessLayer
                 connection.Close();
             }
 
-            return ApplicationID;
+            return LDL_ApplicationID;
 
         }
 
-        static public bool UpdateApplication( int ApplicationID, int ApplicantPersonID,  DateTime ApplicationDate,
-             int ApplicationTypeID,  int ApplicationStatus,  DateTime LastStatusDate,  int PaidFees,  int CreatedByUserID)
+        static public bool UpdateApplication( int LDL_ApplicationID,  int ApplicationID,  int LicenseClassID)
         {
             int RowsAffected = -1;
             // this function returns true if Rows affected > 0 or false if no RowsAffected
@@ -201,41 +117,25 @@ namespace DataAccessLayer
             string query = @"UPDATE Applications
 
                             SET 
-                                ApplicationDate = @ApplicationDate, 
+                                ApplicationID, 
 
-                                ApplicationTypeID = @ApplicationTypeID,
-
-                                ApplicationStatus = @ApplicationStatus, 
-
-                                LastStatusDate = @LastStatusDate,
-
-                                PaidFees = @PaidFees,  
-
-                                CreatedByUserID = @CreatedByUserID
-
-                            WHERE ApplicationID = @ApplicationID;";
+                                LicenseClassID
+                              
+                            WHERE LDL_ApplicationID = @LDL_ApplicationID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
+            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
+
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
-            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
-
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-
-            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {
                 connection.Open();
+
                 RowsAffected = command.ExecuteNonQuery();
 
             }
@@ -251,7 +151,7 @@ namespace DataAccessLayer
             return (RowsAffected > 0);
         }
 
-        static public bool DeleteApplication(int ApplicationID)
+        static public bool DeleteApplication(int LDL_ApplicationID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -261,11 +161,11 @@ namespace DataAccessLayer
 
             string query = @"DELETE Applications
 
-                             WHERE ApplicationID = @ApplicationID";
+                             WHERE LDL_ApplicationID = @LDL_ApplicationID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
 
             try
             {
@@ -345,7 +245,7 @@ namespace DataAccessLayer
 
                                 INNER JOIN TestAppointments ON 
 
-                                        LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
+                                        LocalDrivingLicenseApplications.LDL_ApplicationID = TestAppointments.LDL_ApplicationID
 
                                 INNER JOIN Tests ON 
 
@@ -395,7 +295,7 @@ namespace DataAccessLayer
 
         }
 
-        public static bool IsApplicationExists(int ApplicationID)
+        public static bool IsApplicationExists(int LDL_ApplicationID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -404,10 +304,11 @@ namespace DataAccessLayer
             bool isFound = false;
 
             string query = @"SELECT IsFound = 1 FROM Applications
-                             WHERE ApplicationID=@ApplicationID";
+
+                             WHERE LDL_ApplicationID = @LDL_ApplicationID;";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
 
             try
             {
@@ -429,8 +330,19 @@ namespace DataAccessLayer
             }
             return isFound;
         }
-
-        public static bool IsApplicationExistsbyApplicantID(int ApplicantPersonID)
+        private static string GenerateStatusString(byte[] ApplicationStatus)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (byte item in ApplicationStatus)
+            {
+                
+                    sb.Append(item + ",");
+                
+            }
+            return sb.ToString().TrimEnd(',');
+            
+        }
+        public static bool IsApplicantHasDoubleSameApp(int ApplicantPersonID, int LicenseClassID, byte[] ApplicationStatus)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -438,12 +350,20 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound=1 FROM Applications
+            string query = @"SELECT isFound=1  FROM  Applications INNER JOIN
 
-                             WHERE ApplicantPersonID = @ApplicantPersonID";
+                                 LocalDrivingLicenseApplications ON Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID INNER JOIN
+
+                                             LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID
+
+                                                        WHERE  (Applications.ApplicationStatus in ("+ GenerateStatusString(ApplicationStatus) + @"))
+                                                                         AND 
+                                                               (LicenseClasses.LicenseClassID = @LicenseClassID) 
+                                                                         AND 
+                                                                (Applications.ApplicantPersonID = ApplicantPersonID);";
 
             SqlCommand command = new SqlCommand(query, connection);
-
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
 
             try
@@ -451,7 +371,6 @@ namespace DataAccessLayer
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
-
                 isFound = reader.HasRows;
 
                 reader.Close();
@@ -459,7 +378,6 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
                 isFound = false;
-
                 //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
             }
             finally

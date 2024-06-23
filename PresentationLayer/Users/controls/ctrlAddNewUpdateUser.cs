@@ -86,10 +86,10 @@ namespace PresentationLayer.Users.controls
             }
             // Update Mode 
             
-            _FillUserDataToUpdate();
+            _FillFormWithData();
         }
 
-        private void _FillUserDataToUpdate()
+        private void _FillFormWithData()
         {
             lblMode.Text = "Update User";
             txtUserName.Enabled = false;
@@ -118,6 +118,7 @@ namespace PresentationLayer.Users.controls
                 tablcontrol.SelectTab(tpPersonalInfo);
                 return;
             }
+
                 
             GetUserInfoFromForm();
 

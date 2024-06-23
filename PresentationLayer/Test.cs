@@ -16,5 +16,10 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void Test_Load(object sender, EventArgs e)
+        {
+            ctrlAddUpdateLocal_L_Application1.Load_LDL_ApplicationInfo(43);
+        }
     }
 }

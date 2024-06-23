@@ -56,6 +56,12 @@
     <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.Designer.cs">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.Designer.cs">
+      <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestTypes\controls\ctrlTestTypesList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.resx">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.resx">
+      <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestTypes\controls\ctrlTestTypesList.resx">
       <DependentUpon>ctrlTestTypesList.cs</DependentUpon>

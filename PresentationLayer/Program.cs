@@ -21,7 +21,7 @@ namespace PresentationLayer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Application.Run(new Users.frmUsersList());
-            Application.Run(new TestTypes.frmTestTypeList());
+            Application.Run(new Test());
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.ShowDialog();
             //while (true)

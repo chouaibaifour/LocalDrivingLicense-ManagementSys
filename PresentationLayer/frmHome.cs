@@ -88,6 +88,11 @@ namespace PresentationLayer
             frmApplicationTypeList.ShowDialog();
         }
 
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void smiLocalLicenseApplication_Click(object sender, EventArgs e)
         {
 

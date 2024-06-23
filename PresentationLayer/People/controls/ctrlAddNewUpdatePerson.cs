@@ -211,7 +211,7 @@ namespace PresentationLayer
         private void _LoadData()
         {
             _FillCountriesInComboBox();
-            cbCountry.SelectedIndex = 0;
+            
             if (enMode.AddNew.Equals(_Mode))
             {
                 // Add New Person Mode 

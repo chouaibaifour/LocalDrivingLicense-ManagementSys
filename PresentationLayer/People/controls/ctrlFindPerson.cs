@@ -35,6 +35,9 @@ namespace PresentationLayer.People.controls
         public void LoadPersonInfo(int PersonID)
         {
             personInfo.LoadPersonInfo(PersonID);
+            if (OnPersonSelected != null)
+                //Raise the event with paramter
+                OnPersonSelected(personInfo.PersonID);
         }
         
         private void btnFindPerson_Click(object sender, EventArgs e)
