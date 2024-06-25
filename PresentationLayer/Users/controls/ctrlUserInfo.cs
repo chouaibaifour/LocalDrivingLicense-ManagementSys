@@ -25,7 +25,7 @@ namespace PresentationLayer.Users.controls
 
             if (_User != null)
             {
-                ctrlPersonInfo1.LoadPersonInfo(UserID);
+                ctrlPersonInfo1.LoadPersonInfo(_User.PersonID);
                 _FillUserData();
                 return;
 

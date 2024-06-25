@@ -64,6 +64,7 @@
             this.MaximumSize = new System.Drawing.Size(1167, 630);
             this.MinimumSize = new System.Drawing.Size(1167, 630);
             this.Name = "frmPeopleList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPeopleList";
             this.ResumeLayout(false);
 

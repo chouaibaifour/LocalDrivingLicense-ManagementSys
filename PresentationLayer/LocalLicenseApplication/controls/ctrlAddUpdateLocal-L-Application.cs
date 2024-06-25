@@ -1,14 +1,8 @@
 ﻿using BusinessLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace PresentationLayer.LocalLicenseApplication.controls
 {
@@ -154,18 +148,20 @@ namespace PresentationLayer.LocalLicenseApplication.controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (-1 == _PersonID)
+            if (0 == _PersonID||-1==_PersonID)
             {
-                MessageBox.Show("Unexpected Error, start over.");
-                tabControl1.SelectTab(tpApplicationInfo);
+                MessageBox.Show("Select an applicant !");
+                tabControl1.SelectTab(tpPersonalInfo);
                 return;
             }
 
             Get_LDL_ApplicationInfoFromForm();
 
-            byte [] Status= new byte[] { (byte)clsApplication.enStatus.New, (byte)clsApplication.enStatus.InProgerss };
+            
 
-            if (_Mode.Equals(enMode.AddNew)&&cls_LDL_Application.IsApplicantHasDoubleSameApp(_Application.ApplicantPersonID, _LDL_Application.LicenseClassID, Status))
+            if (_Mode.Equals(enMode.AddNew)
+                &&
+                cls_LDL_Application.IsApplicantHasDoubleSameApp(_Application.ApplicantPersonID, _LDL_Application.LicenseClassID))
             {
                 MessageBox.Show("The applicant has already apply to an application with same License Class!");
                 return;
@@ -174,14 +170,20 @@ namespace PresentationLayer.LocalLicenseApplication.controls
             if (_Application.Save())
             {
                 _LDL_Application.ApplicationID = _Application.ApplicationID;
-                _LDL_Application.Save();
+                if (!_LDL_Application.Save())
+                {
+                    MessageBox.Show("unSuccessfully, saved the application!");
+
+                }
+                MessageBox.Show("Successfully, saved the application!");
+
                 lblMode.Text = "Update Local Driving License Application";
                 lblDLApplicationID.Text = _LDL_Application.LDL_ApplicationID.ToString();
             }
             else
             {
                 MessageBox.Show("Unexpected Error, start over.");
-                tabControl1.SelectTab(tpApplicationInfo);
+                tabControl1.SelectTab(tpPersonalInfo);
                 return;
             }
 
@@ -202,7 +204,7 @@ namespace PresentationLayer.LocalLicenseApplication.controls
             {
                 case enMode.AddNew:
 
-                    if (-1 == _PersonID)
+                    if (0 == _PersonID || -1 == _PersonID)
                     {
                         MessageBox.Show("Please choose a Person !");
                         return;

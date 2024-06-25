@@ -105,9 +105,9 @@ namespace BusinessLayer
             return cls_LDL_ApplicationDataAccess.IsApplicationExists(LDL_ApplicationID);
         }
 
-        public static bool IsApplicantHasDoubleSameApp(int applicantPersonID, int licenseClassID, byte[] bytes)
+        public static bool IsApplicantHasDoubleSameApp(int applicantPersonID, int licenseClassID)
         {
-            return cls_LDL_ApplicationDataAccess.IsApplicantHasDoubleSameApp(applicantPersonID, licenseClassID, bytes);
+            return cls_LDL_ApplicationDataAccess.IsApplicantHasDoubleSameApp(applicantPersonID, licenseClassID);
         }
     }
 }

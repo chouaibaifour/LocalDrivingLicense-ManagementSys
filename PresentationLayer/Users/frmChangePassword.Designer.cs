@@ -48,6 +48,7 @@
             this.Controls.Add(this.ctrlChangePassword1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangePassword";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmChangePassword_FormClosed);
             this.Load += new System.EventHandler(this.frmChangePassword_Load);

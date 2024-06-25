@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlAddUpdateLocal_L_Application1 = new PresentationLayer.LocalLicenseApplication.controls.ctrlAddUpdateLocal_L_Application();
+            this.ctrlLDLApplicationList1 = new PresentationLayer.LocalLicenseApplication.controls.ctrlLDLApplicationList();
             this.SuspendLayout();
             // 
-            // ctrlAddUpdateLocal_L_Application1
+            // ctrlLDLApplicationList1
             // 
-            this.ctrlAddUpdateLocal_L_Application1.BackColor = System.Drawing.Color.White;
-            this.ctrlAddUpdateLocal_L_Application1.Location = new System.Drawing.Point(10, 12);
-            this.ctrlAddUpdateLocal_L_Application1.Name = "ctrlAddUpdateLocal_L_Application1";
-            this.ctrlAddUpdateLocal_L_Application1.Size = new System.Drawing.Size(872, 652);
-            this.ctrlAddUpdateLocal_L_Application1.TabIndex = 0;
+            this.ctrlLDLApplicationList1.BackColor = System.Drawing.Color.White;
+            this.ctrlLDLApplicationList1.Location = new System.Drawing.Point(41, 39);
+            this.ctrlLDLApplicationList1.Name = "ctrlLDLApplicationList1";
+            this.ctrlLDLApplicationList1.Size = new System.Drawing.Size(975, 479);
+            this.ctrlLDLApplicationList1.TabIndex = 0;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 692);
-            this.Controls.Add(this.ctrlAddUpdateLocal_L_Application1);
+            this.ClientSize = new System.Drawing.Size(1153, 692);
+            this.Controls.Add(this.ctrlLDLApplicationList1);
             this.Name = "Test";
-            this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
             this.ResumeLayout(false);
 
@@ -54,6 +53,6 @@
 
         #endregion
 
-        private LocalLicenseApplication.controls.ctrlAddUpdateLocal_L_Application ctrlAddUpdateLocal_L_Application1;
+        private LocalLicenseApplication.controls.ctrlLDLApplicationList ctrlLDLApplicationList1;
     }
 }

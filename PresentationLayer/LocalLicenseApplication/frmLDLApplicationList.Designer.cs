@@ -102,6 +102,7 @@
             this.Controls.Add(this.ctrlLDLApplicationList1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLDLApplicationList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLDLApplicationList";
             ((System.ComponentModel.ISupportInitialize)(this.pbApplications)).EndInit();
             this.ResumeLayout(false);

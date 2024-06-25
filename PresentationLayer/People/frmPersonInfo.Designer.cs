@@ -64,6 +64,7 @@
             this.ctrlPersonInfo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ctrlPersonInfo1.Location = new System.Drawing.Point(7, 47);
             this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
+            this.ctrlPersonInfo1.PersonID = 0;
             this.ctrlPersonInfo1.Size = new System.Drawing.Size(708, 244);
             this.ctrlPersonInfo1.TabIndex = 3;
             this.ctrlPersonInfo1.Load += new System.EventHandler(this.ctrlPersonInfo1_Load);
@@ -79,6 +80,7 @@
             this.Controls.Add(this.ctrlPersonInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPersonInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPersonInfo";
             this.ResumeLayout(false);
 

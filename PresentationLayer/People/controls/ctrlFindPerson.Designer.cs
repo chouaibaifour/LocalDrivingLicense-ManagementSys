@@ -112,6 +112,7 @@
             this.personInfo.BackColor = System.Drawing.SystemColors.Control;
             this.personInfo.Location = new System.Drawing.Point(3, 99);
             this.personInfo.Name = "personInfo";
+            this.personInfo.PersonID = 0;
             this.personInfo.Size = new System.Drawing.Size(710, 245);
             this.personInfo.TabIndex = 0;
             // 
@@ -123,7 +124,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.personInfo);
             this.Name = "ctrlFindPerson";
-            this.Size = new System.Drawing.Size(715, 344);
+            this.Size = new System.Drawing.Size(717, 347);
             this.Load += new System.EventHandler(this.ctrlFindPerson_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

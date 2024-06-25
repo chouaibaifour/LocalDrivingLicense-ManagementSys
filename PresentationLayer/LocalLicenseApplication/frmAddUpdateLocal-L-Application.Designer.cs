@@ -28,23 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ctrlAddUpdateLocal_L_Application1 = new PresentationLayer.LocalLicenseApplication.controls.ctrlAddUpdateLocal_L_Application();
             this.SuspendLayout();
+            // 
+            // ctrlAddUpdateLocal_L_Application1
+            // 
+            this.ctrlAddUpdateLocal_L_Application1.BackColor = System.Drawing.Color.White;
+            this.ctrlAddUpdateLocal_L_Application1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlAddUpdateLocal_L_Application1.Name = "ctrlAddUpdateLocal_L_Application1";
+            this.ctrlAddUpdateLocal_L_Application1.Size = new System.Drawing.Size(897, 652);
+            this.ctrlAddUpdateLocal_L_Application1.TabIndex = 1;
             // 
             // frmAddUpdateLocal_L_Application
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(933, 519);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(923, 678);
+            this.Controls.Add(this.ctrlAddUpdateLocal_L_Application1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmAddUpdateLocal_L_Application";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddUpdateLocal_L_Application";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddUpdateLocal_L_Application_FormClosed);
+            this.Load += new System.EventHandler(this.frmAddUpdateLocal_L_Application_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private controls.ctrlAddUpdateLocal_L_Application ctrlAddUpdateLocal_L_Application1;
     }
 }

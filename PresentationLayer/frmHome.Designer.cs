@@ -203,7 +203,7 @@
             this.toolStripMenuItem5,
             this.manageTestTToolStripMenuItem});
             this.cmsApplications.Name = "contextMenuStrip1";
-            this.cmsApplications.Size = new System.Drawing.Size(226, 160);
+            this.cmsApplications.Size = new System.Drawing.Size(226, 138);
             // 
             // drivingToolStripMenuItem
             // 
@@ -351,7 +351,9 @@
             this.ClientSize = new System.Drawing.Size(1444, 881);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHome";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.panel1.ResumeLayout(false);

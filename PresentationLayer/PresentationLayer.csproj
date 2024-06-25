@@ -56,11 +56,35 @@
     <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.Designer.cs">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.Designer.cs">
+      <DependentUpon>ctrlAppBasicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.Designer.cs">
+      <DependentUpon>ctrlLDLApplicationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlLDL_ApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.Designer.cs">
       <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\frmLDLApplicationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplication\frmLDLApplicationList.Designer.cs">
+      <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
     </Compile>
     <Compile Include="TestTypes\controls\ctrlTestTypesList.cs">
       <SubType>UserControl</SubType>
@@ -211,8 +235,20 @@
     <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.resx">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.resx">
+      <DependentUpon>ctrlAppBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.resx">
+      <DependentUpon>ctrlLDLApplicationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.resx">
+      <DependentUpon>ctrlLDL_ApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.resx">
       <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplication\frmLDLApplicationList.resx">
+      <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestTypes\controls\ctrlTestTypesList.resx">
       <DependentUpon>ctrlTestTypesList.cs</DependentUpon>
@@ -328,9 +364,6 @@
     <None Include="Resources\email.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\id.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\person_man.png" />
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +446,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddApplications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

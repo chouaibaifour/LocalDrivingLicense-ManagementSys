@@ -194,11 +194,11 @@ namespace DataAccessLayer
 
             string query = @"SELECT
 
-                                LocalDrivingLicenseApplications.ApplicationID as 'L.D.L AppID', 
+                                LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID as 'L.D.L.AppID', 
 
                                 LicenseClasses.ClassName as 'Driving Class',
 
-                                People.NationalNumber as 'National No.',
+                                People.NationalNumber as 'NationalNo',
 
 						        COALESCE(People.FirstName, '') + ' ' + 
 
@@ -206,7 +206,7 @@ namespace DataAccessLayer
 
 						        COALESCE(People.ThirdName, '') + ' ' + 
 
-						        COALESCE(People.LastName, '') AS 'Full Name',
+						        COALESCE(People.LastName, '') AS 'FullName',
 
                                 Applications.ApplicationDate,
 
@@ -243,16 +243,16 @@ namespace DataAccessLayer
 
                                         Applications.ApplicationTypeID = ApplicationTypes.ApplicationTypeID
 
-                                INNER JOIN TestAppointments ON 
+                                LEFT OUTER JOIN TestAppointments ON 
 
-                                        LocalDrivingLicenseApplications.LDL_ApplicationID = TestAppointments.LDL_ApplicationID
+                                        LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
 
-                                INNER JOIN Tests ON 
+                                LEFT OUTER JOIN Tests ON 
 
                                         TestAppointments.TestAppointmentID = Tests.TestAppointmentID
 
                                 GROUP BY
-                                        LocalDrivingLicenseApplications.ApplicationID,
+                                        LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID,
 
                                          LicenseClasses.ClassName,
 
@@ -330,19 +330,8 @@ namespace DataAccessLayer
             }
             return isFound;
         }
-        private static string GenerateStatusString(byte[] ApplicationStatus)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (byte item in ApplicationStatus)
-            {
-                
-                    sb.Append(item + ",");
-                
-            }
-            return sb.ToString().TrimEnd(',');
-            
-        }
-        public static bool IsApplicantHasDoubleSameApp(int ApplicantPersonID, int LicenseClassID, byte[] ApplicationStatus)
+
+        public static bool IsApplicantHasDoubleSameApp(int ApplicantPersonID, int LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -356,11 +345,11 @@ namespace DataAccessLayer
 
                                              LicenseClasses ON LocalDrivingLicenseApplications.LicenseClassID = LicenseClasses.LicenseClassID
 
-                                                        WHERE  (Applications.ApplicationStatus in ("+ GenerateStatusString(ApplicationStatus) + @"))
+                                                        WHERE  (Applications.ApplicationStatus != 4)
                                                                          AND 
                                                                (LicenseClasses.LicenseClassID = @LicenseClassID) 
                                                                          AND 
-                                                                (Applications.ApplicantPersonID = ApplicantPersonID);";
+                                                                (Applications.ApplicantPersonID = @ApplicantPersonID);";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);

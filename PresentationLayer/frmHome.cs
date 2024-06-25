@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using PresentationLayer.ApplicationTypes;
+using PresentationLayer.LocalLicenseApplication;
 using PresentationLayer.Users;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace PresentationLayer
 
         private void lblApplication_Click(object sender, EventArgs e)
         {
-            lblApplication.ContextMenuStrip.Show(new Point(lblApplication.Left, lblApplication.Bottom + 35));
+            lblApplication.ContextMenuStrip.Show(new Point(lblApplication.Left, lblApplication.Bottom ));
         }
 
         private void lblPeople_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace PresentationLayer
 
         private void lblAcountSettings_Click(object sender, EventArgs e)
         {
-            lblAcountSettings.ContextMenuStrip.Show(new Point(lblAcountSettings.Left, lblAcountSettings.Bottom+35));
+            lblAcountSettings.ContextMenuStrip.Show(new Point(lblAcountSettings.Left, lblAcountSettings.Bottom));
         }
 
         private void lblUsers_Click(object sender, EventArgs e)
@@ -90,12 +91,14 @@ namespace PresentationLayer
 
         private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmLDLApplicationList frmLDLApplicationList = new frmLDLApplicationList();
+            frmLDLApplicationList.ShowDialog();
         }
 
         private void smiLocalLicenseApplication_Click(object sender, EventArgs e)
         {
-
+            frmAddUpdateLocal_L_Application frmAddUpdateLocal_L_Application = new frmAddUpdateLocal_L_Application(-1);
+            frmAddUpdateLocal_L_Application.ShowDialog();
         }
     }
 }

@@ -48,6 +48,7 @@
             this.Controls.Add(this.ctrlAddNewUpdateUser1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddNewUpdateUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddNewUpdateUser";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddNewUpdateUser_FormClosed);
             this.Load += new System.EventHandler(this.frmAddNewUpdateUser_Load);
