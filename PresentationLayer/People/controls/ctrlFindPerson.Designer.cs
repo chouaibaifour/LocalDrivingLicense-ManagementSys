@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbFilter = new System.Windows.Forms.GroupBox();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.btnFindPerson = new System.Windows.Forms.Button();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.cbFilters = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.personInfo = new PresentationLayer.ctrlPersonInfo();
-            this.groupBox1.SuspendLayout();
+            this.gbFilter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbFilter
             // 
-            this.groupBox1.Controls.Add(this.btnAddPerson);
-            this.groupBox1.Controls.Add(this.btnFindPerson);
-            this.groupBox1.Controls.Add(this.txtFilterValue);
-            this.groupBox1.Controls.Add(this.cbFilters);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(709, 90);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Find Person";
+            this.gbFilter.Controls.Add(this.btnAddPerson);
+            this.gbFilter.Controls.Add(this.btnFindPerson);
+            this.gbFilter.Controls.Add(this.txtFilterValue);
+            this.gbFilter.Controls.Add(this.cbFilters);
+            this.gbFilter.Controls.Add(this.label1);
+            this.gbFilter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFilter.Location = new System.Drawing.Point(3, 3);
+            this.gbFilter.Name = "gbFilter";
+            this.gbFilter.Size = new System.Drawing.Size(709, 90);
+            this.gbFilter.TabIndex = 1;
+            this.gbFilter.TabStop = false;
+            this.gbFilter.Text = "Find Person";
             // 
             // btnAddPerson
             // 
@@ -121,13 +121,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbFilter);
             this.Controls.Add(this.personInfo);
             this.Name = "ctrlFindPerson";
             this.Size = new System.Drawing.Size(717, 347);
             this.Load += new System.EventHandler(this.ctrlFindPerson_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbFilter.ResumeLayout(false);
+            this.gbFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -135,7 +135,7 @@
         #endregion
 
         private ctrlPersonInfo personInfo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbFilter;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.ComboBox cbFilters;
         private System.Windows.Forms.Label label1;

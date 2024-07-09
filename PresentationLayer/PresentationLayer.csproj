@@ -50,41 +50,143 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.cs">
+    <Compile Include="Drivers\frmDriversList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\frmDriversList.Designer.cs">
+      <DependentUpon>frmDriversList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternationalLicenses\controls\ctrlAddUpdateInternationalLicense.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.Designer.cs">
+    <Compile Include="InternationalLicenses\controls\ctrlAddUpdateInternationalLicense.Designer.cs">
+      <DependentUpon>ctrlAddUpdateInternationalLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlAddUpdateLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlAddUpdateLicense.Designer.cs">
+      <DependentUpon>ctrlAddUpdateLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers\controls\ctrlDriversList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Drivers\controls\ctrlDriversList.Designer.cs">
+      <DependentUpon>ctrlDriversList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlFindLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlFindLicense.Designer.cs">
+      <DependentUpon>ctrlFindLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlPersonLicenseHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlPersonLicenseHistory.Designer.cs">
+      <DependentUpon>ctrlPersonLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\frmAddUpdateLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmAddUpdateLicense.Designer.cs">
+      <DependentUpon>frmAddUpdateLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\frmLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmLicenseInfo.Designer.cs">
+      <DependentUpon>frmLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\frmPersonLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmPersonLicenseHistory.Designer.cs">
+      <DependentUpon>frmPersonLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLicenseApplications\controls\ctrlAddUpdateLocal-L-Application.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplications\controls\ctrlAddUpdateLocal-L-Application.Designer.cs">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlAppBasicInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.Designer.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlAppBasicInfo.Designer.cs">
       <DependentUpon>ctrlAppBasicInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlLDLApplicationList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.Designer.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlLDLApplicationList.Designer.cs">
       <DependentUpon>ctrlLDLApplicationList.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlLDL_ApplicationInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.Designer.cs">
+    <Compile Include="LocalLicenseApplications\controls\ctrlLDL_ApplicationInfo.Designer.cs">
       <DependentUpon>ctrlLDL_ApplicationInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.cs">
+    <Compile Include="LocalLicenseApplications\frmAddUpdateLocal-L-Application.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.Designer.cs">
+    <Compile Include="LocalLicenseApplications\frmAddUpdateLocal-L-Application.Designer.cs">
       <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalLicenseApplication\frmLDLApplicationList.cs">
+    <Compile Include="LocalLicenseApplications\frmLDLApplicationInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalLicenseApplication\frmLDLApplicationList.Designer.cs">
+    <Compile Include="LocalLicenseApplications\frmLDLApplicationInfo.Designer.cs">
+      <DependentUpon>frmLDLApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalLicenseApplications\frmLDLApplicationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalLicenseApplications\frmLDLApplicationList.Designer.cs">
       <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointments\controls\ctrlAddUpdateTestAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestAppointments\controls\ctrlAddUpdateTestAppointment.Designer.cs">
+      <DependentUpon>ctrlAddUpdateTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointments\controls\ctrlTestAppointments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestAppointments\controls\ctrlTestAppointments.Designer.cs">
+      <DependentUpon>ctrlTestAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointments\frmAddUpdateTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestAppointments\frmAddUpdateTestAppointment.Designer.cs">
+      <DependentUpon>frmAddUpdateTestAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestAppointments\frmTestAppointmentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestAppointments\frmTestAppointmentsList.Designer.cs">
+      <DependentUpon>frmTestAppointmentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\controls\ctrlAddUpdateTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\controls\ctrlAddUpdateTest.Designer.cs">
+      <DependentUpon>ctrlAddUpdateTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\frmAddUpdateTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\frmAddUpdateTest.Designer.cs">
+      <DependentUpon>frmAddUpdateTest.cs</DependentUpon>
     </Compile>
     <Compile Include="TestTypes\controls\ctrlTestTypesList.cs">
       <SubType>UserControl</SubType>
@@ -232,23 +334,74 @@
     <Compile Include="Users\frmUsersList.Designer.cs">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAddUpdateLocal-L-Application.resx">
+    <EmbeddedResource Include="Drivers\frmDriversList.resx">
+      <DependentUpon>frmDriversList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\controls\ctrlAddUpdateInternationalLicense.resx">
+      <DependentUpon>ctrlAddUpdateInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlAddUpdateLicense.resx">
+      <DependentUpon>ctrlAddUpdateLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers\controls\ctrlDriversList.resx">
+      <DependentUpon>ctrlDriversList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlFindLicense.resx">
+      <DependentUpon>ctrlFindLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlLicenseInfo.resx">
+      <DependentUpon>ctrlLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlPersonLicenseHistory.resx">
+      <DependentUpon>ctrlPersonLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmAddUpdateLicense.resx">
+      <DependentUpon>frmAddUpdateLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmLicenseInfo.resx">
+      <DependentUpon>frmLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmPersonLicenseHistory.resx">
+      <DependentUpon>frmPersonLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplications\controls\ctrlAddUpdateLocal-L-Application.resx">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlAppBasicInfo.resx">
+    <EmbeddedResource Include="LocalLicenseApplications\controls\ctrlAppBasicInfo.resx">
       <DependentUpon>ctrlAppBasicInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlLDLApplicationList.resx">
+    <EmbeddedResource Include="LocalLicenseApplications\controls\ctrlLDLApplicationList.resx">
       <DependentUpon>ctrlLDLApplicationList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalLicenseApplication\controls\ctrlLDL_ApplicationInfo.resx">
+    <EmbeddedResource Include="LocalLicenseApplications\controls\ctrlLDL_ApplicationInfo.resx">
       <DependentUpon>ctrlLDL_ApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalLicenseApplication\frmAddUpdateLocal-L-Application.resx">
+    <EmbeddedResource Include="LocalLicenseApplications\frmAddUpdateLocal-L-Application.resx">
       <DependentUpon>frmAddUpdateLocal-L-Application.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalLicenseApplication\frmLDLApplicationList.resx">
+    <EmbeddedResource Include="LocalLicenseApplications\frmLDLApplicationInfo.resx">
+      <DependentUpon>frmLDLApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalLicenseApplications\frmLDLApplicationList.resx">
       <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointments\controls\ctrlAddUpdateTestAppointment.resx">
+      <DependentUpon>ctrlAddUpdateTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointments\controls\ctrlTestAppointments.resx">
+      <DependentUpon>ctrlTestAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointments\frmAddUpdateTestAppointment.resx">
+      <DependentUpon>frmAddUpdateTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestAppointments\frmTestAppointmentsList.resx">
+      <DependentUpon>frmTestAppointmentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\controls\ctrlAddUpdateTest.resx">
+      <DependentUpon>ctrlAddUpdateTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\frmAddUpdateTest.resx">
+      <DependentUpon>frmAddUpdateTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestTypes\controls\ctrlTestTypesList.resx">
       <DependentUpon>ctrlTestTypesList.cs</DependentUpon>
@@ -455,6 +608,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overtime_rate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

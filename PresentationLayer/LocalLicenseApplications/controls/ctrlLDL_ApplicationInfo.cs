@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using PresentationLayer.Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,18 @@ namespace PresentationLayer.LocalLicenseApplication.controls
         }
 
 
+        public event Action<int> OnLDLD_ApplicationSelected;
+
+        protected virtual void LDL_ApplicationSelected(int LDL_ApplicationID)
+        {
+            Action<int> handler = OnLDLD_ApplicationSelected;
+
+            if (handler != null)
+
+                handler(LDL_ApplicationID);
+
+        }
+
         private cls_LDL_Application _LDL_Application = null;
 
         public void LoadLDLApplicationInfo(int LDL_ApplicationInfo)
@@ -29,11 +42,18 @@ namespace PresentationLayer.LocalLicenseApplication.controls
             {
                 lblLDLAppID.Text = _LDL_Application.LDL_ApplicationID.ToString();
 
-                lblLicenseClass.Text = clsLicenseClass.Find(_LDL_Application.LicenseClassID).LicenseClassName.ToString();
+                lblLicenseClass.Text = clsLicenseClass.Find(_LDL_Application.LicenseClassID).ClassName.ToString();
 
-                // Passed Tests todo later on 
+                lblPassedTest.Text = clsTest.PassedTests(_LDL_Application.LDL_ApplicationID).ToString();
+
+                llblShowLicenseInfo.Enabled = clsLicense.IsLicenseExistsByApplicationID(_LDL_Application.ApplicationID);
 
                 ctrlAppBasicInfo1.LoadApplicationBasicInfo(_LDL_Application.ApplicationID);
+
+                if (OnLDLD_ApplicationSelected != null)
+                {
+                    LDL_ApplicationSelected(_LDL_Application.LDL_ApplicationID);
+                }
             }
             else
             
@@ -45,7 +65,10 @@ namespace PresentationLayer.LocalLicenseApplication.controls
 
         private void llblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            throw new NotImplementedException(); 
+           frmLicenseInfo frmLicenseInfo = new frmLicenseInfo(clsLicense.FindByApplicationID(_LDL_Application.ApplicationID).LicenseID);
+            frmLicenseInfo.ShowDialog();
         }
+
+        
     }
 }

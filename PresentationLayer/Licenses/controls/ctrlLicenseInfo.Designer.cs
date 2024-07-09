@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlLicenseInfo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver License Info";
+            // 
+            // pbProfilePicture
+            // 
+            this.pbProfilePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbProfilePicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbProfilePicture.InitialImage")));
+            this.pbProfilePicture.Location = new System.Drawing.Point(566, 71);
+            this.pbProfilePicture.Name = "pbProfilePicture";
+            this.pbProfilePicture.Size = new System.Drawing.Size(120, 140);
+            this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfilePicture.TabIndex = 29;
+            this.pbProfilePicture.TabStop = false;
             // 
             // lblDateOfBirth
             // 
@@ -381,14 +392,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Gender :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbProfilePicture
-            // 
-            this.pbProfilePicture.Location = new System.Drawing.Point(566, 71);
-            this.pbProfilePicture.Name = "pbProfilePicture";
-            this.pbProfilePicture.Size = new System.Drawing.Size(120, 140);
-            this.pbProfilePicture.TabIndex = 29;
-            this.pbProfilePicture.TabStop = false;
             // 
             // ctrlLicenseInfo
             // 

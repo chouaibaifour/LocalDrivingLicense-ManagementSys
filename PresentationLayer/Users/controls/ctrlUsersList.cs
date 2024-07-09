@@ -91,6 +91,8 @@ namespace PresentationLayer.Users
 
             dgvUsers.DataSource = dataView;
 
+            lblRecordCount.Text = dgvUsers.RowCount.ToString();
+
         }
 
         private void txtFilterValue_KeyUp(object sender, KeyEventArgs e)

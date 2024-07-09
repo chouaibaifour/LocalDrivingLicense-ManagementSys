@@ -12,12 +12,12 @@ namespace PresentationLayer.Licenses
 {
     public partial class frmPersonLicenseHistory : Form
     {
-        private string _NationalNumber;
+        private int _PersonID;
 
-        public frmPersonLicenseHistory(string NationalNumber)
+        public frmPersonLicenseHistory(int PersonID)
         {
             InitializeComponent();
-            _NationalNumber = NationalNumber;
+            _PersonID = PersonID;
         }
 
         private void lblClose_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace PresentationLayer.Licenses
 
         private void frmPersonLicenseHistory_Load(object sender, EventArgs e)
         {
-            ctrlPersonLicenseHistory1.LoadPersonLicenseHistory(_NationalNumber);
+            ctrlPersonLicenseHistory1.LoadPersonLicenseHistory(_PersonID);
         }
     }
 }

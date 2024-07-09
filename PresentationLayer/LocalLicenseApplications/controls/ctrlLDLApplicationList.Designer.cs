@@ -38,11 +38,11 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.smiDeleteApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.CancelApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.secudleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sechduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.secToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiScheduleTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiVisionTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiWrittenTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiStreetTest = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.smiIssueDrivingLicesne = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,7 +57,7 @@
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.epEmptyOrNull = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.scheduleStreetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CancelApplication = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDLApplications)).BeginInit();
             this.cmsLDLApplicationList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).BeginInit();
@@ -96,7 +96,7 @@
             this.toolStripMenuItem3,
             this.CancelApplication,
             this.toolStripMenuItem4,
-            this.secudleToolStripMenuItem,
+            this.smiScheduleTest,
             this.toolStripMenuItem5,
             this.smiIssueDrivingLicesne,
             this.toolStripMenuItem6,
@@ -105,6 +105,7 @@
             this.smiShowPersonLicenseHistory});
             this.cmsLDLApplicationList.Name = "cmsLDLApplicationList";
             this.cmsLDLApplicationList.Size = new System.Drawing.Size(267, 244);
+            this.cmsLDLApplicationList.Opening += new System.ComponentModel.CancelEventHandler(this.cmsLDLApplicationList_Opening);
             // 
             // smiApplicationDetails
             // 
@@ -142,39 +143,41 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(263, 6);
             // 
-            // CancelApplication
-            // 
-            this.CancelApplication.Name = "CancelApplication";
-            this.CancelApplication.Size = new System.Drawing.Size(266, 22);
-            this.CancelApplication.Text = "Cancel Application";
-            this.CancelApplication.Click += new System.EventHandler(this.CancelApplication_Click);
-            // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(263, 6);
             // 
-            // secudleToolStripMenuItem
+            // smiScheduleTest
             // 
-            this.secudleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sechduleToolStripMenuItem,
-            this.secToolStripMenuItem,
-            this.scheduleStreetTestToolStripMenuItem});
-            this.secudleToolStripMenuItem.Name = "secudleToolStripMenuItem";
-            this.secudleToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
-            this.secudleToolStripMenuItem.Text = "Schedule Tests";
+            this.smiScheduleTest.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smiVisionTest,
+            this.smiWrittenTest,
+            this.smiStreetTest});
+            this.smiScheduleTest.Name = "smiScheduleTest";
+            this.smiScheduleTest.Size = new System.Drawing.Size(266, 22);
+            this.smiScheduleTest.Text = "Schedule Tests";
             // 
-            // sechduleToolStripMenuItem
+            // smiVisionTest
             // 
-            this.sechduleToolStripMenuItem.Name = "sechduleToolStripMenuItem";
-            this.sechduleToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.sechduleToolStripMenuItem.Text = "Schedule Vision Test";
+            this.smiVisionTest.Name = "smiVisionTest";
+            this.smiVisionTest.Size = new System.Drawing.Size(202, 22);
+            this.smiVisionTest.Text = "Schedule Vision Test";
+            this.smiVisionTest.Click += new System.EventHandler(this.smiVisionTest_Click);
             // 
-            // secToolStripMenuItem
+            // smiWrittenTest
             // 
-            this.secToolStripMenuItem.Name = "secToolStripMenuItem";
-            this.secToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.secToolStripMenuItem.Text = "Schedule Written Test";
+            this.smiWrittenTest.Name = "smiWrittenTest";
+            this.smiWrittenTest.Size = new System.Drawing.Size(202, 22);
+            this.smiWrittenTest.Text = "Schedule Written Test";
+            this.smiWrittenTest.Click += new System.EventHandler(this.smiWrittenTest_Click);
+            // 
+            // smiStreetTest
+            // 
+            this.smiStreetTest.Name = "smiStreetTest";
+            this.smiStreetTest.Size = new System.Drawing.Size(202, 22);
+            this.smiStreetTest.Text = "Schedule Street Test";
+            this.smiStreetTest.Click += new System.EventHandler(this.smiStreetTest_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -303,11 +306,12 @@
             this.cbStatus.Visible = false;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
-            // scheduleStreetTestToolStripMenuItem
+            // CancelApplication
             // 
-            this.scheduleStreetTestToolStripMenuItem.Name = "scheduleStreetTestToolStripMenuItem";
-            this.scheduleStreetTestToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.scheduleStreetTestToolStripMenuItem.Text = "Schedule Street Test";
+            this.CancelApplication.Name = "CancelApplication";
+            this.CancelApplication.Size = new System.Drawing.Size(266, 22);
+            this.CancelApplication.Text = "Cancel Application";
+            this.CancelApplication.Click += new System.EventHandler(this.CancelApplication_Click);
             // 
             // ctrlLDLApplicationList
             // 
@@ -351,17 +355,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem smiDeleteApplication;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem CancelApplication;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem secudleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smiScheduleTest;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem smiIssueDrivingLicesne;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem smiShowLicense;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem smiShowPersonLicenseHistory;
-        private System.Windows.Forms.ToolStripMenuItem sechduleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem secToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scheduleStreetTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smiVisionTest;
+        private System.Windows.Forms.ToolStripMenuItem smiWrittenTest;
+        private System.Windows.Forms.ToolStripMenuItem smiStreetTest;
+        private System.Windows.Forms.ToolStripMenuItem CancelApplication;
     }
 }

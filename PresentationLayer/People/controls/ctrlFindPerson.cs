@@ -32,14 +32,28 @@ namespace PresentationLayer.People.controls
 
         }
 
-        public void LoadPersonInfo(int PersonID)
+        public void LoadPersonInfo(int PersonID, bool Filter = true)
         {
+            cbFilters.SelectedIndex = 1;
+            txtFilterValue.Text =PersonID.ToString();
+            gbFilter.Enabled = Filter;
             personInfo.LoadPersonInfo(PersonID);
             if (OnPersonSelected != null)
                 //Raise the event with paramter
                 OnPersonSelected(personInfo.PersonID);
         }
-        
+
+        public void LoadPersonInfo(string NationalNumber,bool Filter=true)
+        {
+            cbFilters.SelectedIndex = 0;
+            txtFilterValue.Text = NationalNumber.ToString();
+            gbFilter.Enabled = Filter;
+            personInfo.LoadPersonInfo(NationalNumber);
+            if (OnPersonSelected != null)
+                //Raise the event with paramter
+                OnPersonSelected(personInfo.PersonID);
+        }
+
         private void btnFindPerson_Click(object sender, EventArgs e)
         {
             if ("".Equals(txtFilterValue.Text))
@@ -72,10 +86,7 @@ namespace PresentationLayer.People.controls
 
         }
 
-        public void toUpdate()
-        {
-            groupBox1.Enabled = false;
-        }
+       
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {

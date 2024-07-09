@@ -20,15 +20,20 @@ namespace PresentationLayer.Licenses.controls
 
         private int _PersonID;
         private DataSet dtInternationalLicense;
-       
 
-        
+
+        public void LoadPersonLicenseHistory(int PersonID)
+        {
+            ctrlFindPerson1.LoadPersonInfo(PersonID, false);
+            _Fill_dgvLocalLicenses();
+            // _Fill_dgvInternationalLicenses();
+        }
 
         public void LoadPersonLicenseHistory(string NationalNumber)
         {
             ctrlFindPerson1.LoadPersonInfo(NationalNumber,false);
             _Fill_dgvLocalLicenses();
-            _Fill_dgvInternationalLicenses();
+           // _Fill_dgvInternationalLicenses();
         }
 
         private void _Fill_dgvLocalLicenses()

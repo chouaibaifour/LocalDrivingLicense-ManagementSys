@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static  class clsUserDataAccess
+    public static class clsDriverDataAccess
     {
-        static public bool GetUserByID(ref int UserID, ref int PersonID, ref string UserName, ref string Password,ref bool isActive)
+        static public bool GetDriverByID(ref int DriverID, ref int PersonID, ref int CreatedByUserID, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM Users WHERE UserID = @UserID";
+            string query = @"SELECT * FROM Drivers WHERE DriverID = @DriverID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@DriverID", DriverID);
 
             try
             {
@@ -29,19 +29,17 @@ namespace DataAccessLayer
 
                 if (reader.Read())
                 {
-                    // the User Was Successfully Found
+                    // the Driver Was Successfully Found
 
                     isFound = true;
 
-                    UserID = (int)reader["UserID"];
+                    DriverID = (int)reader["DriverID"];
 
                     PersonID = (int)reader["PersonID"];
 
-                    UserName = (string)reader["UserName"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
 
-                    Password = (string)reader["Password"];
-
-                    isActive = (bool)reader["isActive"];
+                    CreatedDate = (DateTime)reader["CreatedDate"];
 
                 }
                 else
@@ -64,15 +62,15 @@ namespace DataAccessLayer
 
         }
 
-        static public bool GetUserByUserName(ref int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool isActive)
+        static public bool GetDriverByPersonID(ref int DriverID, ref int PersonID, ref int CreatedByUserID, ref DateTime CreatedDate)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM Users WHERE UserName = @UserName";
+            string query = @"SELECT * FROM Drivers WHERE PersonID = @PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
 
             try
             {
@@ -83,19 +81,17 @@ namespace DataAccessLayer
 
                 if (reader.Read())
                 {
-                    // the User Was Successfully Found
+                    // the Driver Was Successfully Found
 
                     isFound = true;
 
-                    UserID = (int)reader["UserID"];
+                    DriverID = (int)reader["DriverID"];
 
                     PersonID = (int)reader["PersonID"];
 
-                    UserName = (string)reader["UserName"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
 
-                    Password = (string)reader["Password"];
-
-                    isActive = (bool)reader["isActive"];
+                    CreatedDate = (DateTime)reader["CreatedDate"];
 
                 }
                 else
@@ -118,27 +114,27 @@ namespace DataAccessLayer
 
         }
 
-        static public int AddNewUser(int PersonID, string UserName, string Password, bool isActive)
+        static public int AddNewDriver(int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
-            // the function will returns UserID or -1 if not 
-            int UserID = -1;
+            // the function will returns DriverID or -1 if not 
+            int DriverID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Users( PersonID,  UserName,  Password,  isActive)
-                            VALUES
-                            ( @PersonID,  @UserName,  @Password,  @isActive);
-                               SELECT SCOPE_IDENTITY(); ";
+            string query = @" INSERT INTO Drivers
+                                    (PersonID, CreatedByUserID, CreatedDate)
+                                             VALUES
+                                    (@PersonID, @CreatedByUserID, @CreatedDate);
+
+                                         SELECT SCOPE_IDENTITY(); ";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@PersonID", PersonID);
 
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
-            command.Parameters.AddWithValue("@Password", Password);
-
-            command.Parameters.AddWithValue("@isActive", isActive);
+            command.Parameters.AddWithValue("@CreatedDate", CreatedDate);
 
             try
             {
@@ -148,50 +144,52 @@ namespace DataAccessLayer
 
                 if (result != DBNull.Value && int.TryParse(result.ToString(), out int InsertedID))
                 {
-                    UserID = InsertedID;
+                    DriverID = InsertedID;
                 }
 
             }
             catch (Exception ex)
             {
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+                
             }
             finally
             {
                 connection.Close();
             }
 
-            return UserID;
+            return DriverID;
 
         }
 
-        static public bool UpdateUser(int UserID, int PersonID, string UserName, string Password, bool isActive)
+        static public bool UpdateDriver(int DriverID,int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
             int RowsAffected = -1;
             // this function returns true if Rows affected > 0 or false if no RowsAffected
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             //(,NationalityCountryID,ImagePath)
-            string query = @"UPDATE Users
-                            SET 
-                            PersonID = @PersonID,
-                            UserName = @UserName,
-                            Password = @Password,
-                            isActive = @isActive
-                            WHERE UserID = @UserID;";
+            string query = @"UPDATE Drivers
+
+                                SET PersonID = PersonID,
+
+                                    CreatedByUserID = CreatedByUserID,
+
+                                    CreatedDate = CreatedDate
+
+                                            WHERE  DriverID = @DriverID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
 
-            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@DriverID", DriverID);
 
             command.Parameters.AddWithValue("@PersonID", PersonID);
 
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@CreatedDate", CreatedDate);
 
-            command.Parameters.AddWithValue("@isActive", isActive);
+
 
             try
             {
@@ -201,7 +199,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+               
             }
             finally
             {
@@ -211,7 +209,7 @@ namespace DataAccessLayer
             return (RowsAffected > 0);
         }
 
-        static public bool DeleteUser(int UserID)
+        static public bool DeleteDriver(int DriverID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -219,12 +217,12 @@ namespace DataAccessLayer
 
             int RowsAffected = 0;
 
-            string query = @"DELETE Users
-                             WHERE UserID=@UserID";
+            string query = @"DELETE Drivers
+                             WHERE DriverID=@DriverID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@DriverID", DriverID);
 
             try
             {
@@ -245,19 +243,35 @@ namespace DataAccessLayer
 
         }
 
-        public static DataTable GetAllUsers()
+        public static DataTable GetAllDrivers()
         {
             DataTable dt = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT  UserID, Users.PersonID,
-                                        COALESCE(People.FirstName, '') + ' ' + 
-                                        COALESCE(People.SecondName, '') + ' ' + 
-                                        COALESCE(People.ThirdName, '') + ' ' + 
-                                        COALESCE(People.LastName, '') AS FullName,UserName, IsActive
-                                                             FROM  Users INNER JOIN
-                                                                    People ON Users.PersonID = People.PersonID;";
+            string query = @"SELECT Drivers.DriverID,
+
+                                    People.PersonID, 
+
+				                    People.NationalNumber AS 'NationalNo',
+
+				                    COALESCE (People.FirstName, '') + ' ' +
+
+				                    COALESCE (People.SecondName, '') + ' ' +
+
+				                    COALESCE (People.ThirdName, '') + ' ' + 
+
+				                    COALESCE (People.LastName, '') AS 'Full Name',
+
+				                    Drivers.CreatedDate, 
+
+				                    (SELECT        COUNT(LicenseID) AS NumberOfActiveLicenses
+                                                        FROM            dbo.Licenses
+                                                             WHERE        (IsActive = 1) AND (DriverID = dbo.Drivers.DriverID)) AS 'Active Licenses'
+
+				                            FROM   People RIGHT  JOIN
+
+                                                 Drivers ON People.PersonID = Drivers.PersonID  ;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -274,7 +288,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+
             }
             finally
             {
@@ -284,7 +298,7 @@ namespace DataAccessLayer
 
         }
 
-        public static bool IsUserExists(int UserID)
+        public static bool IsDriverExists(int DriverID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -292,11 +306,11 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound=1 FROM Users
-                             WHERE UserID=@UserID";
+            string query = @"SELECT IsFound=1 FROM Drivers
+                             WHERE DriverID=@DriverID";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@DriverID", DriverID);
 
             try
             {
@@ -310,7 +324,6 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
                 isFound = false;
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
             }
             finally
             {
@@ -319,7 +332,7 @@ namespace DataAccessLayer
             return isFound;
         }
 
-        public static bool IsUserExist(string UserName)
+        public static bool IsDriverExistByPersonID(int PersonID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -327,41 +340,7 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound=1 FROM Users
-                             WHERE UserName = @UserName";
-            SqlCommand command = new SqlCommand(query, connection);
-
-            command.Parameters.AddWithValue("@UserName", UserName);
-
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                isFound = reader.HasRows;
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                isFound = false;
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return isFound;
-        }
-
-        public static bool IsUserExistsbyPersonID(int PersonID)
-        {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            // this fuction will returns true when RowsAffected > 0 and flase if not 
-
-            bool isFound = false;
-
-            string query = @"SELECT IsFound=1 FROM Users
+            string query = @"SELECT IsFound=1 FROM Drivers
                              WHERE PersonID = @PersonID";
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -378,7 +357,7 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
                 isFound = false;
-                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+                
             }
             finally
             {
@@ -386,5 +365,7 @@ namespace DataAccessLayer
             }
             return isFound;
         }
+
+       
     }
 }

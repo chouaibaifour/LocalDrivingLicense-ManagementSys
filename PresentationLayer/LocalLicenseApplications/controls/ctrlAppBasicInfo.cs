@@ -36,7 +36,7 @@ namespace PresentationLayer.LocalLicenseApplication.controls
                 lblApplicant.Text = clsPerson.Find(_Application.ApplicantPersonID).FullName.ToString();
                 lblAppDate.Text = _Application.ApplicationDate.ToString("d");
                 lblLastStatusDate.Text = _Application.LastStatusDate.ToString("d");
-                lblCreatedBy.Text = clsPerson.Find(clsUser.Find(_Application.CreatedByUserID).PersonID).FullName;
+                lblCreatedBy.Text = clsUser.Find(_Application.CreatedByUserID).UserName;
 
             }
             else

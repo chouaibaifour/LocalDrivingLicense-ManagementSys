@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbFilters = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
@@ -64,13 +64,14 @@
             this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::PresentationLayer.Properties.Resources.close1;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(900, 328);
+            this.btnClose.Location = new System.Drawing.Point(728, 319);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 24);
             this.btnClose.TabIndex = 15;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtFilterValue
             // 
@@ -97,7 +98,7 @@
             // lblRecordCount
             // 
             this.lblRecordCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordCount.Location = new System.Drawing.Point(102, 328);
+            this.lblRecordCount.Location = new System.Drawing.Point(102, 319);
             this.lblRecordCount.Name = "lblRecordCount";
             this.lblRecordCount.Size = new System.Drawing.Size(63, 24);
             this.lblRecordCount.TabIndex = 11;
@@ -107,7 +108,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 328);
+            this.label1.Location = new System.Drawing.Point(16, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 24);
             this.label1.TabIndex = 12;
@@ -120,22 +121,23 @@
             this.dgvDrivers.AllowUserToDeleteRows = false;
             this.dgvDrivers.AllowUserToResizeColumns = false;
             this.dgvDrivers.AllowUserToResizeRows = false;
+            this.dgvDrivers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDrivers.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDrivers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDrivers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDrivers.GridColor = System.Drawing.Color.White;
-            this.dgvDrivers.Location = new System.Drawing.Point(3, 44);
+            this.dgvDrivers.Location = new System.Drawing.Point(4, 40);
             this.dgvDrivers.MultiSelect = false;
             this.dgvDrivers.Name = "dgvDrivers";
             this.dgvDrivers.ReadOnly = true;
             this.dgvDrivers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrivers.Size = new System.Drawing.Size(979, 262);
+            this.dgvDrivers.Size = new System.Drawing.Size(809, 262);
             this.dgvDrivers.TabIndex = 9;
             // 
             // epEmptyOrNull
@@ -155,7 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDrivers);
             this.Name = "ctrlDriversList";
-            this.Size = new System.Drawing.Size(985, 362);
+            this.Size = new System.Drawing.Size(817, 362);
             this.Load += new System.EventHandler(this.ctrlDriversList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmptyOrNull)).EndInit();

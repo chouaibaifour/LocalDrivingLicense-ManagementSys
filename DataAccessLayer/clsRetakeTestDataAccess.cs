@@ -8,25 +8,18 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public static class clsLicenseClassDataAccess
+    public static class clsRetakeTestDataAccess
     {
-        static public bool GetLicenseClassByID(ref int LicenseClassID, ref string LicenseClassName, ref string ClassDescription
-            , ref int MinimumAllowedAge, ref int DefaultValidityLength, ref int ClassFees)
+
+        static public bool GetRetakeTestByID(ref int RetakeTestID, ref int ApplicationID, ref int TestAppointmentID)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT LicenseClassID
-                                      ,ClassName
-                                      ,ClassDescription
-                                      ,MinimumAllowedAge
-                                      ,DefaultValidityLength
-                                      ,CAST(ClassFees as int ) as ClassFees
-                                             FROM LicenseClasses
-                                                 WHERE LicenseClassID = @LicenseClassID";
+            string query = @"SELECT * FROM RetakeTests WHERE RetakeTestID = @RetakeTestID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@RetakeTestID", RetakeTestID);
 
             try
             {
@@ -37,21 +30,17 @@ namespace DataAccessLayer
 
                 if (reader.Read())
                 {
-                    // the LicenseClass Was Successfully Found
+                    // the RetakeTest Was Successfully Found
 
                     isFound = true;
 
-                    LicenseClassID = (int)reader["LicenseClassID"];
+                    RetakeTestID = (int)reader["RetakeTestID"];
 
-                    LicenseClassName = (string)reader["ClassName"];
+                    ApplicationID = (int)reader["ApplicationID"];
 
-                    ClassDescription = (string)reader["ClassDescription"];
+                    TestAppointmentID = (int)reader["TestAppointmentID"];
 
-                    MinimumAllowedAge = (byte)reader["MinimumAllowedAge"];
 
-                    DefaultValidityLength = (byte)reader["DefaultValidityLength"];
-
-                    ClassFees = (int)reader["ClassFees"];
 
                 }
                 else
@@ -74,23 +63,15 @@ namespace DataAccessLayer
 
         }
 
-        static public bool GetLicenseClassByLicenseClassName(ref int LicenseClassID, ref string LicenseClassName, ref string ClassDescription
-            , ref int MinimumAllowedAge, ref int DefaultValidityLength, ref int ClassFees)
+        static public bool GetRetakeTestByTestAppointmentID(ref int RetakeTestID, ref int ApplicationID, ref int TestAppointmentID)
         {
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT LicenseClassID
-                                      ,ClassName
-                                      ,ClassDescription
-                                      ,MinimumAllowedAge
-                                      ,DefaultValidityLength
-                                      ,CAST(ClassFees as int ) as ClassFees
-                                             FROM LicenseClasses
-                                                        WHERE ClassName = @ClassName";
+            string query = @"SELECT * FROM RetakeTests WHERE AppointmentID = @AppointmentID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ClassName", LicenseClassName);
+            command.Parameters.AddWithValue("@AppointmentID", TestAppointmentID);
 
             try
             {
@@ -101,21 +82,16 @@ namespace DataAccessLayer
 
                 if (reader.Read())
                 {
-                    // the LicenseClass Was Successfully Found
+                    // the RetakeTest Was Successfully Found
 
                     isFound = true;
 
-                    LicenseClassID = (int)reader["LicenseClassID"];
+                    RetakeTestID = (int)reader["RetakeTestID"];
 
-                    LicenseClassName = (string)reader["ClassName"];
+                    ApplicationID = (int)reader["ApplicationID"];
 
-                    ClassDescription = (string)reader["ClassDescription"];
+                    TestAppointmentID = (int)reader["AppointmentID"];
 
-                    MinimumAllowedAge = (int)reader["MinimumAllowedAge"];
-
-                    DefaultValidityLength = (int)reader["DefaultValidityLength"];
-
-                    ClassFees = (int)reader["ClassFees"];
 
                 }
                 else
@@ -138,30 +114,24 @@ namespace DataAccessLayer
 
         }
 
-        static public int AddNewLicenseClass(string ClassName, string ClassDescription
-            , int MinimumAllowedAge, int DefaultValidityLength, int ClassFees)
+        static public int AddNewRetakeTest(int ApplicationID, int TestAppointmentID)
         {
-            // the function will returns LicenseClassID or -1 if not 
-            int LicenseClassID = -1;
+            // the function will returns RetakeTestID or -1 if not 
+            int RetakeTestID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO LicenseClasses(ClassName, ClassDescription, MinimumAllowedAge, DefaultValidityLength, ClassFees)
+            string query = @"INSERT INTO RetakeTests( ApplicationID,  AppointmentID)
                             VALUES
-                            (@ClassName, @ClassDescription, @MinimumAllowedAge, @DefaultValidityLength, @ClassFees);
+                            ( @ApplicationID,  @AppointmentID);
                                SELECT SCOPE_IDENTITY(); ";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ClassName", ClassName);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-            command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
+            command.Parameters.AddWithValue("@AppointmentID", TestAppointmentID);
 
-            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
-
-            command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
-
-            command.Parameters.AddWithValue("@ClassFees", ClassFees);
 
             try
             {
@@ -171,58 +141,45 @@ namespace DataAccessLayer
 
                 if (result != DBNull.Value && int.TryParse(result.ToString(), out int InsertedID))
                 {
-                    LicenseClassID = InsertedID;
+                    RetakeTestID = InsertedID;
                 }
 
             }
             catch (Exception ex)
             {
-
+                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
             }
             finally
             {
                 connection.Close();
             }
 
-            return LicenseClassID;
+            return RetakeTestID;
 
         }
 
-        static public bool UpdateLicenseClass(int LicenseClassID, string ClassName, string ClassDescription
-            , int MinimumAllowedAge, int DefaultValidityLength, int ClassFees)
+        static public bool UpdateRetakeTest(int RetakeTestID, int ApplicationID, int TestAppointmentID)
         {
             int RowsAffected = -1;
             // this function returns true if Rows affected > 0 or false if no RowsAffected
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            //(,NationalityLicenseClassID,ImagePath)
-            string query = @"UPDATE LicenseClasses
-                                 SET ClassName = @ClassName ,
+            //(,NationalityCountryID,ImagePath)
+            string query = @"UPDATE RetakeTests
+                            SET 
+                            ApplicationID = @ApplicationID,
+                            TestAppointmentID = @TestAppointmentID
 
-                                     ClassDescription = @ClassDescription,
-
-                                      MinimumAllowedAge = @MinimumAllowedAge ,
-
-                                      DefaultValidityLength = @DefaultValidityLength ,
-
-                                      ClassFees = @ClassFees
-
-                                                 WHERE LicenseClassID = @LicenseClassID;";
+                            WHERE RetakeTestID = @RetakeTestID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
 
-            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@RetakeTestID", RetakeTestID);
 
-            command.Parameters.AddWithValue("@ClassName", ClassName);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-            command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
-
-            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
-
-            command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
-
-            command.Parameters.AddWithValue("@ClassFees", ClassFees);
+            command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
 
             try
             {
@@ -242,7 +199,7 @@ namespace DataAccessLayer
             return (RowsAffected > 0);
         }
 
-        static public bool DeleteLicenseClass(int LicenseClassID)
+        static public bool DeleteRetakeTest(int RetakeTestID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -250,12 +207,12 @@ namespace DataAccessLayer
 
             int RowsAffected = 0;
 
-            string query = @"DELETE LicenseClasses
-                             WHERE LicenseClassID=@LicenseClassID";
+            string query = @"DELETE RetakeTests
+                             WHERE RetakeTestID=@RetakeTestID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@RetakeTestID", RetakeTestID);
 
             try
             {
@@ -276,16 +233,16 @@ namespace DataAccessLayer
 
         }
 
-        public static DataTable GetAllLicenseClasses()
+        public static DataTable GetAllRetakeTests()
         {
-
+            DataTable dt = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT * FROM LicenseClasses; ";
+            string query = @"SELECT * FROM  RetakeTests;";
 
             SqlCommand command = new SqlCommand(query, connection);
-            DataTable dataTable = new DataTable();
+
             try
             {
                 connection.Open();
@@ -293,7 +250,7 @@ namespace DataAccessLayer
 
                 if (reader.HasRows)
                 {
-                    dataTable.Load(reader);
+                    dt.Load(reader);
                 }
                 reader.Close();
             }
@@ -305,11 +262,11 @@ namespace DataAccessLayer
             {
                 connection.Close();
             }
-            return dataTable;
+            return dt;
 
         }
 
-        public static bool IsLicenseClassExists(int LicenseClassID)
+        public static bool IsRetakeTestExists(int RetakeTestID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -317,11 +274,11 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound=1 FROM LicenseClasses
-                             WHERE LicenseClassID=@LicenseClassID";
+            string query = @"SELECT IsFound=1 FROM RetakeTests
+                             WHERE RetakeTestID=@RetakeTestID";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@RetakeTestID", RetakeTestID);
 
             try
             {
@@ -344,7 +301,7 @@ namespace DataAccessLayer
             return isFound;
         }
 
-        public static bool IsLicenseClassExist(string LicenseClassName)
+        public static bool IsRetakeTestExistsByAppointmentID(int AppointmentID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -352,11 +309,11 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound=1 FROM LicenseClasses
-                             WHERE ClassName = @ClassName";
+            string query = @"SELECT IsFound=1 FROM RetakeTests
+                             WHERE AppointmentID = @AppointmentID";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ClassName", LicenseClassName);
+            command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
 
             try
             {
@@ -377,5 +334,7 @@ namespace DataAccessLayer
             }
             return isFound;
         }
+
+       
     }
 }

@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlPersonLicenseHistory));
-            this.ctrlFindPerson1 = new PresentationLayer.People.controls.ctrlFindPerson();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblLocalLicensesCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvLocalLicenses = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvInternationalLicenses = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblLocalLicensesCount = new System.Windows.Forms.Label();
             this.lblInternationalLicenseCount = new System.Windows.Forms.Label();
+            this.dgvInternationalLicenses = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.ctrlFindPerson1 = new PresentationLayer.People.controls.ctrlFindPerson();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -49,15 +49,6 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicenses)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ctrlFindPerson1
-            // 
-            this.ctrlFindPerson1.BackColor = System.Drawing.Color.White;
-            this.ctrlFindPerson1.Location = new System.Drawing.Point(173, 3);
-            this.ctrlFindPerson1.Name = "ctrlFindPerson1";
-            this.ctrlFindPerson1.Size = new System.Drawing.Size(717, 347);
-            this.ctrlFindPerson1.TabIndex = 0;
-            this.ctrlFindPerson1.OnPersonSelected += new System.Action<int>(this.ctrlFindPerson1_OnPersonSelected);
             // 
             // pictureBox1
             // 
@@ -103,14 +94,33 @@
             this.tabPage1.Text = "Local";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lblLocalLicensesCount
+            // 
+            this.lblLocalLicensesCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalLicensesCount.Location = new System.Drawing.Point(96, 252);
+            this.lblLocalLicensesCount.Name = "lblLocalLicensesCount";
+            this.lblLocalLicensesCount.Size = new System.Drawing.Size(52, 20);
+            this.lblLocalLicensesCount.TabIndex = 2;
+            this.lblLocalLicensesCount.Text = "N/A";
+            this.lblLocalLicensesCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 252);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "# Records :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // dgvLocalLicenses
             // 
             this.dgvLocalLicenses.AllowUserToAddRows = false;
             this.dgvLocalLicenses.AllowUserToDeleteRows = false;
             this.dgvLocalLicenses.AllowUserToResizeColumns = false;
             this.dgvLocalLicenses.AllowUserToResizeRows = false;
-            this.dgvLocalLicenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLocalLicenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvLocalLicenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvLocalLicenses.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocalLicenses.Location = new System.Drawing.Point(6, 6);
@@ -137,14 +147,22 @@
             this.tabPage2.Text = "International";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lblInternationalLicenseCount
+            // 
+            this.lblInternationalLicenseCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInternationalLicenseCount.Location = new System.Drawing.Point(96, 250);
+            this.lblInternationalLicenseCount.Name = "lblInternationalLicenseCount";
+            this.lblInternationalLicenseCount.Size = new System.Drawing.Size(52, 20);
+            this.lblInternationalLicenseCount.TabIndex = 3;
+            this.lblInternationalLicenseCount.Text = "N/A";
+            this.lblInternationalLicenseCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // dgvInternationalLicenses
             // 
             this.dgvInternationalLicenses.AllowUserToAddRows = false;
             this.dgvInternationalLicenses.AllowUserToDeleteRows = false;
             this.dgvInternationalLicenses.AllowUserToResizeColumns = false;
             this.dgvInternationalLicenses.AllowUserToResizeRows = false;
-            this.dgvInternationalLicenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInternationalLicenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInternationalLicenses.BackgroundColor = System.Drawing.Color.White;
             this.dgvInternationalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInternationalLicenses.Location = new System.Drawing.Point(6, 6);
@@ -158,36 +176,6 @@
             this.dgvInternationalLicenses.Size = new System.Drawing.Size(855, 234);
             this.dgvInternationalLicenses.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 252);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "# Records :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblLocalLicensesCount
-            // 
-            this.lblLocalLicensesCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalLicensesCount.Location = new System.Drawing.Point(96, 252);
-            this.lblLocalLicensesCount.Name = "lblLocalLicensesCount";
-            this.lblLocalLicensesCount.Size = new System.Drawing.Size(52, 20);
-            this.lblLocalLicensesCount.TabIndex = 2;
-            this.lblLocalLicensesCount.Text = "N/A";
-            this.lblLocalLicensesCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblInternationalLicenseCount
-            // 
-            this.lblInternationalLicenseCount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInternationalLicenseCount.Location = new System.Drawing.Point(96, 250);
-            this.lblInternationalLicenseCount.Name = "lblInternationalLicenseCount";
-            this.lblInternationalLicenseCount.Size = new System.Drawing.Size(52, 20);
-            this.lblInternationalLicenseCount.TabIndex = 3;
-            this.lblInternationalLicenseCount.Text = "N/A";
-            this.lblInternationalLicenseCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,6 +185,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "# Records :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ctrlFindPerson1
+            // 
+            this.ctrlFindPerson1.BackColor = System.Drawing.Color.White;
+            this.ctrlFindPerson1.Location = new System.Drawing.Point(173, 3);
+            this.ctrlFindPerson1.Name = "ctrlFindPerson1";
+            this.ctrlFindPerson1.Size = new System.Drawing.Size(717, 347);
+            this.ctrlFindPerson1.TabIndex = 0;
+            this.ctrlFindPerson1.OnPersonSelected += new System.Action<int>(this.ctrlFindPerson1_OnPersonSelected);
             // 
             // ctrlPersonLicenseHistory
             // 

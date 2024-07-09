@@ -135,7 +135,7 @@ namespace PresentationLayer.LocalLicenseApplication.controls
             ctrlFindPerson1.LoadPersonInfo(_Application.ApplicantPersonID);
             lblDLApplicationID.Text =_LDL_Application.LDL_ApplicationID.ToString();
             lblApplicationDate.Text = _Application.ApplicationDate.ToString("d");
-            cbLicenseClasses.SelectedIndex = cbLicenseClasses.FindString(clsLicenseClass.Find(_LDL_Application.LicenseClassID).LicenseClassName);
+            cbLicenseClasses.SelectedIndex = cbLicenseClasses.FindString(clsLicenseClass.Find(_LDL_Application.LicenseClassID).ClassName);
             lblApplicationFees.Text=clsApplicationType.Find(_Application.ApplicationTypeID).ApplicationFees.ToString();
             lblCreatedBy.Text = clsUser.Find(_Application.CreatedByUserID).UserName;
         }

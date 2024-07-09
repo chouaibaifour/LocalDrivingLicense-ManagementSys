@@ -64,8 +64,8 @@ namespace DataAccessLayer
 
         static public int AddNewApplication(int ApplicationID, int LicenseClassID)
         {
-            // the function will returns LDL_ApplicationID or -1 if not 
-            int LDL_ApplicationID = -1; 
+            // the function will returns LocalDrivingLicenseApplicationID or -1 if not 
+            int LocalDrivingLicenseApplicationID = -1; 
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -90,7 +90,7 @@ namespace DataAccessLayer
 
                 if (result != DBNull.Value && int.TryParse(result.ToString(), out int InsertedID))
                 {
-                    LDL_ApplicationID = InsertedID;
+                    LocalDrivingLicenseApplicationID = InsertedID;
                 }
 
             }
@@ -103,29 +103,29 @@ namespace DataAccessLayer
                 connection.Close();
             }
 
-            return LDL_ApplicationID;
+            return LocalDrivingLicenseApplicationID;
 
         }
 
-        static public bool UpdateApplication( int LDL_ApplicationID,  int ApplicationID,  int LicenseClassID)
+        static public bool UpdateApplication( int LocalDrivingLicenseApplicationID,  int ApplicationID,  int LicenseClassID)
         {
             int RowsAffected = -1;
             // this function returns true if Rows affected > 0 or false if no RowsAffected
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             //(,NationalityCountryID,ImagePath)
-            string query = @"UPDATE Applications
+            string query = @"UPDATE LocalDrivingLicenseApplications
 
                             SET 
                                 ApplicationID, 
 
                                 LicenseClassID
                               
-                            WHERE LDL_ApplicationID = @LDL_ApplicationID;";
+                            WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
 
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
@@ -151,7 +151,7 @@ namespace DataAccessLayer
             return (RowsAffected > 0);
         }
 
-        static public bool DeleteApplication(int LDL_ApplicationID)
+        static public bool DeleteApplication(int LocalDrivingLicenseApplicationID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -159,13 +159,13 @@ namespace DataAccessLayer
 
             int RowsAffected = 0;
 
-            string query = @"DELETE Applications
+            string query = @"DELETE LocalDrivingLicenseApplications
 
-                             WHERE LDL_ApplicationID = @LDL_ApplicationID;";
+                             WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
 
             try
             {
@@ -295,7 +295,7 @@ namespace DataAccessLayer
 
         }
 
-        public static bool IsApplicationExists(int LDL_ApplicationID)
+        public static bool IsApplicationExists(int LocalDrivingLicenseApplicationID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -303,12 +303,12 @@ namespace DataAccessLayer
 
             bool isFound = false;
 
-            string query = @"SELECT IsFound = 1 FROM Applications
+            string query = @"SELECT IsFound = 1 FROM LocalDrivingLicenseApplications
 
-                             WHERE LDL_ApplicationID = @LDL_ApplicationID;";
+                             WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@LDL_ApplicationID", LDL_ApplicationID);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
 
             try
             {

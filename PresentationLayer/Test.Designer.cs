@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlLDLApplicationList1 = new PresentationLayer.LocalLicenseApplication.controls.ctrlLDLApplicationList();
+            this.ctrlLicenseInfo1 = new PresentationLayer.Licenses.controls.ctrlLicenseInfo();
             this.SuspendLayout();
             // 
-            // ctrlLDLApplicationList1
+            // ctrlLicenseInfo1
             // 
-            this.ctrlLDLApplicationList1.BackColor = System.Drawing.Color.White;
-            this.ctrlLDLApplicationList1.Location = new System.Drawing.Point(41, 39);
-            this.ctrlLDLApplicationList1.Name = "ctrlLDLApplicationList1";
-            this.ctrlLDLApplicationList1.Size = new System.Drawing.Size(975, 479);
-            this.ctrlLDLApplicationList1.TabIndex = 0;
+            this.ctrlLicenseInfo1.BackColor = System.Drawing.Color.White;
+            this.ctrlLicenseInfo1.Location = new System.Drawing.Point(58, 57);
+            this.ctrlLicenseInfo1.Name = "ctrlLicenseInfo1";
+            this.ctrlLicenseInfo1.Size = new System.Drawing.Size(701, 257);
+            this.ctrlLicenseInfo1.TabIndex = 0;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 692);
-            this.Controls.Add(this.ctrlLDLApplicationList1);
+            this.ClientSize = new System.Drawing.Size(936, 406);
+            this.Controls.Add(this.ctrlLicenseInfo1);
             this.Name = "Test";
+            this.Text = "/";
             this.Load += new System.EventHandler(this.Test_Load);
             this.ResumeLayout(false);
 
@@ -53,6 +54,6 @@
 
         #endregion
 
-        private LocalLicenseApplication.controls.ctrlLDLApplicationList ctrlLDLApplicationList1;
+        private Licenses.controls.ctrlLicenseInfo ctrlLicenseInfo1;
     }
 }

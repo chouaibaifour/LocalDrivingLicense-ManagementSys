@@ -38,7 +38,7 @@ namespace PresentationLayer.Users.controls
             else
             {
                 _UserID = UserID;
-                ctrlFindPerson1.toUpdate();
+                
                 _Mode = enMode.Update;
             }
 
@@ -98,7 +98,7 @@ namespace PresentationLayer.Users.controls
             txtUserName.Text= _User.UserName;
             txtPasswordConfirm.Text = _User.Password;
             chkIsActive.Checked = _User.isActive;
-            ctrlFindPerson1.LoadPersonInfo(_User.PersonID);
+            ctrlFindPerson1.LoadPersonInfo(_User.PersonID,false);
         }
 
         private void GetUserInfoFromForm()
@@ -129,8 +129,10 @@ namespace PresentationLayer.Users.controls
             }    
 
             if (_User.Save())
-
+            {
+                _Mode = enMode.Update;
                 MessageBox.Show("User Saved Successfully.");
+            }
 
             else
             {
@@ -138,7 +140,7 @@ namespace PresentationLayer.Users.controls
                 return;
             }
 
-            _Mode = enMode.Update;
+           
             lblUserID.Text = _User.UserID.ToString();
 
         }

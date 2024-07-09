@@ -71,7 +71,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 250);
+            this.groupBox1.Size = new System.Drawing.Size(655, 203);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application Basic Info";
@@ -81,7 +81,7 @@
             // 
             this.llblShowPersonInfo.Image = global::PresentationLayer.Properties.Resources.user;
             this.llblShowPersonInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.llblShowPersonInfo.Location = new System.Drawing.Point(481, 214);
+            this.llblShowPersonInfo.Location = new System.Drawing.Point(385, 171);
             this.llblShowPersonInfo.Name = "llblShowPersonInfo";
             this.llblShowPersonInfo.Size = new System.Drawing.Size(128, 22);
             this.llblShowPersonInfo.TabIndex = 1;
@@ -93,7 +93,7 @@
             // lblAppDate
             // 
             this.lblAppDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppDate.Location = new System.Drawing.Point(481, 35);
+            this.lblAppDate.Location = new System.Drawing.Point(474, 19);
             this.lblAppDate.Name = "lblAppDate";
             this.lblAppDate.Size = new System.Drawing.Size(163, 22);
             this.lblAppDate.TabIndex = 0;
@@ -104,7 +104,7 @@
             // 
             this.label9.Image = global::PresentationLayer.Properties.Resources.DateOfBirth;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(392, 35);
+            this.label9.Location = new System.Drawing.Point(385, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 22);
             this.label9.TabIndex = 0;
@@ -115,7 +115,7 @@
             // 
             this.label13.Image = global::PresentationLayer.Properties.Resources.user;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label13.Location = new System.Drawing.Point(354, 109);
+            this.label13.Location = new System.Drawing.Point(347, 93);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(116, 22);
             this.label13.TabIndex = 0;
@@ -126,7 +126,7 @@
             // 
             this.label6.Image = global::PresentationLayer.Properties.Resources.DateOfBirth;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(351, 73);
+            this.label6.Location = new System.Drawing.Point(344, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 22);
             this.label6.TabIndex = 0;
@@ -136,7 +136,7 @@
             // lblCreatedBy
             // 
             this.lblCreatedBy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCreatedBy.Location = new System.Drawing.Point(481, 109);
+            this.lblCreatedBy.Location = new System.Drawing.Point(474, 93);
             this.lblCreatedBy.Name = "lblCreatedBy";
             this.lblCreatedBy.Size = new System.Drawing.Size(163, 22);
             this.lblCreatedBy.TabIndex = 0;
@@ -146,7 +146,7 @@
             // lblLastStatusDate
             // 
             this.lblLastStatusDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLastStatusDate.Location = new System.Drawing.Point(481, 73);
+            this.lblLastStatusDate.Location = new System.Drawing.Point(474, 57);
             this.lblLastStatusDate.Name = "lblLastStatusDate";
             this.lblLastStatusDate.Size = new System.Drawing.Size(163, 22);
             this.lblLastStatusDate.TabIndex = 0;
@@ -156,7 +156,7 @@
             // lblApplicant
             // 
             this.lblApplicant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblApplicant.Location = new System.Drawing.Point(130, 214);
+            this.lblApplicant.Location = new System.Drawing.Point(123, 171);
             this.lblApplicant.Name = "lblApplicant";
             this.lblApplicant.Size = new System.Drawing.Size(220, 22);
             this.lblApplicant.TabIndex = 0;
@@ -167,7 +167,7 @@
             // 
             this.label10.Image = global::PresentationLayer.Properties.Resources.user;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(6, 214);
+            this.label10.Location = new System.Drawing.Point(-1, 171);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 22);
             this.label10.TabIndex = 0;
@@ -177,7 +177,7 @@
             // lblAppType
             // 
             this.lblAppType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppType.Location = new System.Drawing.Point(130, 161);
+            this.lblAppType.Location = new System.Drawing.Point(123, 133);
             this.lblAppType.Name = "lblAppType";
             this.lblAppType.Size = new System.Drawing.Size(220, 22);
             this.lblAppType.TabIndex = 0;
@@ -188,7 +188,7 @@
             // 
             this.label7.Image = global::PresentationLayer.Properties.Resources.Test;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(31, 161);
+            this.label7.Location = new System.Drawing.Point(24, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 22);
             this.label7.TabIndex = 0;
@@ -198,7 +198,7 @@
             // lblAppFees
             // 
             this.lblAppFees.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppFees.Location = new System.Drawing.Point(130, 109);
+            this.lblAppFees.Location = new System.Drawing.Point(123, 95);
             this.lblAppFees.Name = "lblAppFees";
             this.lblAppFees.Size = new System.Drawing.Size(220, 22);
             this.lblAppFees.TabIndex = 0;
@@ -209,7 +209,7 @@
             // 
             this.label4.Image = global::PresentationLayer.Properties.Resources.money;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(28, 109);
+            this.label4.Location = new System.Drawing.Point(21, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 22);
             this.label4.TabIndex = 0;
@@ -219,7 +219,7 @@
             // lblAppStatus
             // 
             this.lblAppStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppStatus.Location = new System.Drawing.Point(130, 73);
+            this.lblAppStatus.Location = new System.Drawing.Point(123, 57);
             this.lblAppStatus.Name = "lblAppStatus";
             this.lblAppStatus.Size = new System.Drawing.Size(220, 22);
             this.lblAppStatus.TabIndex = 0;
@@ -230,7 +230,7 @@
             // 
             this.label2.Image = global::PresentationLayer.Properties.Resources.id1;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(15, 73);
+            this.label2.Location = new System.Drawing.Point(8, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 22);
             this.label2.TabIndex = 0;
@@ -240,7 +240,7 @@
             // lblAppID
             // 
             this.lblAppID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAppID.Location = new System.Drawing.Point(130, 35);
+            this.lblAppID.Location = new System.Drawing.Point(123, 19);
             this.lblAppID.Name = "lblAppID";
             this.lblAppID.Size = new System.Drawing.Size(220, 22);
             this.lblAppID.TabIndex = 0;
@@ -251,7 +251,7 @@
             // 
             this.label1.Image = global::PresentationLayer.Properties.Resources.id1;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(41, 35);
+            this.label1.Location = new System.Drawing.Point(34, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 22);
             this.label1.TabIndex = 0;
@@ -265,7 +265,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlAppBasicInfo";
-            this.Size = new System.Drawing.Size(663, 250);
+            this.Size = new System.Drawing.Size(663, 210);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -19,7 +19,7 @@ namespace PresentationLayer
 
         private void Test_Load(object sender, EventArgs e)
         {
-            
+            ctrlLicenseInfo1.LoadLicenseInfo(10);
         }
     }
 }

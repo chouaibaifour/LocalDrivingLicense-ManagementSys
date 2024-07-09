@@ -11,11 +11,6 @@ namespace BusinessLayer
     public class clsUser
     {
 
-            //UserID
-            //PersonID
-            //UserName
-            //Password
-            //isActive
 
         private enum enMode { AddNew, Update };
         private enMode Mode = enMode.AddNew;
@@ -107,7 +102,7 @@ namespace BusinessLayer
 
             int UserID = -1;
             int PersonID = -1;
-            UserName = "";
+            
             string Password = "";
             bool isActive = false;
 

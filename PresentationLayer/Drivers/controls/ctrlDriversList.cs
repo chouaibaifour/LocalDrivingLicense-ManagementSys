@@ -29,7 +29,7 @@ namespace PresentationLayer.Licenses.controls
 
         private void _Fill_dgvDriversWithData()
         {
-            DataTable dt = clsUser.GetAllUsers();
+            DataTable dt = clsDriver.GetAllDrivers();
 
             dgvDrivers.DataSource = dt;
 
@@ -41,8 +41,10 @@ namespace PresentationLayer.Licenses.controls
             Filter = "";
 
             string[] Filters = {
-            "UserID",
+            
+            "DriverID",
             "PersonID",
+            "National No",
             "FullName"};
 
             if (Filters.Length <= index && 0 > index)
@@ -57,13 +59,19 @@ namespace PresentationLayer.Licenses.controls
             {
                 
                 txtFilterValue.Visible = true;
-
-                return;
+                txtFilterValue.Text = "";
+                
+            }
+            else
+            {
+                txtFilterValue.Visible = false;
             }
 
-            txtFilterValue.Visible = false;
+            
 
-            dgvDrivers.DataSource = dataView;
+            dataView.RowFilter = "NationalNo LIKE '%%'";
+
+            dgvDrivers.DataSource = dataView.ToTable();
 
             lblRecordCount.Text = dgvDrivers.RowCount.ToString();
         }
@@ -73,13 +81,13 @@ namespace PresentationLayer.Licenses.controls
             _getClomnName(cbFilters.SelectedIndex);
             Filter = Filter.Replace(" ", "");
 
-            if (!("UserID".Equals(Filter)||"PersonID".Equals(Filter)))
+            if (!("DriverID".Equals(Filter)||"PersonID".Equals(Filter)))
             {
                 Filter += @" LIKE '%" + txtFilterValue.Text + "%'";
             }
             else
             {
-                if (!int.TryParse(txtFilterValue.Text, out int ID))
+               if (!int.TryParse(txtFilterValue.Text, out int ID))
                 {
 
                     txtFilterValue.Text = string.Empty;
@@ -101,7 +109,7 @@ namespace PresentationLayer.Licenses.controls
             }
             catch (Exception)
             {
-
+                dataView.RowFilter = "NationalNo LIKE '%%'";
             }
 
             dgvDrivers.DataSource = dataView.ToTable();
@@ -114,15 +122,21 @@ namespace PresentationLayer.Licenses.controls
             System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
             if (string.IsNullOrEmpty(textBox.Text))
             {
-                e.Cancel = true;
+               
 
                 epEmptyOrNull.SetError(textBox, "Invalid input try again !");
             }
             else
             {
-                e.Cancel = false;
+                
                 epEmptyOrNull.SetError(textBox, "");
             }
+            e.Cancel = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            FindForm().Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresentationLayer.TestAppointments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace PresentationLayer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Application.Run(new Users.frmUsersList());
-             //Application.Run(new Test());
+            // Application.Run(new Test());
+           // Application.Run(new frmTestAppointmentsList(36, 2));
             frmLogin frmLogin = new frmLogin();
             frmLogin.ShowDialog();
             while (true)
