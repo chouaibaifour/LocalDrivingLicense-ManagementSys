@@ -19,26 +19,26 @@ namespace PresentationLayer.Licenses.controls
         }
 
         private int _PersonID;
-        private DataSet dtInternationalLicense;
+       
 
 
         public void LoadPersonLicenseHistory(int PersonID)
         {
             ctrlFindPerson1.LoadPersonInfo(PersonID, false);
             _Fill_dgvLocalLicenses();
-            // _Fill_dgvInternationalLicenses();
+             _Fill_dgvInternationalLicenses();
         }
 
         public void LoadPersonLicenseHistory(string NationalNumber)
         {
             ctrlFindPerson1.LoadPersonInfo(NationalNumber,false);
             _Fill_dgvLocalLicenses();
-           // _Fill_dgvInternationalLicenses();
+            _Fill_dgvInternationalLicenses();
         }
 
         private void _Fill_dgvLocalLicenses()
         {
-              DataTable dtLocalLicense= clsLicense.GetAllLicensesOfPerson(_PersonID);
+              DataTable dtLocalLicense = clsLicense.GetAllLicensesOfPerson(_PersonID);
 
             dgvLocalLicenses.DataSource = dtLocalLicense;
             lblLocalLicensesCount.Text = dgvLocalLicenses.RowCount.ToString();
@@ -47,7 +47,9 @@ namespace PresentationLayer.Licenses.controls
 
         private void _Fill_dgvInternationalLicenses()
         {
-            throw new NotImplementedException();
+            DataTable dtInternationalLicense = clsInternationalLicense.GetAllInternationalLicensesOfPerson(_PersonID);
+            dgvInternationalLicenses.DataSource = dtInternationalLicense;
+            lblInternationalLicenseCount.Text = dgvInternationalLicenses.RowCount.ToString();
         }
 
         private void ctrlFindPerson1_OnPersonSelected(int obj)

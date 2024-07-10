@@ -21,7 +21,7 @@ namespace PresentationLayer.Users.controls
 
         public void LoadUserInfo(int UserID)
         {
-            _User=clsUser.Find(UserID);
+            _User = clsUser.Find(UserID);
 
             if (_User != null)
             {
@@ -39,10 +39,7 @@ namespace PresentationLayer.Users.controls
 
             lblUsername.Text = _User.UserName.ToString();
 
-            if (_User.isActive)
-                lblisActive.Text = "Yes";
-            else
-                lblisActive.Text = "No";
+            lblisActive.Text = (_User.isActive) ? "Yes" : "No";
         }
 
         private void btnClose_Click(object sender, EventArgs e)

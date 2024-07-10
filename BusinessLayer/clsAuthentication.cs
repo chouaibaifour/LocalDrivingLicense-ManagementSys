@@ -27,11 +27,11 @@ namespace BusinessLayer
         
         }
 
-        private clsAuthentication(int UserID,int PersonID,bool isActive)
+        private clsAuthentication(int UserID,string Username,int PersonID,bool isActive)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
-
+            this.UserName = Username;
             this.isActive = isActive;
         }
         
@@ -41,9 +41,9 @@ namespace BusinessLayer
             bool isActive = false;
             int PersonID = -1;
             int UserID = -1;
-            if(clsAuthenticationDataAccess.Login(UserName,Password,ref UserID,ref PersonID,ref isActive))
+            if(clsAuthenticationDataAccess.Login(ref UserName,ref Password,ref UserID,ref PersonID,ref isActive))
             {
-                return new clsAuthentication(UserID,PersonID,isActive);
+                return new clsAuthentication(UserID, UserName, PersonID, isActive);
 
             }
             else
@@ -57,7 +57,7 @@ namespace BusinessLayer
            clsUser user= clsUser.Find(UserID);
 
             if (user != null)
-                return new clsAuthentication(user.UserID, user.PersonID, user.isActive);
+                return new clsAuthentication(user.UserID, user.UserName, user.PersonID, user.isActive);
 
             return null;
         }

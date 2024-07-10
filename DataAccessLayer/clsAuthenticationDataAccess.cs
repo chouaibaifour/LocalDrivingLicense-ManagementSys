@@ -10,7 +10,7 @@ namespace DataAccessLayer
     public static  class clsAuthenticationDataAccess
     {
 
-        public static bool Login( string UserName,  string Password,ref int UserID,ref int PersonID,ref bool isActive)
+        public static bool Login( ref string UserName,  ref string Password,ref int UserID,ref int PersonID,ref bool isActive)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -39,6 +39,7 @@ namespace DataAccessLayer
                     isActive = (bool)reader["isActive"];
                     PersonID = (int)reader["PersonID"];
                     UserID = (int)reader["UserID"];
+                    
 
                 }else
                     isFound = false;

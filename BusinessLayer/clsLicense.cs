@@ -190,5 +190,15 @@ namespace BusinessLayer
         {
             return clsLicenseDataAccess.GetAllLicensesOfPerson(personID);
         }
+
+        public static bool IsLicenseActive(int LicenseID)
+        {
+            return clsLicenseDataAccess.IsLicenseActive(LicenseID);
+        }
+
+        public static bool isExpired(int issuedUsingLicenseID)
+        {
+           return clsLicenseDataAccess.isExpired(issuedUsingLicenseID);
+        }
     }
 }

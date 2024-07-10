@@ -62,6 +62,30 @@
     <Compile Include="InternationalLicenses\controls\ctrlAddUpdateInternationalLicense.Designer.cs">
       <DependentUpon>ctrlAddUpdateInternationalLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="InternationalLicenses\controls\ctrlInternationalLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InternationalLicenses\controls\ctrlInternationalLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlInternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternationalLicenses\controls\ctrlInternationalLicenseList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InternationalLicenses\controls\ctrlInternationalLicenseList.Designer.cs">
+      <DependentUpon>ctrlInternationalLicenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternationalLicenses\frmInternationalLicenseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternationalLicenses\frmInternationalLicenseList.Designer.cs">
+      <DependentUpon>frmInternationalLicenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternationalLicenses\frmAddUpdateInternationalLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternationalLicenses\frmAddUpdateInternationalLicense.Designer.cs">
+      <DependentUpon>frmAddUpdateInternationalLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\controls\ctrlAddUpdateLicense.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +116,18 @@
     <Compile Include="Licenses\controls\ctrlPersonLicenseHistory.Designer.cs">
       <DependentUpon>ctrlPersonLicenseHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\controls\ctrlRenewLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlRenewLicense.Designer.cs">
+      <DependentUpon>ctrlRenewLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlReplacementDamagedOrLostLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licenses\controls\ctrlReplacementDamagedOrLostLicense.Designer.cs">
+      <DependentUpon>ctrlReplacementDamagedOrLostLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\frmAddUpdateLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +145,18 @@
     </Compile>
     <Compile Include="Licenses\frmPersonLicenseHistory.Designer.cs">
       <DependentUpon>frmPersonLicenseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\frmRenewLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmRenewLicense.Designer.cs">
+      <DependentUpon>frmRenewLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\frmReplacementDamagedLostLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\frmReplacementDamagedLostLicense.Designer.cs">
+      <DependentUpon>frmReplacementDamagedLostLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalLicenseApplications\controls\ctrlAddUpdateLocal-L-Application.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +199,42 @@
     </Compile>
     <Compile Include="LocalLicenseApplications\frmLDLApplicationList.Designer.cs">
       <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlDetainedLicenseList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlDetainedLicenseList.Designer.cs">
+      <DependentUpon>ctrlDetainedLicenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlDetainLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlDetainLicense.Designer.cs">
+      <DependentUpon>ctrlDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlReleaseLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\controls\ctrlReleaseLicense.Designer.cs">
+      <DependentUpon>ctrlReleaseLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmDetainedLicenseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmDetainedLicenseList.Designer.cs">
+      <DependentUpon>frmDetainedLicenseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmDetainLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmDetainLicense.Designer.cs">
+      <DependentUpon>frmDetainLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmReleaseLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleaseDetianedLicenses\frmReleaseLicense.Designer.cs">
+      <DependentUpon>frmReleaseLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="TestAppointments\controls\ctrlAddUpdateTestAppointment.cs">
       <SubType>UserControl</SubType>
@@ -334,11 +418,29 @@
     <Compile Include="Users\frmUsersList.Designer.cs">
       <DependentUpon>frmUsersList.cs</DependentUpon>
     </Compile>
+    <Compile Include="InternationalLicenses\frmInternationalLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternationalLicenses\frmInternationalLicenseInfo.Designer.cs">
+      <DependentUpon>frmInternationalLicenseInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Drivers\frmDriversList.resx">
       <DependentUpon>frmDriversList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InternationalLicenses\controls\ctrlAddUpdateInternationalLicense.resx">
       <DependentUpon>ctrlAddUpdateInternationalLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\controls\ctrlInternationalLicenseInfo.resx">
+      <DependentUpon>ctrlInternationalLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\controls\ctrlInternationalLicenseList.resx">
+      <DependentUpon>ctrlInternationalLicenseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\frmInternationalLicenseList.resx">
+      <DependentUpon>frmInternationalLicenseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\frmAddUpdateInternationalLicense.resx">
+      <DependentUpon>frmAddUpdateInternationalLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\controls\ctrlAddUpdateLicense.resx">
       <DependentUpon>ctrlAddUpdateLicense.cs</DependentUpon>
@@ -355,6 +457,12 @@
     <EmbeddedResource Include="Licenses\controls\ctrlPersonLicenseHistory.resx">
       <DependentUpon>ctrlPersonLicenseHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlRenewLicense.resx">
+      <DependentUpon>ctrlRenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\controls\ctrlReplacementDamagedOrLostLicense.resx">
+      <DependentUpon>ctrlReplacementDamagedOrLostLicense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses\frmAddUpdateLicense.resx">
       <DependentUpon>frmAddUpdateLicense.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +471,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\frmPersonLicenseHistory.resx">
       <DependentUpon>frmPersonLicenseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmRenewLicense.resx">
+      <DependentUpon>frmRenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\frmReplacementDamagedLostLicense.resx">
+      <DependentUpon>frmReplacementDamagedLostLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalLicenseApplications\controls\ctrlAddUpdateLocal-L-Application.resx">
       <DependentUpon>ctrlAddUpdateLocal-L-Application.cs</DependentUpon>
@@ -384,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LocalLicenseApplications\frmLDLApplicationList.resx">
       <DependentUpon>frmLDLApplicationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReleaseDetianedLicenses\controls\ctrlDetainedLicenseList.resx">
+      <DependentUpon>ctrlDetainedLicenseList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestAppointments\controls\ctrlAddUpdateTestAppointment.resx">
       <DependentUpon>ctrlAddUpdateTestAppointment.cs</DependentUpon>
@@ -484,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmUsersList.resx">
       <DependentUpon>frmUsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternationalLicenses\frmInternationalLicenseInfo.resx">
+      <DependentUpon>frmInternationalLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -30,7 +30,7 @@ namespace PresentationLayer.Users.controls
         {
             if (-1 == UserID)
             {
-                _UserID = UserID;
+                
                 
                 _Mode = enMode.AddNew;
                

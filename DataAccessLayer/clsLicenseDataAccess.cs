@@ -258,7 +258,12 @@ namespace DataAccessLayer
 
             command.Parameters.AddWithValue("@ExpirationDate", ExpirationDate);
 
-            command.Parameters.AddWithValue("@Notes", Notes);
+
+            if ("".Equals(Notes))
+                command.Parameters.AddWithValue("@Notes", DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@Notes", Notes);
+
 
             command.Parameters.AddWithValue("@PaidFees", PaidFees);
 
@@ -428,6 +433,43 @@ namespace DataAccessLayer
             return isFound;
         }
 
+        public static bool IsLicenseActive(int LicenseID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            // this fuction will returns true when RowsAffected > 0 and flase if not 
+
+            bool isFound = false;
+
+            string query = @"SELECT IsFound=1 FROM Licenses
+                             WHERE (LicenseID = @LicenseID)
+                                        AND
+                                    (IsActive = 1);";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
         public static bool IsLicenseExistbyDriverID(string DriverID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -497,5 +539,42 @@ namespace DataAccessLayer
             return isFound;
         }
 
+        public static bool isExpired(int LicenseID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            // this fuction will returns true when RowsAffected > 0 and flase if not 
+
+            bool isFound = false;
+
+            string query = @"SELECT        isExpired=1
+                                FROM            Licenses
+                                WHERE        (ExpirationDate <= GETDATE())
+                                                    AND
+                                            (LicenseID = @LicenseID);";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+                //clsDataAccessSettings.PrintExecptionErrorMessage(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
     }
 }

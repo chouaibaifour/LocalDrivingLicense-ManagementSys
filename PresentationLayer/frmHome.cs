@@ -1,6 +1,9 @@
 ﻿using BusinessLayer;
 using PresentationLayer.ApplicationTypes;
 using PresentationLayer.Drivers;
+using PresentationLayer.InternationalLicenses;
+using PresentationLayer.InternationalLicenses.controls;
+using PresentationLayer.Licenses;
 using PresentationLayer.LocalLicenseApplication;
 using PresentationLayer.Users;
 using System;
@@ -101,6 +104,30 @@ namespace PresentationLayer
         {
             frmAddUpdateLocal_L_Application frmAddUpdateLocal_L_Application = new frmAddUpdateLocal_L_Application(-1);
             frmAddUpdateLocal_L_Application.ShowDialog();
+        }
+
+        private void smiInternationalLicense_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateInternationalLicense frmAddUpdateInternational = new frmAddUpdateInternationalLicense(-1);
+            frmAddUpdateInternational.ShowDialog();
+        }
+
+        private void smiInternationalLicenseAppliactions_Click(object sender, EventArgs e)
+        {
+            frmInternationalLicenseList frmInternationalLicenseList = new frmInternationalLicenseList();
+            frmInternationalLicenseList.ShowDialog();
+        }
+
+        private void smiRenewLicense_Click(object sender, EventArgs e)
+        {
+            frmRenewLicense frmRenewLicense =new frmRenewLicense(-1);
+            frmRenewLicense.ShowDialog();
+        }
+
+        private void smiReplacementDamageOrLost_Click(object sender, EventArgs e)
+        {
+            frmReplacementDamagedLostLicense frmReplacementDamagedLostLicense =new frmReplacementDamagedLostLicense(-1);
+            frmReplacementDamagedLostLicense.ShowDialog();
         }
     }
 }

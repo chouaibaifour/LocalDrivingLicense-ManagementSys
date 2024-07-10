@@ -41,10 +41,24 @@ namespace PresentationLayer.Licenses.controls
             }
         }
 
+        public void LoadLicenseInfo(int LicenseID)
+        {
+            
+           if( ctrlLicenseInfo1.LoadLicenseInfo(LicenseID))
+
+            groupBox1.Enabled = false;
+            txtFilterValue.Text = LicenseID.ToString();
+        }
+
         private void ctrlLicenseInfo1_OnLicenseSelected(int obj)
         {
             if(OnLicenseSelected != null) 
                 OnLicenseSelected(obj);
+        }
+
+        public void toUpdate(bool toUpdate)
+        {
+            groupBox1.Enabled = !toUpdate;
         }
     }
 }

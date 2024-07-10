@@ -128,6 +128,15 @@ namespace BusinessLayer
         {
             return clsInternationalLicenseDataAccess.IsInternationalLicenseExists(InternationalLicenseID);
         }
-       
+
+        public static bool IsInternationalLicenseExistsByLocalLicenseID(int LicenseID)
+        {
+            return clsInternationalLicenseDataAccess.IsInternationalLicenseExistsByLocalLicenseID(LicenseID);
+        }
+
+        public static DataTable GetAllInternationalLicensesOfPerson(int personID)
+        {
+            return clsInternationalLicenseDataAccess.GetAllInternationalLicensesOfPerson(personID);
+        }
     }
 }

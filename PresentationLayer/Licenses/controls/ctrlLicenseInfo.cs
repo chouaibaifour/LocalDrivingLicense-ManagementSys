@@ -33,7 +33,7 @@ namespace PresentationLayer.Licenses.controls
         private int _LicenseID;
         private clsLicense _License;
 
-        public void LoadLicenseInfo(int LicenseID)
+        public bool LoadLicenseInfo(int LicenseID)
         {
             _License = clsLicense.Find(LicenseID);
 
@@ -62,17 +62,20 @@ namespace PresentationLayer.Licenses.controls
                     if (OnLicenseSelected != null)
                         OnLicenseSelected(_License.LicenseID);
 
-                    return;
+                    return true;
 
                 }
+                return false;
             }
             else
                 MessageBox.Show("No License With LicenseID = " + _LicenseID.ToString());
+            return false;
+
         }
 
         private string _GetIssueReason()
         {
-            string[] IssueReasons = { "FirstTime", "SencondTime", "LastTime" };
+            string[] IssueReasons = { "FirstTime", "ReNew", "Replacement For Damage","Replacement For Lost" };
              return IssueReasons[_License.IssueReason-1];
         }
     }

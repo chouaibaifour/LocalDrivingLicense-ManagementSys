@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.ComponentModel;
 
 namespace DataAccessLayer
 {
@@ -37,7 +38,7 @@ namespace DataAccessLayer
 
                     InternationalLicenseID = (int)reader["InternationalLicenseID"];
 
-                    ApplicationID = (int)reader["ApplicatinID"];
+                    ApplicationID = (int)reader["ApplicationID"];
 
                     DriverID = (int)reader["DriverID"];
 
@@ -322,6 +323,95 @@ namespace DataAccessLayer
             return isFound;
         }
 
-        
+        public static bool IsInternationalLicenseExistsByLocalLicenseID(int licenseID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            // this fuction will returns true when RowsAffected > 0 and flase if not 
+
+            bool isFound = false;
+
+            string query = @"SELECT IsFound=1 FROM InternationalLicenses
+                             WHERE IssuedUsingLocalLicenseID  = @IssuedUsingLocalLicenseID ";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@IssuedUsingLocalLicenseID ", licenseID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                isFound = false;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isFound;
+        }
+
+        public static DataTable GetAllInternationalLicensesOfPerson(int PersonID)
+        {
+           
+
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @" SELECT InternationalLicenseID
+
+                                      ,ApplicationID
+
+                                      ,Drivers.DriverID
+
+                                      ,IssuedUsingLocalLicenseID
+
+                                      ,IssueDate
+
+                                      ,ExpirationDate
+
+                                      ,IsActive
+
+                                FROM InternationalLicenses
+
+                                        INNER JOIN Drivers
+
+                                                 ON
+
+                                        Drivers.DriverID = InternationalLicenses.DriverID
+
+                                                    WHERE(Drivers.PersonID = @PersonID);";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@PersonID ", PersonID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
     }
 }

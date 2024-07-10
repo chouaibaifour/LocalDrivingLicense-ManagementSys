@@ -99,7 +99,7 @@ namespace PresentationLayer.Users
         {
 
             _getClomnName(cbFilters.SelectedIndex);
-            Filter=Filter.Replace(" ", "");
+            Filter = Filter.Replace(" ", "");
 
             if (!"UserID".Equals(Filter))
             {
@@ -139,18 +139,19 @@ namespace PresentationLayer.Users
 
         private void ValidatingEmptyOrNulltxt(object sender, CancelEventArgs e)
         {
-            System.Windows.Forms.TextBox textBox = (System.Windows.Forms.TextBox)sender;
+            TextBox textBox = (TextBox)sender;
             if (string.IsNullOrEmpty(textBox.Text))
             {
-                    e.Cancel = true;
+                   
 
                 epEmptyOrNull.SetError(textBox, "Invalid input try again !");
             }
             else
             {
-                e.Cancel = false;
+               
                 epEmptyOrNull.SetError(textBox, "");
             }
+            e.Cancel = false;
         }
 
         private void smiShowDetails_Click(object sender, EventArgs e)
@@ -228,15 +229,22 @@ namespace PresentationLayer.Users
 
             try
             {
-                if(cbAccountStatus.SelectedIndex==1)
+                switch (cbAccountStatus.SelectedIndex)
+                {
+                case 1:
                     dataView.RowFilter = "IsActive = 1";
-                else if(cbAccountStatus.SelectedIndex==2)
+                    break;
+                case 2:
                     dataView.RowFilter = "IsActive = 0";
-                else
+                    break;
+                default:
                     dataView.RowFilter = "IsActive = 0 or IsActive = 1";
+                    break;
+
+                };
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 
             }
